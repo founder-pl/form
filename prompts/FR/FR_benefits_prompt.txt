@@ -1,0 +1,160 @@
+You are an expert in social welfare and family benefit systems. Please provide detailed information about family and social benefits in France (FR) in the following JSON format. Be as precise and comprehensive as possible, including all relevant benefit programs, eligibility criteria, and payment amounts.
+
+{
+  "countryCode": "FR",
+  "familyBenefits": {
+    "childBenefit": {
+      "name": "string (local language name)",
+      "description": "string",
+      "monthlyAmount": number,
+      "paymentFrequency": "monthly|quarterly|yearly",
+      "ageLimit": number,
+      "studentAgeLimit": number,
+      "incomeTested": boolean,
+      "incomeThreshold": number,
+      "notes": "string"
+    },
+    "birthGrant": {
+      "name": "string (local language name)",
+      "description": "string",
+      "amount": number,
+      "oneTime": boolean,
+      "eligibility": "string",
+      "notes": "string"
+    },
+    "parentalLeave": {
+      "name": "string (local language name)",
+      "durationWeeks": number,
+      "paidPercentage": number,
+      "maxBenefit": number,
+      "eligibility": "string",
+      "notes": "string"
+    },
+    "childcareSupport": {
+      "name": "string (local language name)",
+      "description": "string",
+      "amount": number,
+      "ageLimit": number,
+      "incomeTested": boolean,
+      "notes": "string"
+    },
+    "largeFamilyBenefits": [
+      {
+        "name": "string (local language name)",
+        "description": "string",
+        "minChildren": number,
+        "amountPerChild": number,
+        "maxAmount": number,
+        "notes": "string"
+      }
+    ],
+    "disabledChildBenefits": {
+      "name": "string (local language name)",
+      "description": "string",
+      "monthlyAmount": number,
+      "eligibility": "string",
+      "notes": "string"
+    },
+    "otherBenefits": [
+      {
+        "name": "string (local language name)",
+        "description": "string",
+        "amount": number,
+        "paymentFrequency": "string",
+        "eligibility": "string",
+        "notes": "string"
+      }
+    ]
+  },
+  "socialWelfare": {
+    "unemploymentBenefits": {
+      "name": "string (local language name)",
+      "eligibilityMonths": number,
+      "benefitRate": number,
+      "maxBenefitDuration": number,
+      "minWorkMonthsRequired": number,
+      "notes": "string"
+    },
+    "sicknessBenefits": {
+      "name": "string (local language name)",
+      "waitingDays": number,
+      "benefitRate": number,
+      "maxDurationDays": number,
+      "notes": "string"
+    },
+    "disabilityBenefits": {
+      "name": "string (local language name)",
+      "eligibility": "string",
+      "amount": number,
+      "paymentFrequency": "string",
+      "notes": "string"
+    },
+    "housingBenefits": {
+      "name": "string (local language name)",
+      "eligibility": "string",
+      "amount": number,
+      "paymentFrequency": "string",
+      "notes": "string"
+    }
+  },
+  "educationBenefits": {
+    "studentGrants": {
+      "name": "string (local language name)",
+      "amount": number,
+      "eligibility": "string",
+      "paymentFrequency": "string",
+      "notes": "string"
+    },
+    "schoolMeals": {
+      "name": "string (local language name)",
+      "description": "string",
+      "eligibility": "string",
+      "notes": "string"
+    },
+    "transportSubsidies": {
+      "name": "string (local language name)",
+      "description": "string",
+      "eligibility": "string",
+      "amount": number,
+      "notes": "string"
+    }
+  },
+  "healthcareBenefits": {
+    "freeHealthcare": boolean,
+    "coverageDetails": "string",
+    "prescriptionCosts": "string",
+    "dentalCoverage": "string",
+    "notes": "string"
+  },
+  "taxCredits": [
+    {
+      "name": "string (local language name)",
+      "description": "string",
+      "amount": number,
+      "eligibility": "string",
+      "refundable": boolean,
+      "notes": "string"
+    }
+  ],
+  "specialPrograms": [
+    {
+      "name": "string (local language name)",
+      "description": "string",
+      "targetGroup": "string",
+      "benefits": "string",
+      "applicationProcess": "string",
+      "notes": "string"
+    }
+  ],
+  "notes": "string",
+  "sources": [
+    {
+      "name": "string",
+      "url": "string",
+      "date": "YYYY-MM-DD"
+    }
+  ],
+  "lastUpdated": "YYYY-MM-DD"
+}
+
+Please provide all monetary amounts in the local currency (EUR). If any values are estimates or averages, please indicate this in the notes section.

@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Porównanie działalności gospodarczej w różnych krajach</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.9em; }
+  th, td { border: 1px solid #ddd; padding: 8px; text-align: center; vertical-align: middle; }
+  th { background: #f0f0f0; position: sticky; top: 0; z-index: 10; }
+  tr:hover { background-color: #f5f5f5; }
+  .controls { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+  .countries, .global-params { flex: 1; min-width: 300px; background: #f9f9f9; padding: 15px; border-radius: 5px; }
+  label { display: block; margin-bottom: 8px; }
+  input[type=number], input[type=text], select { 
+    padding: 5px; 
+    border: 1px solid #ddd; 
+    border-radius: 3px; 
+    width: 100%; 
+    max-width: 150px;
+  }
+  input[type=checkbox] { width: auto; }
+  .toggle-details { 
+    color: #0066cc; 
+    cursor: pointer; 
+    text-decoration: underline; 
+    font-size: 0.9em; 
+    margin: 10px 0;
+    display: inline-block;
+  }
+  .summary-row { font-weight: bold; background-color: #e6f3ff; }
+  .citizen-check { color: green; font-weight: bold; }
+  .country-flag { margin-right: 5px; }
+  .editable { cursor: pointer; }
+  .editable:hover { background-color: #f0f8ff; }
+  .financial-input { width: 80px !important; text-align: right; }
+</style>
+</head>
+<body>
+
+<h2>Konfigurator działalności gospodarczej</h2>
+
+<div class="controls">
+  <div class="countries">
+    <h3>Wybierz kraje do porównania</h3>
+    <div class="europe">
+      <h4>Europa</h4>
+      <div class="country-grid">
+        <label><input type="checkbox" class="country" value="pl" checked> 🇵🇱 Polska</label>
+        <label><input type="checkbox" class="country" value="de"> 🇩🇪 Niemcy</label>
+        <label><input type="checkbox" class="country" value="cz"> 🇨🇿 Czechy</label>
+        <label><input type="checkbox" class="country" value="sk"> 🇸🇰 Słowacja</label>
+        <label><input type="checkbox" class="country" value="fr"> 🇫🇷 Francja</label>
+        <label><input type="checkbox" class="country" value="es"> 🇪🇸 Hiszpania</label>
+        <label><input type="checkbox" class="country" value="it"> 🇮🇹 Włochy</label>
+        <label><input type="checkbox" class="country" value="nl"> 🇳🇱 Holandia</label>
+        <label><input type="checkbox" class="country" value="pt"> 🇵🇹 Portugalia</label>
+        <label><input type="checkbox" class="country" value="se"> 🇸🇪 Szwecja</label>
+      </div>
+    </div>
+    <div class="outside-eu" style="margin-top: 15px;">
+      <h4>Poza UE</h4>
+      <div class="country-grid">
+        <label><input type="checkbox" class="country" value="uk"> 🇬🇧 Wielka Brytania</label>
+        <label><input type="checkbox" class="country" value="ch"> 🇨🇭 Szwajcaria</label>
+        <label><input type="checkbox" class="country" value="no"> 🇳🇴 Norwegia</label>
+        <label><input type="checkbox" class="country" value="us"> 🇺🇸 USA (Delaware)</label>
+        <label><input type="checkbox" class="country" value="sg"> 🇸🇬 Singapur</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="global-params">
+    <h2>Dane osobiste</h2>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="maritalStatus">Status związku:</label>
+        <select id="maritalStatus" class="form-control">
+          <option value="single">Kawaler/Panna</option>
+          <option value="married" selected>Żonaty/Zamężna</option>
+          <option value="divorced">Rozwiedziony/a</option>
+          <option value="widowed">Wdowiec/Wdowa</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="spouseLocation">Lokalizacja małżonka:</label>
+        <select id="spouseLocation" class="form-control">
+          <option value="same">To samo co ja</option>
+          <option value="different">Inna lokalizacja</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="childrenCount">Liczba dzieci:</label>
+        <input type="number" id="childrenCount" class="form-control" min="0" value="0">
+      </div>
+    </div>
+    
+    <div id="childrenAges" class="form-group" style="display: none;">
+    </div>
+    
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="applyFor500Plus">
+      <label class="form-check-label" for="applyFor500Plus">Uwzględnij program 500+</label>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="applyForBecikowe">
+      <label class="form-check-label" for="applyForBecikowe">Uwzględnij becikowe</label>
+    </div>
+    
+    <h2>Ustawienia globalne</h2>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="currency">Waluta:</label>
+        <select id="currency" class="form-control">
+          <option value="PLN">PLN</option>
+          <option value="EUR">EUR</option>
+          <option value="USD">USD</option>
+          <option value="CHF">CHF</option>
+          <option value="GBP">GBP</option>
+          <option value="AED">AED (Dirham ZEA)</option>
+          <option value="QAR">QAR (Rial katarski)</option>
+          <option value="SGD">SGD (Dolar singapurski)</option>
+          <option value="KRW">KRW (Won południowokoreański)</option>
+          <option value="CNY">CNY (Yuan chiński)</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="taxYear1">Rok podatkowy 1:</label>
+        <select id="taxYear1" class="form-control tax-year">
+          <option value="2024">2024</option>
+          <option value="2025" selected>2025</option>
+          <option value="2026">2026</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="taxYear2">Rok podatkowy 2:</label>
+        <select id="taxYear2" class="form-control tax-year">
+          <option value="2024">2024</option>
+          <option value="2025" selected>2025</option>
+          <option value="2026">2026</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>
+        Domyślna liczba dni pobytu:
+        <input type="number" id="defaultDays" value="183" min="0" max="365" />
+      </label>
+    </div>
+    <button id="updateTableBtn" class="btn btn-primary">Aktualizuj tabele</button>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table id="resultTable">
+    <thead>
+      <tr>
+        <th>Kraj</th>
+        <th>Obywatel</th>
+        <th>Rodzaj działalności</th>
+        <th>Dni<br>pobytu</th>
+        <th>Rezydencja</th>
+        <th>Przychód<br><small>(roczny)</small></th>
+        <th>Koszty<br><small>(roczne)</small></th>
+        <th>Dochód<br>podatkowy</th>
+        <th>Podatek<br>dochodowy</th>
+        <th>VAT</th>
+        <th>Składki<br>ZUS/NFZ</th>
+        <th>Inne<br>podatki</th>
+        <th>Podatek<br>całkowity</th>
+        <th>Efektywna<br>stawka</th>
+        <th>Dochód<br>netto</th>
+        <th>Uwagi</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- Rows will be generated by JavaScript -->
+    </tbody>
+    <tfoot id="summaryRow">
+      <!-- Summary row will be generated by JavaScript -->
+    </tfoot>
+  </table>
+</div>
+
+<script>
+  // All European countries with EU membership status and additional requested countries
+  const europeanCountries = {
+    // EU Members
+    'AT': {name: 'Austria', eu: true, flag: '🇦🇹'},
+    'EE': {name: 'Estonia', eu: true, flag: '🇪🇪'},
+    'BE': {name: 'Belgia', eu: true, flag: '🇧🇪'},
+    'BG': {name: 'Bułgaria', eu: true, flag: '🇧🇬'},
+    'HR': {name: 'Chorwacja', eu: true, flag: '🇭🇷'},
+    'CY': {name: 'Cypr', eu: true, flag: '🇨🇾'},
+    'CZ': {name: 'Czechy', eu: true, flag: '🇨🇿'},
+    'DK': {name: 'Dania', eu: true, flag: '🇩🇰'},
+    'EE': {name: 'Estonia', eu: true, flag: '🇪🇪'},
+    'FI': {name: 'Finlandia', eu: true, flag: '🇫🇮'},
+    'FR': {name: 'Francja', eu: true, flag: '🇫🇷'},
+    'GR': {name: 'Grecja', eu: true, flag: '🇬🇷'},
+    'ES': {name: 'Hiszpania', eu: true, flag: '🇪🇸'},
+    'NL': {name: 'Holandia', eu: true, flag: '🇳🇱'},
+    'IE': {name: 'Irlandia', eu: true, flag: '🇮🇪'},
+    'IS': {name: 'Islandia', eu: false, flag: '🇮🇸'},
+    'LI': {name: 'Liechtenstein', eu: false, flag: '🇱🇮'},
+    'LT': {name: 'Litwa', eu: true, flag: '🇱🇹'},
+    'LU': {name: 'Luksemburg', eu: true, flag: '🇱🇺'},
+    'LV': {name: 'Łotwa', eu: true, flag: '🇱🇻'},
+    'MT': {name: 'Malta', eu: true, flag: '🇲🇹'},
+    'DE': {name: 'Niemcy', eu: true, flag: '🇩🇪'},
+    'NO': {name: 'Norwegia', eu: false, flag: '🇳🇴'},
+    'PL': {name: 'Polska', eu: true, flag: '🇵🇱'},
+    'PT': {name: 'Portugalia', eu: true, flag: '🇵🇹'},
+    'RO': {name: 'Rumunia', eu: true, flag: '🇷🇴'},
+    'SM': {name: 'San Marino', eu: false, flag: '🇸🇲'},
+    'SK': {name: 'Słowacja', eu: true, flag: '🇸🇰'},
+    'SI': {name: 'Słowenia', eu: true, flag: '🇸🇮'},
+    'CH': {name: 'Szwajcaria', eu: false, flag: '🇨🇭'},
+    'SE': {name: 'Szwecja', eu: true, flag: '🇸🇪'},
+    'HU': {name: 'Węgry', eu: true, flag: '🇭🇺'},
+    'GB': {name: 'Wielka Brytania', eu: false, flag: '🇬🇧'},
+    'IT': {name: 'Włochy', eu: true, flag: '🇮🇹'},
+    // Other European countries
+    'AL': {name: 'Albania', eu: false, flag: '🇦🇱'},
+    'AD': {name: 'Andora', eu: false, flag: '🇦🇩'},
+    'AM': {name: 'Armenia', eu: false, flag: '🇦🇲'},
+    'AZ': {name: 'Azerbejdżan', eu: false, flag: '🇦🇿'},
+    'BY': {name: 'Białoruś', eu: false, flag: '🇧🇾'},
+    'BA': {name: 'Bośnia i Hercegowina', eu: false, flag: '🇧🇦'},
+    'MD': {name: 'Mołdawia', eu: false, flag: '🇲🇩'},
+    'MC': {name: 'Monako', eu: false, flag: '🇲🇨'},
+    'ME': {name: 'Czarnogóra', eu: false, flag: '🇲🇪'},
+    'MK': {name: 'Macedonia Północna', eu: false, flag: '🇲🇰'},
+    'RU': {name: 'Rosja', eu: false, flag: '🇷🇺'},
+    'RS': {name: 'Serbia', eu: false, flag: '🇷🇸'},
+    'TR': {name: 'Turcja', eu: false, flag: '🇹🇷'},
+    'UA': {name: 'Ukraina', eu: false, flag: '🇺🇦'},
+    'VA': {name: 'Watykan', eu: false, flag: '🇻🇦'},
+    // Additional requested non-European countries
+    'QA': {name: 'Katar', eu: false, flag: '🇶🇦'},
+    'AE': {name: 'Zjednoczone Emiraty Arabskie', eu: false, flag: '🇦🇪'},
+    'SG': {name: 'Singapur', eu: false, flag: '🇸🇬'},
+    'KR': {name: 'Korea Południowa', eu: false, flag: '🇰🇷'},
+    'CN': {name: 'Chiny', eu: false, flag: '🇨🇳'}
+  };
+  
+  // Get EU countries array
+  const euCountries = Object.entries(europeanCountries)
+    .filter(([_, data]) => data.eu)
+    .map(([code, _]) => code);
+
+  const countriesData = {
+    pl: {
+      name: "Polska",
+      flag: '🇵🇱',
+      taxIncome: { production: 19, trade: 19, services: 17, freelance: 12, ecommerce: 19 },
+      taxBrackets: [
+        { to: 120000, rate: 12 },
+        { to: Infinity, rate: 32 }
+      ],
+      vat: 23,
+      vatThreshold: 200000,
+      socialSecurity: 1200,  // miesięcznie w PLN
+      healthInsurance: 400,   // miesięcznie w PLN
+      costsAllowed: true,
+      taxFreeAmount: 30000,  // rocznie
+      notes: "Podatek liniowy dostępny, możliwość rozliczania kosztów.",
+      euMember: true,
+      taxTreaty: true
+    },
+    de: {
+      name: "Niemcy",
+      flag: '🇩🇪',
+      taxIncome: { production: 15, trade: 15, services: 15, freelance: 30, ecommerce: 15 },
+      taxBrackets: [
+        { to: 10347, rate: 0 },
+        { to: 14926, rate: 14 },
+        { to: 58596, rate: 42 },
+        { to: 277825, rate: 45 },
+        { to: Infinity, rate: 45 }
+      ],
+      vat: 19,
+      vatThreshold: 50000,
+      socialSecurity: 850,   // miesięcznie w EUR
+      healthInsurance: 400,   // miesięcznie w EUR
+      costsAllowed: true,
+      taxFreeAmount: 9744,   // rocznie w EUR
+      notes: "Skomplikowany system podatkowy, obowiązkowe ubezpieczenia społeczne.",
+      euMember: true,
+      taxTreaty: true
+    },
+    cz: {
+      name: "Czechy",
+      flag: '🇨🇿',
+      taxIncome: { production: 19, trade: 19, services: 19, freelance: 19, ecommerce: 19 },
+      vat: 21,
+      vatThreshold: 1000000,
+      socialSecurity: 600,
+      healthInsurance: 300,
+      costsAllowed: true,
+      taxFreeAmount: 25000,
+      notes: "Uproszczony system podatkowy, niskie składki.",
+      euMember: true,
+      taxTreaty: true
+    },
+    sk: {
+      name: "Słowacja",
+      flag: '🇸🇰',
+      taxIncome: { production: 21, trade: 21, services: 21, freelance: 21, ecommerce: 21 },
+      vat: 20,
+      vatThreshold: 50000,
+      socialSecurity: 700,
+      healthInsurance: 350,
+      costsAllowed: true,
+      taxFreeAmount: 20000,
+      notes: "Uproszczony system podatkowy, niskie składki.",
+      euMember: true,
+      taxTreaty: true
+    },
+    fr: {
+      name: "Francja",
+      flag: '🇫🇷',
+      taxIncome: { production: 28, trade: 28, services: 28, freelance: 25, ecommerce: 28 },
+      vat: 20,
+      vatThreshold: 35000,
+      socialSecurity: 1000,
+      healthInsurance: 500,
+      costsAllowed: true,
+      taxFreeAmount: 10000,
+      notes: "Wysokie podatki, ale wiele ulg i odliczeń.",
+      euMember: true,
+      taxTreaty: true
+    },
+    es: {
+      name: "Hiszpania",
+      flag: '🇪🇸',
+      taxIncome: { production: 25, trade: 25, services: 25, freelance: 25, ecommerce: 25 },
+      vat: 21,
+      vatThreshold: 0,
+      costsAllowed: true,
+      notes: "Niski próg VAT, preferencyjne stawki dla nowych firm.",
+      euMember: true,
+      taxTreaty: true
+    },
+    it: {
+      name: "Włochy",
+      flag: '🇮🇹',
+      taxIncome: { production: 24, trade: 24, services: 24, freelance: 23, ecommerce: 24 },
+      vat: 22,
+      vatThreshold: 65000,
+      costsAllowed: true,
+      notes: "Ulgi dla małych firm i startupów.",
+      euMember: true,
+      taxTreaty: true
+    },
+    nl: {
+      name: "Holandia",
+      flag: '🇳🇱',
+      taxIncome: { production: 25, trade: 25, services: 25, freelance: 30, ecommerce: 25 },
+      vat: 21,
+      vatThreshold: 0,
+      costsAllowed: true,
+      notes: "Korzystne warunki dla spółek holdingowych.",
+      euMember: true,
+      taxTreaty: true
+    },
+    pt: {
+      name: "Portugalia",
+      flag: '🇵🇹',
+      taxIncome: { production: 21, trade: 21, services: 21, freelance: 21, ecommerce: 21 },
+      vat: 23,
+      vatThreshold: 10000,
+      costsAllowed: true,
+      notes: "Specjalne stawki dla nowych firm i rezydentów.",
+      euMember: true,
+      taxTreaty: true
+    },
+    se: {
+      name: "Szwecja",
+      flag: '🇸🇪',
+      taxIncome: { production: 20, trade: 20, services: 20, freelance: 20, ecommerce: 20 },
+      vat: 25,
+      vatThreshold: 0,
+      costsAllowed: true,
+      notes: "Wysokie podatki, ale świetna infrastruktura.",
+      euMember: true,
+      taxTreaty: true
+    },
+    uk: {
+      name: "Wielka Brytania",
+      flag: '🇬🇧',
+      taxIncome: { production: 19, trade: 19, services: 19, freelance: 20, ecommerce: 19 },
+      vat: 20,
+      vatThreshold: 85000,
+      costsAllowed: true,
+      notes: "Uproszczony system podatkowy po Brexicie.",
+      euMember: false,
+      taxTreaty: true
+    },
+    ch: {
+      name: "Szwajcaria",
+      flag: '🇨🇭',
+      taxIncome: { production: 12, trade: 12, services: 12, freelance: 12, ecommerce: 12 },
+      vat: 7.7,
+      vatThreshold: 100000,
+      costsAllowed: true,
+      notes: "Niskie podatki, ale wysokie koszty życia.",
+      euMember: false,
+      taxTreaty: true
+    },
+    no: {
+      name: "Norwegia",
+      flag: '🇳🇴',
+      taxIncome: { production: 22, trade: 22, services: 22, freelance: 22, ecommerce: 22 },
+      vat: 25,
+      vatThreshold: 50000,
+      costsAllowed: true,
+      notes: "Wysokie podatki, ale świetna jakość życia.",
+      euMember: false,
+      taxTreaty: true
+    },
+    us: {
+      name: "USA (Delaware)",
+      flag: '🇺🇸',
+      taxIncome: { production: 8.7, trade: 8.7, services: 8.7, freelance: 8.7, ecommerce: 0 },
+      vat: 0,
+      vatThreshold: 0,
+      costsAllowed: true,
+      notes: "Brak VAT, ale podatek stanowy i federalny. E-commerce: brak podatku stanowego.",
+      euMember: false,
+      taxTreaty: true
+    },
+    sg: {
+      name: "Singapur",
+      flag: '🇸🇬',
+      taxIncome: { production: 17, trade: 17, services: 17, freelance: 17, ecommerce: 0 },
+      vat: 8,
+      vatThreshold: 1000000,
+      socialSecurity: 0,
+      healthInsurance: 500,  // miesięcznie w SGD
+      legalInsurance: 200,  // miesięcznie w SGD
+      costsAllowed: true,
+      notes: "Brak podatku od sprzedaży online poza Singapurem. Niski podatek CIT.",
+      euMember: false,
+      taxTreaty: false
+    },
+    qa: {
+      name: "Katar",
+      flag: '🇶🇦',
+      taxIncome: { production: 10, trade: 10, services: 10, freelance: 10, ecommerce: 0 },
+      vat: 0,
+      vatThreshold: 0,
+      socialSecurity: 0,
+      healthInsurance: 0,
+      legalInsurance: 0,
+      costsAllowed: true,
+      notes: "Brak podatku dochodowego, brak VAT. Obowiązkowe ubezpieczenie zdrowotne dla ekspatów.",
+      euMember: false,
+      taxTreaty: false
+    },
+    ae: {
+      name: "Zjednoczone Emiraty Arabskie",
+      flag: '🇦🇪',
+      taxIncome: { production: 9, trade: 9, services: 9, freelance: 9, ecommerce: 0 },
+      vat: 5,
+      vatThreshold: 375000,
+      socialSecurity: 0,
+      healthInsurance: 1000,  // rocznie w AED
+      legalInsurance: 0,
+      costsAllowed: true,
+      notes: "Brak podatku dochodowego, niski VAT. Obowiązkowe ubezpieczenie zdrowotne.",
+      euMember: false,
+      taxTreaty: false
+    },
+    kr: {
+      name: "Korea Południowa",
+      flag: '🇰🇷',
+      taxIncome: { production: 20, trade: 20, services: 20, freelance: 20, ecommerce: 20 },
+      vat: 10,
+      vatThreshold: 0,
+      socialSecurity: 9,
+      healthInsurance: 6.24,
+      legalInsurance: 0,
+      costsAllowed: true,
+      notes: "Progresywny podatek dochodowy, obowiązkowe ubezpieczenia społeczne.",
+      euMember: false,
+      taxTreaty: true
+    },
+    cn: {
+      name: "Chiny (Pekin)",
+      flag: '🇨🇳',
+      taxIncome: { production: 25, trade: 25, services: 25, freelance: 25, ecommerce: 25 },
+      vat: 13,
+      vatThreshold: 0,
+      socialSecurity: 28,  // 16% pracodawca + 8% pracownik + 4% inne
+      healthInsurance: 10,  // 8% pracodawca + 2% pracownik
+      legalInsurance: 0,
+      costsAllowed: true,
+      notes: "Skomplikowany system podatkowy, różnice regionalne. Obowiązkowe ubezpieczenia społeczne.",
+      euMember: false,
+      taxTreaty: true
+    }
+  };
+
+  function calculateTax(amount, brackets) {
+    let tax = 0;
+    let previousBracket = 0;
+    
+    for (const bracket of brackets) {
+      if (amount <= 0) break;
+      const taxableInBracket = Math.min(amount, bracket.to - previousBracket);
+      tax += taxableInBracket * (bracket.rate / 100);
+      amount -= taxableInBracket;
+      previousBracket = bracket.to;
+    }
+    
+    return Math.round(tax);
+  }
+
+  function updateCountryDaysInputs() {
+    const container = document.getElementById('countryDays');
+    const selectedCountries = [...document.querySelectorAll(".country:checked")].map(c => c.value);
+    const defaultDays = parseInt(document.getElementById('defaultDays').value) || 0;
+    
+    let html = '';
+    selectedCountries.forEach(code => {
+      const country = countriesData[code];
+      html += `
+        <label>
+          ${country.name}:
+          <input type="number" class="country-day" data-country="${code}" 
+                 value="${defaultDays}" min="0" max="365" /> dni
+        </label><br>
+      `;
+    });
+    
+    container.innerHTML = html;
+    
+    // Add event listeners to the new inputs
+    container.querySelectorAll('.country-day').forEach(input => {
+      input.addEventListener('change', updateTable);
+    });
+  }
+
+  function toggleDetails(id) {
+    const element = document.getElementById(id);
+    element.style.display = element.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function updateTable() {
+    const tbody = document.querySelector("#resultTable tbody");
+    tbody.innerHTML = "";
+
+    // Get selected countries
+    const selectedCountries = [...document.querySelectorAll(".country:checked")].map(c => c.value);
+    if (selectedCountries.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7">Wybierz co najmniej jeden kraj</td></tr>';
+      return;
+    }
+
+    const businessType = document.getElementById("businessType").value;
+    const annualRevenue = parseFloat(document.getElementById("annualRevenue").value) || 0;
+    const annualCosts = parseFloat(document.getElementById("annualCosts").value) || 0;
+    const payVat = document.getElementById("payVat").checked;
+    const deductCosts = document.getElementById("deductCosts").checked;
+    const costsPercentage = parseFloat(document.getElementById("costsPercentage")?.value) || 100;
+    
+    // Update country days inputs
+    updateCountryDaysInputs();
+    
+    // Get days per country
+    const countryDays = {};
+    document.querySelectorAll('.country-day').forEach(input => {
+      countryDays[input.dataset.country] = parseInt(input.value) || 0;
+    });
+
+    selectedCountries.forEach(code => {
+      const c = countriesData[code];
+      if (!c) return;
+      
+      const daysInCountry = countryDays[code] || parseInt(document.getElementById('defaultDays').value) || 0;
+      const isResident = daysInCountry >= 183;
+      
+      // Calculate tax base
+      let taxableIncome = annualRevenue;
+      if (deductCosts && c.costsAllowed) {
+        taxableIncome -= (annualCosts * (costsPercentage / 100));
+      }
+      
+      // Apply tax brackets if available, otherwise use flat rate
+      let incomeTax = 0;
+      if (c.taxBrackets) {
+        incomeTax = calculateTax(taxableIncome, c.taxBrackets);
+      } else {
+        incomeTax = Math.round(taxableIncome * (c.taxIncome[businessType] || c.taxIncome.services) / 100);
+      }
+      
+      // Calculate VAT
+      const vatTax = payVat && c.vat ? Math.round(annualRevenue * c.vat / 100) : 0;
+      
+      // Calculate total tax burden
+      const totalTax = incomeTax + vatTax;
+      const effectiveTaxRate = annualRevenue > 0 ? Math.round((totalTax / annualRevenue) * 100) : 0;
+      
+      // Determine tax residency status
+      let residencyStatus = isResident ? 'Rezydent' : 'Nierezydent';
+      if (!isResident && daysInCountry > 0) {
+        residencyStatus += ` (${daysInCountry} dni)`;
+      }
+      
+      // Add row to table
+      tbody.innerHTML += `
+        <tr>
+          <td>${c.name} ${c.euMember ? '🇪🇺' : ''}</td>
+          <td>${residencyStatus}</td>
+          <td>${c.taxBrackets ? 'Skala' : c.taxIncome[businessType] || c.taxIncome.services}%</td>
+          <td>${payVat ? c.vat + '%' : '0%'}</td>
+          <td>${c.costsAllowed ? 'Tak' : 'Nie'}</td>
+          <td>${totalTax.toLocaleString()} EUR (${effectiveTaxRate}%)</td>
+          <td>${c.notes}</td>
+        </tr>
+      `;
+    });
+  }
+
+  // Update tax calculations based on all inputs
+  function updateTaxCalculations() {
+    const unemployedLongTerm = document.getElementById('unemployedLongTerm').checked;
+    const familySituation = document.getElementById('familySituation').value;
+    
+    // Update tax rates based on unemployment status
+    if (unemployedLongTerm) {
+      // Apply reduced rates or benefits for long-term unemployed
+      // This would be implemented based on specific country rules
+    }
+    
+    // Update UI to show relevant information
+    updateTable();
+  }
+
+  // Initialize the application
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize country data
+    initCountryData();
+    
+    // Set default tax years (current and next year)
+    const currentYear = new Date().getFullYear();
+    const taxYear1 = document.getElementById('taxYear1');
+    const taxYear2 = document.getElementById('taxYear2');
+    
+    // Set default years
+    taxYear1.value = currentYear;
+    taxYear2.value = currentYear + 1;
+    
+    // Update year options
+    updateYearOptions();
+    
+    // Add event listeners for year changes
+    document.querySelectorAll('.tax-year').forEach(select => {
+      select.addEventListener('change', function() {
+        validateTotalDays();
+        updateTable();
+      });
+    });
+    
+    // Add child button
+    document.getElementById('addChildBtn').addEventListener('click', function() {
+      const count = parseInt(document.getElementById('childrenCount').value) + 1;
+      document.getElementById('childrenCount').value = count;
+      addChildFields();
+    });
+    
+    // Initialize with one child if count > 0
+    if (parseInt(document.getElementById('childrenCount').value) > 0) {
+      addChildFields();
+    }
+    
+    // Set up other event listeners
+    document.getElementById('updateTableBtn').addEventListener('click', updateTable);
+    
+    // Handle country selection changes
+    document.querySelectorAll('.country').forEach(checkbox => {
+      checkbox.addEventListener('change', updateCountryRows);
+    });
+    
+    // Initial table update
+    updateTable();
+  });
+  
+  function updateYearOptions() {
+    const currentYear = new Date().getFullYear();
+    const years = [currentYear - 1, currentYear, currentYear + 1, currentYear + 2];
+    
+    document.querySelectorAll('.tax-year').forEach(select => {
+      const currentValue = select.value;
+      select.innerHTML = years.map(year => 
+        `<option value="${year}" ${year == currentValue ? 'selected' : ''}>${year}</option>`
+      ).join('');
+    });
+  }
+  
+  function validateTotalDays() {
+    const daysInputs = document.querySelectorAll('.days');
+    const year1 = parseInt(document.getElementById('taxYear1').value);
+    const year2 = parseInt(document.getElementById('taxYear2').value);
+    
+    let totalDaysYear1 = 0;
+    let totalDaysYear2 = 0;
+    
+    daysInputs.forEach((input, index) => {
+      const days = parseInt(input.value) || 0;
+      if (index % 2 === 0) {
+        totalDaysYear1 += days;
+      } else {
+        totalDaysYear2 += days;
+      }
+    });
+    
+    const daysInYear1 = isLeapYear(year1) ? 366 : 365;
+    const daysInYear2 = isLeapYear(year2) ? 366 : 365;
+    
+    const validationRow = document.getElementById('days-validation');
+    if (validationRow) {
+      const messages = [];
+      
+      if (totalDaysYear1 > daysInYear1) {
+        messages.push(`Rok ${year1}: Suma dni (${totalDaysYear1}) przekracza ${daysInYear1} dni`);
+      }
+      
+      if (totalDaysYear2 > daysInYear2) {
+        messages.push(`Rok ${year2}: Suma dni (${totalDaysYear2}) przekracza ${daysInYear2} dni`);
+      }
+      
+      if (messages.length > 0) {
+        validationRow.style.display = '';
+        validationRow.querySelector('td').innerHTML = `
+          <i class="bi bi-exclamation-triangle-fill"></i> 
+          ${messages.join(' | ')}
+        `;
+      } else {
+        validationRow.style.display = 'none';
+      }
+    }
+    
+    return totalDaysYear1 <= daysInYear1 && totalDaysYear2 <= daysInYear2;
+  }
+  
+  function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+  }
+  
+  function addChildFields() {
+    const container = document.getElementById('childrenContainer');
+    const childCount = document.querySelectorAll('.child-entry').length;
+    const childId = `child-${childCount + 1}`;
+    
+    const childDiv = document.createElement('div');
+    childDiv.className = 'child-entry border p-3 mb-3';
+    childDiv.id = childId;
+    
+    childDiv.innerHTML = `
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label>Imię dziecka</label>
+          <input type="text" class="form-control child-name" placeholder="Imię">
+        </div>
+        <div class="form-group col-md-3">
+          <label>Data urodzenia</label>
+          <input type="date" class="form-control child-dob">
+        </div>
+        <div class="form-group col-md-3">
+          <label>Kraj urodzenia</label>
+          <select class="form-control child-birth-country">
+            ${Object.entries(europeanCountries).map(([code, data]) => 
+              `<option value="${code}">${data.flag} ${data.name} ${data.eu ? '(UE)' : ''}</option>`
+            ).join('')}
+          </select>
+        </div>
+        <div class="form-group col-md-2 d-flex align-items-end">
+          <button type="button" class="btn btn-danger btn-sm remove-child" data-child="${childId}">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <div class="form-check">
+            <input class="form-check-input child-500plus" type="checkbox" id="${childId}-500plus">
+            <label class="form-check-label" for="${childId}-500plus">
+              Uprawniony do 500+
+            </label>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <div class="form-check">
+            <input class="form-check-input child-becikowe" type="checkbox" id="${childId}-becikowe">
+            <label class="form-check-label" for="${childId}-becikowe">
+              Uprawniony do becikowego
+            </label>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    container.appendChild(childDiv);
+    
+    // Add event listener for remove button
+    childDiv.querySelector('.remove-child').addEventListener('click', function() {
+      document.getElementById(childId).remove();
+      document.getElementById('childrenCount').value = document.querySelectorAll('.child-entry').length;
+    });
+    
+    // Add event listeners for benefit checkboxes
+    childDiv.querySelector('.child-500plus').addEventListener('change', calculateBenefits);
+    childDiv.querySelector('.child-becikowe').addEventListener('change', calculateBenefits);
+  }
+  
+  function calculateBenefits() {
+    let total500Plus = 0;
+    let totalBecikowe = 0;
+    
+    document.querySelectorAll('.child-entry').forEach(child => {
+      if (child.querySelector('.child-500plus').checked) {
+        total500Plus += 600; // 500+ is actually 600 PLN per month now (as of 2024)
+      }
+      
+      if (child.querySelector('.child-becikowe').checked) {
+        totalBecikowe += 1000; // One-time benefit of 1000 PLN
+      }
+    });
+    
+    // Update UI with benefit totals
+    const benefitsElement = document.getElementById('benefits-total');
+    if (benefitsElement) {
+      benefitsElement.innerHTML = `
+        <div class="alert alert-success">
+          <h5>Świadczenia rodzinne:</h5>
+          <p>Program 500+: ${total500Plus.toFixed(2)} PLN/rok</p>
+          <p>Becikowe: ${totalBecikowe.toFixed(2)} PLN (jednorazowo)</p>
+          <p class="fw-bold">Razem: ${(total500Plus + totalBecikowe).toFixed(2)} PLN</p>
+        </div>
+      `;
+    }
+    
+    return {
+      total500Plus,
+      totalBecikowe
+    };
+  }
+  
+  // Add event listeners for form controls
+  function setupEventListeners() {
+    // Unemployment status
+    const unemployedLongTerm = document.getElementById('unemployedLongTerm');
+    if (unemployedLongTerm) {
+      unemployedLongTerm.addEventListener('change', updateTaxCalculations);
+    }
+    
+    // Family situation changes
+    const familySituation = document.getElementById('familySituation');
+    if (familySituation) {
+      familySituation.addEventListener('change', updateTaxCalculations);
+    }
+    
+    // Business type changes
+    document.querySelectorAll('.business-type').forEach(select => {
+      select.addEventListener('change', updateTaxCalculations);
+    });
+    
+    // Days input changes
+    document.querySelectorAll('.days').forEach(input => {
+      input.addEventListener('input', function() {
+        validateTotalDays();
+        updateTaxCalculations();
+      });
+    });
+  }
+  
+  // Initialize the application
+  document.addEventListener('DOMContentLoaded', function() {
+    setupEventListeners();
+    updateCountryRows();
+    updateTaxCalculations();
+  });
+  
+  // Global functions
+  window.toggleDetails = toggleDetails;
+  
+  // Store per-country data
+  const countryData = {};
+  
+  // Initialize country data with default values
+  function initCountryData() {
+    // Set default selection to all EU countries and additional requested countries
+    const defaultCountries = [...euCountries, 'QA', 'AE', 'SG', 'KR', 'CN'];
+    
+    document.querySelectorAll('.country').forEach(checkbox => {
+      const code = checkbox.value;
+      // Check if this is a default country
+      if (defaultCountries.includes(code)) {
+        checkbox.checked = true;
+      }
+      
+      // Initialize country data structure if it doesn't exist
+      if (!countryData[code]) {
+        countryData[code] = {
+          businessType: 'services',
+          daysYear1: 0,
+          daysYear2: 0,
+          revenue: 100000,  // Default revenue
+          costs: 30000,    // Default costs
+          vatRegistered: true,
+          citizen: false,
+          socialInsurance: '',
+          healthInsurance: '',
+          legalInsurance: '',
+          startupCosts: 0,
+          grants: 0,
+          taxReliefs: 0,
+          costDeduction: true,
+          costPercentage: 70
+        };
+      }
+    });
+  }
+  
+  // Update country rows based on selection with enhanced information
+  function updateCountryRows() {
+    const tbody = document.querySelector('#resultTable tbody');
+    if (!tbody) return;
+    
+    tbody.innerHTML = '';
+    
+    // Get selected countries
+    const selectedCountries = Array.from(document.querySelectorAll('.country:checked'))
+      .map(checkbox => checkbox.value);
+    
+    // Add rows for each selected country
+    selectedCountries.forEach(code => {
+      const country = europeanCountries[code] || countriesData[code];
+      if (!country) return;
+      
+      const row = document.createElement('tr');
+      row.className = 'country-row';
+      row.dataset.country = code;
+      
+      // Initialize country data if not exists
+      if (!countryData[code]) {
+        countryData[code] = {
+          businessType: 'services',
+          daysYear1: 0,
+          daysYear2: 0,
+          revenue: 100000,
+          costs: 30000,
+          vatRegistered: true,
+          citizen: false,
+          socialInsurance: '',
+          healthInsurance: '',
+          legalInsurance: '',
+          startupCosts: 0,
+          grants: 0,
+          taxReliefs: 0,
+          costDeduction: true,
+          costPercentage: 70
+        };
+      }
+      
+      const data = countryData[code];
+      
+      // Create row content
+      row.innerHTML = `
+        <td>${country.flag || ''} ${country.name} ${country.eu ? '(UE)' : ''}</td>
+        <td>
+          <select class="form-control form-control-sm business-type" data-country="${code}">
+            <option value="production" ${data.businessType === 'production' ? 'selected' : ''}>Produkcja</option>
+            <option value="trade" ${data.businessType === 'trade' ? 'selected' : ''}>Handel</option>
+            <option value="services" ${data.businessType === 'services' ? 'selected' : ''}>Usługi</option>
+            <option value="freelance" ${data.businessType === 'freelance' ? 'selected' : ''}>Wolny zawód</option>
+            <option value="ecommerce" ${data.businessType === 'ecommerce' ? 'selected' : ''}>E-commerce</option>
+          </select>
+        </td>
+        <td><input type="number" class="form-control form-control-sm days" value="${data.daysYear1 || ''}" min="0" max="366" data-year="1" data-country="${code}"></td>
+        <td><input type="number" class="form-control form-control-sm days" value="${data.daysYear2 || ''}" min="0" max="366" data-year="2" data-country="${code}"></td>
+        <td><input type="number" class="form-control form-control-sm revenue" value="${data.revenue || ''}" data-country="${code}"></td>
+        <td><input type="number" class="form-control form-control-sm costs" value="${data.costs || ''}" data-country="${code}"></td>
+        <td class="text-center"><input type="checkbox" class="vat-registered" ${data.vatRegistered ? 'checked' : ''} data-country="${code}"></td>
+        <td class="text-center"><input type="checkbox" class="citizen" ${data.citizen ? 'checked' : ''} data-country="${code}"></td>
+        <td>
+          <select class="form-control form-control-sm social-insurance" data-country="${code}">
+            <option value="" ${!data.socialInsurance ? 'selected' : ''}>-</option>
+            <option value="local" ${data.socialInsurance === 'local' ? 'selected' : ''}>Lokalne</option>
+            <option value="pl" ${data.socialInsurance === 'pl' ? 'selected' : ''}>PL</option>
+            <option value="other" ${data.socialInsurance === 'other' ? 'selected' : ''}>Inne</option>
+          </select>
+        </td>
+        <td>
+          <select class="form-control form-control-sm health-insurance" data-country="${code}">
+            <option value="" ${!data.healthInsurance ? 'selected' : ''}>-</option>
+            <option value="local" ${data.healthInsurance === 'local' ? 'selected' : ''}>Lokalne</option>
+            <option value="pl" ${data.healthInsurance === 'pl' ? 'selected' : ''}>PL</option>
+            <option value="private" ${data.healthInsurance === 'private' ? 'selected' : ''}>Prywatne</option>
+          </select>
+        </td>
+        <td class="text-center">
+          <input type="checkbox" class="legal-insurance" ${data.legalInsurance ? 'checked' : ''} data-country="${code}">
+        </td>
+        <td class="text-end">${calculateTaxForCountry(code, data).toFixed(2)}</td>
+      `;
+      
+      tbody.appendChild(row);
+    });
+    
+    // Add summary row
+    const summaryRow = document.createElement('tr');
+    summaryRow.id = "summary-row";
+    summaryRow.innerHTML = `
+      <td colspan="12" class="text-end fw-bold">Razem:</td>
+      <td id="total-tax" class="text-end fw-bold">0.00</td>
+    `;
+    tbody.appendChild(summaryRow);
+    
+    // Add validation row
+    const validationRow = document.createElement('tr');
+    validationRow.id = "days-validation";
+    validationRow.style.display = "none";
+    validationRow.innerHTML = `
+      <td colspan="13" class="text-danger"></td>
+    `;
+    tbody.appendChild(validationRow);
+    
+    // Add event listeners to new elements
+    addRowEventListeners();
+    
+    // Add event listeners to new elements
+    addRowEventListeners();
+    
+    // Update calculations
+    updateCalculations();
+  }
+  
+  // Add event listeners to table rows
+  function addRowEventListeners() {
+    document.querySelectorAll('.business-type').forEach(select => {
+      select.addEventListener('change', function() {
+        const row = this.closest('tr');
+        const countryCode = row.dataset.country;
+        countryData[countryCode].businessType = this.value;
+        updateCalculations();
+      });
+    });
+    
+    document.querySelectorAll('.days-input').forEach(input => {
+      input.addEventListener('change', function() {
+        const row = this.closest('tr');
+        const countryCode = row.dataset.country;
+        countryData[countryCode].days = parseInt(this.value) || 0;
+        updateCalculations();
+      });
+    });
+    
+    document.querySelectorAll('.citizen-checkbox').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const row = this.closest('tr');
+        const countryCode = row.dataset.country;
+        countryData[countryCode].isCitizen = this.checked;
+        updateCalculations();
+      });
+    });
+    
+    document.querySelectorAll('.revenue-input, .costs-input').forEach(input => {
+      input.addEventListener('input', debounce(function() {
+        const row = this.closest('tr');
+        const countryCode = row.dataset.country;
+        const value = parseFloat(this.value) || 0;
+        
+        if (this.classList.contains('revenue-input')) {
+          countryData[countryCode].revenue = value;
+        } else {
+          countryData[countryCode].costs = value;
+        }
+        
+        updateCalculations();
+      }, 500));
+    });
+    
+    document.querySelectorAll('.vat-checkbox').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const row = this.closest('tr');
+        const countryCode = row.dataset.country;
+        countryData[countryCode].vatEnabled = this.checked;
+        updateCalculations();
+      });
+    });
+  }
+  
+  // Update all calculations
+  function updateCalculations() {
+    let totalRevenue = 0;
+    let totalCosts = 0;
+    let totalTax = 0;
+    let totalNetIncome = 0;
+    
+    document.querySelectorAll('#tableBody tr').forEach(row => {
+      const countryCode = row.dataset.country;
+      const country = countriesData[countryCode];
+      const data = countryData[countryCode];
+      
+      if (!country || !data) return;
+      
+      // Calculate taxable income
+      let taxableIncome = data.revenue - (data.costDeduction ? (data.costs * (data.costPercentage / 100)) : 0);
+      if (taxableIncome < 0) taxableIncome = 0;
+      
+      // Calculate tax for a specific country with enhanced calculations
+  function calculateTaxForCountry(countryCode, data) {
+    const country = countriesData[countryCode] || {};
+    if (!country) return 0;
+    
+    const revenue = parseFloat(data.revenue) || 0;
+    const costs = parseFloat(data.costs) || 0;
+    const profit = Math.max(0, revenue - costs);
+    const taxRate = (country.taxIncome && country.taxIncome[data.businessType]) || 
+                   (country.taxIncome && country.taxIncome.services) || 0;
+    
+    // Apply tax rate to profit
+    let tax = (profit * taxRate) / 100;
+    
+    // Apply tax treaty benefits for non-citizens
+    if (!data.citizen && country.taxTreaty) {
+      tax *= (1 - (country.taxTreaty.reduction || 0));
+    }
+    
+    // Add VAT if applicable
+    if (data.vatRegistered && revenue > (country.vatThreshold || 0) && country.vat) {
+      const vatAmount = (revenue * country.vat) / (100 + country.vat);
+      tax += vatAmount;
+    }
+    
+    // Add social security and health insurance
+    if (data.socialInsurance === 'local' && country.socialSecurity) {
+      const socialRate = typeof country.socialSecurity === 'number' ? 
+                        country.socialSecurity : 
+      
+      // Calculate tax based on tax brackets or flat rate
+      let incomeTax = 0;
+      if (country.taxBrackets) {
+        incomeTax = calculateTax(taxableIncome, country.taxBrackets);
+      } else {
+        const taxRate = country.taxIncome[data.businessType] || country.taxIncome.services;
+        incomeTax = Math.round(taxableIncome * (taxRate / 100));
+      }
+      
+      // Calculate VAT
+      const vatAmount = data.vatEnabled ? Math.round(data.revenue * (country.vat / 100)) : 0;
+      
+      // Calculate social security (simplified)
+      const socialSecurity = country.socialSecurity ? country.socialSecurity * 12 : 0;
+      
+      // Total tax
+      const totalTaxForCountry = incomeTax + vatAmount + socialSecurity;
+      
+      // Net income
+      const netIncome = data.revenue - data.costs - totalTaxForCountry;
+      
+      // Effective tax rate
+      const effectiveRate = data.revenue > 0 ? Math.round((totalTaxForCountry / data.revenue) * 100) : 0;
+      
+      // Update row
+      row.querySelector('.taxable-income').textContent = formatNumber(taxableIncome);
+      row.querySelector('.total-tax').textContent = formatNumber(totalTaxForCountry);
+      row.querySelector('.effective-rate').textContent = effectiveRate + '%';
+      row.querySelector('.net-income').textContent = formatNumber(netIncome);
+      
+      // Update totals
+      totalRevenue += data.revenue;
+      totalCosts += data.costs;
+      totalTax += totalTaxForCountry;
+      totalNetIncome += netIncome;
+    });
+    
+    // Update summary row
+    updateSummaryRow(totalRevenue, totalCosts, totalTax, totalNetIncome);
+  }
+  
+  // Update summary row
+  function updateSummaryRow(revenue, costs, tax, netIncome) {
+    const tfoot = document.getElementById('summaryRow');
+    tfoot.innerHTML = `
+      <tr class="summary-row">
+        <td colspan="5"><strong>SUMA</strong></td>
+        <td><strong>${formatNumber(revenue)}</strong></td>
+        <td><strong>${formatNumber(costs)}</strong></td>
+        <td colspan="4"></td>
+        <td><strong>${formatNumber(tax)}</strong></td>
+        <td></td>
+        <td><strong>${formatNumber(netIncome)}</strong></td>
+        <td></td>
+      </tr>
+    `;
+  }
+  
+  // Helper function to format numbers
+  function formatNumber(num) {
+    return new Intl.NumberFormat('pl-PL', { 
+      style: 'decimal', 
+      minimumFractionDigits: 0, 
+      maximumFractionDigits: 0 
+    }).format(num);
+  }
+  
+  // Debounce function for input events
+  function debounce(func, wait) {
+    let timeout;
+    return function() {
+      const context = this, args = arguments;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+  }
+</script>
+
+</body>
+</html>

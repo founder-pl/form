@@ -1,0 +1,171 @@
+You are an expert in international tax law and social benefits systems. Please provide detailed information about the tax system and benefits in Nigeria (NG) in the following JSON format. Be as precise and comprehensive as possible, including all relevant tax rates, brackets, and benefit programs. If any information is not applicable, please set it to null.
+
+{
+  "countryCode": "NG",
+  "name": "Nigeria",
+  "flag": "🇳🇬",
+  "euMember": boolean,
+  "currency": "NGN",
+  "taxYear": {
+    "starts": "YYYY-MM-DD",
+    "ends": "YYYY-MM-DD"
+  },
+  "taxResidencyRules": {
+    "daysThreshold": number,
+    "permanentEstablishment": boolean,
+    "tieBreakerRules": string
+  },
+  "taxRates": {
+    "corporate": {
+      "standardRate": number,
+      "reducedRates": [
+        {
+          "rate": number,
+          "description": "string"
+        }
+      ]
+    },
+    "individual": {
+      "progressive": boolean,
+      "brackets": [
+        {
+          "threshold": number,
+          "rate": number,
+          "description": "string"
+        }
+      ]
+    },
+    "capitalGains": {
+      "shortTermRate": number,
+      "longTermRate": number,
+      "longTermThreshold": number,
+      "exemptions": ["string"]
+    },
+    "dividends": {
+      "domesticRate": number,
+      "foreignRate": number,
+      "participationExemption": boolean
+    },
+    "interest": {
+      "rate": number,
+      "taxExemptAmount": number
+    },
+    "royalties": {
+      "domesticRate": number,
+      "foreignRate": number,
+      "treatyRates": [
+        {
+          "countryCode": "string",
+          "rate": number
+        }
+      ]
+    }
+  },
+  "vat": {
+    "standardRate": number,
+    "reducedRates": [
+      {
+        "rate": number,
+        "description": "string"
+      }
+    ],
+    "registrationThreshold": number,
+    "intraCommunityRules": string
+  },
+  "socialSecurity": {
+    "employeeRate": number,
+    "employerRate": number,
+    "selfEmployedRate": number,
+    "ceiling": number,
+    "healthcareIncluded": boolean,
+    "pensionIncluded": boolean,
+    "unemploymentIncluded": boolean,
+    "notes": "string"
+  },
+  "healthInsurance": {
+    "mandatory": boolean,
+    "publicRate": number,
+    "privateOptions": boolean,
+    "notes": "string"
+  },
+  "pensionSystem": {
+    "contributionRate": number,
+    "employerContribution": number,
+    "employeeContribution": number,
+    "retirementAge": {
+      "men": number,
+      "women": number
+    },
+    "notes": "string"
+  },
+  "unemploymentBenefits": {
+    "eligibilityMonths": number,
+    "benefitRate": number,
+    "maxBenefitDuration": number,
+    "notes": "string"
+  },
+  "familyBenefits": {
+    "childBenefit": {
+      "monthlyAmount": number,
+      "ageLimit": number,
+      "studentAgeLimit": number,
+      "notes": "string"
+    },
+    "parentalLeave": {
+      "durationWeeks": number,
+      "paidPercentage": number,
+      "maxBenefit": number,
+      "notes": "string"
+    },
+    "otherBenefits": [
+      {
+        "name": "string",
+        "description": "string",
+        "amount": number,
+        "eligibility": "string"
+      }
+    ]
+  },
+  "taxIncentives": [
+    {
+      "name": "string",
+      "description": "string",
+      "requirements": "string",
+      "benefits": "string"
+    }
+  ],
+  "doubleTaxationTreaties": ["string"],
+  "taxFiling": {
+    "deadline": "string",
+    "extensionsAvailable": boolean,
+    "paymentDeadline": "string",
+    "filingMethod": ["online", "paper"],
+    "notes": "string"
+  },
+  "specialRegimes": [
+    {
+      "name": "string",
+      "description": "string",
+      "eligibility": "string",
+      "benefits": "string"
+    }
+  ],
+  "digitalNomadVisa": {
+    "available": boolean,
+    "minimumIncome": number,
+    "durationMonths": number,
+    "taxExemptions": "string",
+    "notes": "string"
+  },
+  "notes": "string",
+  "sources": [
+    {
+      "name": "string",
+      "url": "string",
+      "date": "YYYY-MM-DD"
+    }
+  ],
+  "lastUpdated": "YYYY-MM-DD"
+}
+
+Please provide all monetary amounts in the local currency (NGN). If any values are estimates or averages, please indicate this in the notes section.

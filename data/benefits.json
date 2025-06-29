@@ -1,0 +1,227 @@
+{
+  "PL": [
+    {
+      "id": "500plus",
+      "name": "Program 500+",
+      "description": "Świadczenie wychowawcze 500+ na dziecko",
+      "amount": 500,
+      "frequency": "monthly",
+      "currency": "PLN",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 18,
+      "conditions": {
+        "age": "<18",
+        "income": "<1923.70",
+        "disabled": false
+      },
+      "url": "https://www.gov.pl/web/rodzina/500plus--rzadowy-program-pomocy-rodzinom"
+    },
+    {
+      "id": "800plus",
+      "name": "Program 800+",
+      "description": "Dodatek wychowawczy 800+ na dziecko do 18 miesiąca życia",
+      "amount": 800,
+      "frequency": "monthly",
+      "currency": "PLN",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 1.5,
+      "conditions": {
+        "age": "<1.5",
+        "income": "<1923.70",
+        "disabled": false
+      },
+      "url": "https://www.gov.pl/web/rodzina/800-plus"
+    },
+    {
+      "id": "becikowe",
+      "name": "Becikowe",
+      "description": "Jednorazowa zapomoga z tytułu urodzenia dziecka",
+      "amount": 1000,
+      "frequency": "one-time",
+      "currency": "PLN",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 0.25,
+      "conditions": {
+        "age": "<0.25",
+        "income": "<1923.70",
+        "newborn": true
+      },
+      "url": "https://www.gov.pl/web/rodzina/becikowe"
+    },
+    {
+      "id": "dla-niepelnosprawnych",
+      "name": "Dodatki dla niepełnosprawnych dzieci",
+      "description": "Dodatki i świadczenia dla rodzin z dziećmi niepełnosprawnymi",
+      "amount": 215,
+      "frequency": "monthly",
+      "currency": "PLN",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 24,
+      "conditions": {
+        "disabled": true,
+        "student": true
+      },
+      "url": "https://www.gov.pl/web/niepelnosprawnosci/zasilek-pielegnacyjny"
+    },
+    {
+      "id": "dodatek-rodzinny",
+      "name": "Dodatek rodzinny",
+      "description": "Świadczenie rodzinne na utrzymanie dziecka",
+      "amount": 95,
+      "frequency": "monthly",
+      "currency": "PLN",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 18,
+      "conditions": {
+        "age": "<18",
+        "income": "<1923.70"
+      },
+      "url": "https://www.gov.pl/web/rodzina/zasilek-rodzinny"
+    }
+  ],
+  "DE": [
+    {
+      "id": "kindergeld",
+      "name": "Kindergeld",
+      "description": "Dodatek na dziecko w Niemczech",
+      "amount": 250,
+      "frequency": "monthly",
+      "currency": "EUR",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 25,
+      "conditions": {
+        "age": "<25",
+        "student": true
+      },
+      "url": "https://www.arbeitsagentur.de/familie-und-kinder/kindergeld"
+    },
+    {
+      "id": "elterngeld",
+      "name": "Elterngeld",
+      "description": "Dodatek dla rodziców na opiekę nad dzieckiem",
+      "amount": 1800,
+      "frequency": "monthly",
+      "currency": "EUR",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 3,
+      "conditions": {
+        "age": "<3",
+        "parentalLeave": true
+      },
+      "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld"
+    },
+    {
+      "id": "kinderfreibetrag",
+      "name": "Kinderfreibetrag",
+      "description": "Ulga podatkowa na dziecko",
+      "amount": 5000,
+      "frequency": "yearly",
+      "currency": "EUR",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 25,
+      "conditions": {
+        "age": "<25",
+        "student": true
+      },
+      "url": "https://www.bmf-steuerrechner.de/kinderfreibetrag/"
+    }
+  ],
+  "FR": [
+    {
+      "id": "allocations-familiales",
+      "name": "Allocations familiales",
+      "description": "Zasiłki rodzinne we Francji",
+      "amount": 170,
+      "frequency": "monthly",
+      "currency": "EUR",
+      "minChildren": 2,
+      "maxChildren": null,
+      "maxAge": 20,
+      "conditions": {
+        "age": "<20",
+        "student": true
+      },
+      "url": "https://www.caf.fr/allocations-et-services/s-informer-sur-les-aides/petite-enfance/les-aides-au-quotidien/les-allocations-familiales"
+    }
+  ],
+  "UK": [
+    {
+      "id": "child-benefit",
+      "name": "Child Benefit",
+      "description": "Zasiłek na dziecko w Wielkiej Brytanii",
+      "amount": 84.60,
+      "frequency": "monthly",
+      "currency": "GBP",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 20,
+      "conditions": {
+        "age": "<20",
+        "student": true
+      },
+      "url": "https://www.gov.uk/child-benefit"
+    }
+  ],
+  "SE": [
+    {
+      "id": "barnbidrag",
+      "name": "Barnbidrag",
+      "description": "Zasiłek rodzinny w Szwecji",
+      "amount": 1250,
+      "frequency": "monthly",
+      "currency": "SEK",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 16,
+      "conditions": {
+        "age": "<16",
+        "residence": true
+      },
+      "url": "https://www.forsakringskassan.se/privatpers/foralder/bidragochersattning/barnbidrag"
+    }
+  ],
+  "NO": [
+    {
+      "id": "barnetrygd",
+      "name": "Barnetrygd",
+      "description": "Zasiłek rodzinny w Norwegii",
+      "amount": 1054,
+      "frequency": "monthly",
+      "currency": "NOK",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 18,
+      "conditions": {
+        "age": "<18",
+        "residence": true
+      },
+      "url": "https://www.nav.no/familie/alene-med-barn/barnetrygd"
+    }
+  ],
+  "DK": [
+    {
+      "id": "børnetilskud",
+      "name": "Børnetilskud",
+      "description": "Zasiłek rodzinny w Danii",
+      "amount": 1600,
+      "frequency": "monthly",
+      "currency": "DKK",
+      "minChildren": 1,
+      "maxChildren": null,
+      "maxAge": 18,
+      "conditions": {
+        "age": "<18",
+        "residence": true
+      },
+      "url": "https://www.borger.dk/bolig-og-familie/Born-og-unge/Boernetilskud"
+    }
+  ]
+}

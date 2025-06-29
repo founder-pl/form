@@ -1,0 +1,114 @@
+{
+  "countries": {
+    "PL": {
+      "name": "Poland",
+      "description": "Poland has a competitive tax system with various reliefs and incentives for businesses and families.",
+      "taxTips": [
+        "Flat tax rate of 19% for most businesses (9% for small taxpayers)",
+        "Lump-sum tax available for certain professions (ryczałt ewidencjonowany)",
+        "IP Box regime for intellectual property income at 5% tax rate",
+        "Estonian CIT (CIT for companies that reinvest profits)",
+        "VAT rates: 23% (standard), 8%, 5%, or 0% for specific goods/services"
+      ],
+      "benefits": [
+        "500+ program: Monthly benefit for families with children",
+        "800+: Additional benefit for children under 18 months",
+        "Becikowe: One-time birth grant of 1000 PLN",
+        "Dobry Start: 300 PLN annual school allowance per child",
+        "Family 4+ Program: Additional benefits for large families"
+      ]
+    },
+    "DE": {
+      "name": "Germany",
+      "description": "Germany has a comprehensive social security system with progressive taxation and extensive benefits.",
+      "taxTips": [
+        "Progressive income tax up to 45% (plus 5.5% solidarity surcharge)",
+        "Trade tax (Gewerbesteuer) for businesses, varying by municipality",
+        "VAT rates: 19% (standard) or 7% (reduced for food, books, etc.)",
+        "Tax-free allowance of 9,984 EUR (2023) for single taxpayers",
+        "Special tax regimes for expatriates and researchers"
+      ],
+      "benefits": [
+        "Kindergeld: Child benefit up to 250 EUR per month",
+        "Elterngeld: Parental leave benefit (65-67% of net income)",
+        "Wohngeld: Housing benefit for low-income households",
+        "Bürgergeld: Basic income support",
+        "BAföG: Education and training assistance"
+      ]
+    },
+    "US": {
+      "name": "United States",
+      "description": "The US has a complex tax system with federal, state, and local taxes, and various tax credits and deductions.",
+      "taxTips": [
+        "Progressive federal income tax with rates from 10% to 37%",
+        "State income taxes vary from 0% to 13.3%",
+        "Self-employment tax of 15.3% for Social Security and Medicare",
+        "Standard deduction of $13,850 for single filers (2023)",
+        "Various tax credits available (EITC, Child Tax Credit, etc.)"
+      ],
+      "benefits": [
+        "Earned Income Tax Credit (EITC) for low to moderate-income workers",
+        "Child Tax Credit up to $2,000 per child",
+        "SNAP (Food Stamps) for food assistance",
+        "Section 8 Housing Choice Voucher Program",
+        "Medicaid and CHIP for health insurance"
+      ]
+    },
+    "SG": {
+      "name": "Singapore",
+      "description": "Singapore has a territorial tax system with low personal and corporate tax rates and no capital gains tax.",
+      "taxTips": [
+        "Progressive personal income tax up to 24%",
+        "Corporate tax rate of 17% with various exemptions",
+        "No capital gains tax",
+        "Goods and Services Tax (GST) of 9% (from 2024)",
+        "Various tax incentives for businesses and investors"
+      ],
+      "benefits": [
+        "Baby Bonus cash gift and matching savings for children",
+        "Workfare Income Supplement for low-wage workers",
+        "Silver Support Scheme for elderly low-income citizens",
+        "CPF (Central Provident Fund) for retirement, healthcare and housing",
+        "Various grants and subsidies for education and training"
+      ]
+    },
+    "AE": {
+      "name": "United Arab Emirates",
+      "description": "The UAE has no personal income tax and a territorial tax system with various free zones offering tax incentives.",
+      "taxTips": [n        "No personal income tax",
+        "Corporate tax of 9% on profits over 375,000 AED (from June 2023)",
+        "5% VAT on most goods and services (0% on certain items)",
+        "No capital gains tax for individuals",
+        "Free zones offer 0% corporate and personal income tax for up to 50 years"
+      ],
+      "benefits": [
+        "No tax on employment income",
+        "Free public education for Emirati citizens",
+        "Subsidized healthcare for citizens",
+        "Housing grants and loans for Emirati citizens",
+        "Various social welfare programs for citizens"
+      ]
+    }
+  },
+  "columns": {
+    "business-type": "Type of business activity. Different tax rates and regulations may apply based on business structure (sole proprietorship, partnership, corporation, etc.).",
+    "days-year1": "Number of days physically present in the country during the first tax year. Critical for determining tax residency status and potential tax obligations.",
+    "days-year2": "Number of days physically present in the country during the second tax year. Used for multi-year tax planning and residency determination.",
+    "revenue": "Total annual business revenue in local currency before any deductions. Include all income from sales, services, and other business activities.",
+    "costs": "Allowable business expenses that can be deducted from revenue. Includes costs directly related to generating income, such as materials, salaries, and operating expenses.",
+    "vat": "Value Added Tax registration status. Required if revenue exceeds certain thresholds. Rates and rules vary by country.",
+    "social-security": "Social security and national insurance contributions. May be required for both employees and self-employed individuals, with rates varying by country and income level.",
+    "health-insurance": "Health insurance requirements and costs. Some countries require mandatory health insurance contributions.",
+    "pension": "Pension or retirement contribution requirements. May be part of social security or a separate system.",
+    "benefits": "Government benefits and tax credits you may be eligible for based on your personal and family situation.",
+    "tax": "Calculated tax liability based on taxable income, deductions, and credits. The final amount owed to the tax authorities.",
+    "net-income": "Your after-tax income after all deductions, taxes, and benefits. Represents your actual take-home amount.",
+    "effective-rate": "The average rate at which your income is taxed, calculated as total tax divided by total income. Useful for comparing tax burdens across different scenarios.",
+    "citizenship": "Indicates whether you are a citizen of this country. Some countries tax citizens on worldwide income regardless of residence.",
+    "residency": "Your tax residency status in this country. Residents are typically taxed on worldwide income, while non-residents are only taxed on local-source income.",
+    "tax-treaty": "Whether a tax treaty exists between this country and your country of residence, which may prevent double taxation.",
+    "cfc-rules": "Controlled Foreign Corporation rules that may attribute income from foreign companies to resident shareholders.",n    "exit-tax": "Potential tax liabilities when ceasing tax residency or moving assets out of the country.",
+    "wealth-tax": "Annual tax on net wealth or assets, applicable in some jurisdictions.",
+    "property-tax": "Taxes on real estate ownership, which may apply to both residents and non-residents."
+  }
+}
