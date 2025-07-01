@@ -1,0 +1,88 @@
+{
+  "code": "NL",
+  "name": "Netherlands",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "zzp",
+      "name": "ZZP (Self-employed)",
+      "registrationFee": 0,
+      "annualFees": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.13,
+      "incomeTaxRate": 0.20,
+      "simplifiedTaxation": true,
+      "taxDeduction": 0.14
+    },
+    {
+      "id": "bv",
+      "name": "BV (Private Limited Company)",
+      "registrationFee": 200,
+      "annualFees": 50,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.19,
+      "socialSecurityRate": 0.28,
+      "dividendTaxRate": 0.268
+    },
+    {
+      "id": "eenmanszak",
+      "name": "Eenmanszak (Sole Proprietorship)",
+      "registrationFee": 50,
+      "annualFees": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.13,
+      "incomeTaxRate": 0.20
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 73031,
+      "rate": 37.07,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 73032,
+      "maxIncome": 111000,
+      "rate": 49.5,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 111001,
+      "rate": 49.5,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "aow": 0.179,
+    "wia": 0.007,
+    "zw": 0.016,
+    "awf": 0.005,
+    "maxContributionBase": 58000,
+    "minContributionBase": 35000
+  },
+  "deductions": {
+    "selfEmployedDeduction": 6700,
+    "startupDeduction": 2125,
+    "energyInvestmentDeduction": 0.45,
+    "researchDeduction": 0.32,
+    "homeOffice": {
+      "hourlyRate": 3.20,
+      "maxHours": 1225
+    }
+  },
+  "hints": {
+    "zzp": "ZZP (Zelfstandige zonder personeel) is the most common business structure for freelancers",
+    "vat": "Standard VAT rate is 21%, with reduced rates of 9% and 0% for specific goods and services",
+    "healthInsurance": "Health insurance is mandatory for all residents, with a standard premium of around €120 per month",
+    "thirtyPercentRuling": "Expats may be eligible for the 30% tax ruling, which provides a tax-free allowance"
+  }
+}

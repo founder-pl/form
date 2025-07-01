@@ -1,3 +1,5 @@
+![img.png](img.png)
+
 # Multi-Country Tax Comparison Tool
 
 A comprehensive web application for comparing tax and benefit scenarios across multiple countries, with a focus on European countries. This tool helps individuals and businesses understand their tax obligations and benefits in different jurisdictions.

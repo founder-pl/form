@@ -6,7 +6,7 @@ let benefitConfig = {};
 const countryDataCache = new Map();
 
 // Supported country codes
-const SUPPORTED_COUNTRIES = ['DE', 'FR', 'ES', 'IT'];
+const SUPPORTED_COUNTRIES = ['DE', 'FR', 'ES', 'IT', 'NL'];
 
 // Constants
 const DAYS_IN_YEAR = 365;
@@ -259,9 +259,7 @@ export function initCountryData() {
  * @param {string} countryCode - ISO country code
  * @returns {Object} Country data
  */
-export function getCountryData(countryCode) {
-    return countriesData[countryCode] || null;
-}
+
 
 /**
  * Gets all countries data
