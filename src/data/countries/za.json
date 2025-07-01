@@ -1,0 +1,204 @@
+{
+  "code": "ZA",
+  "name": "South Africa",
+  "currency": "ZAR",
+  "taxYearStart": "03-01",
+  "taxYearEnd": "02-28",
+  "businessTypes": [
+    {
+      "id": "sole_proprietor",
+      "name": "Sole Proprietor",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 1000000,
+        "currency": "ZAR"
+      },
+      "taxRegime": "Provisional Tax",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.15,
+      "passThroughTaxation": true,
+      "taxAgency": "SARS"
+    },
+    {
+      "id": "pty_ltd",
+      "name": "Private Company (Pty) Ltd",
+      "registrationFee": 125,
+      "minimumCapital": 1000,
+      "requiresVatRegistration": {
+        "threshold": 1000000,
+        "currency": "ZAR"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.15,
+      "dividendWithholdingTax": 0.20,
+      "taxAgency": "CIPC & SARS"
+    },
+    {
+      "id": "cc",
+      "name": "Close Corporation (CC)",
+      "registrationFee": 125,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 1000000,
+        "currency": "ZAR"
+      },
+      "taxRegime": "Provisional Tax",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.15,
+      "passThroughTaxation": true,
+      "taxAgency": "CIPC & SARS"
+    },
+    {
+      "id": "npc",
+      "name": "Non-Profit Company (NPC)",
+      "registrationFee": 125,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 1000000,
+        "currency": "ZAR"
+      },
+      "taxRegime": "Tax-Exempt",
+      "taxExempt": true,
+      "vatRate": 0.15,
+      "taxAgency": "CIPC & SARS"
+    },
+    {
+      "id": "branch",
+      "name": "Foreign Company Branch",
+      "registrationFee": 125,
+      "requiresVatRegistration": {
+        "threshold": 1000000,
+        "currency": "ZAR"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.15,
+      "branchProfitsTax": 0.00,
+      "taxAgency": "CIPC & SARS"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 226000,
+          "rate": 0.18,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 226001,
+          "maxIncome": 353100,
+          "rate": 0.26,
+          "tax": 40680,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 353101,
+          "maxIncome": 488700,
+          "rate": 0.31,
+          "tax": 73726,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 488701,
+          "maxIncome": 641400,
+          "rate": 0.36,
+          "tax": 115762,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 641401,
+          "maxIncome": 817600,
+          "rate": 0.39,
+          "tax": 170734,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 817601,
+          "maxIncome": 1731600,
+          "rate": 0.41,
+          "tax": 239452,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1731601,
+          "rate": 0.45,
+          "tax": 614192,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "uif": {
+      "employeeContribution": 0.01,
+      "employerContribution": 0.01,
+      "ceiling": 17712
+    },
+    "sdl": {
+      "employerContribution": 0.01,
+      "ceiling": 0
+    },
+    "compensationFund": {
+      "employerContribution": 0.01,
+      "ceiling": 0
+    },
+    "skillsDevelopment": {
+      "employerContribution": 0.01,
+      "ceiling": 0
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.15,
+      "zeroRated": ["Basic food items", "Petrol", "Exports"],
+      "exempt": ["Financial services", "Residential rental"]
+    },
+    "dividendTax": 0.20,
+    "interestExemption": {
+      "under65": 23800,
+      "over65": 34500,
+      "over75": 50000
+    },
+    "capitalGains": {
+      "inclusionRate": 0.40,
+      "annualExclusion": 40000
+    },
+    "donations": {
+      "deductiblePercentage": 0.10,
+      "maxDeduction": 0.10
+    }
+  },
+  "deductions": {
+    "retirementFund": {
+      "deductionLimit": 0.275,
+      "annualCeiling": 350000
+    },
+    "medicalExpenses": {
+      "taxCreditRate": 0.25,
+      "additionalDependentCredit": 1724
+    },
+    "travelExpenses": {
+      "ratePerKm": 3.98,
+      "publicTransport": 0.80
+    },
+    "homeOffice": {
+      "ratePerHour": 7.00,
+      "maxHours": 216
+    },
+    "tuitionFees": {
+      "deductionRate": 1.00,
+      "maxPerDependent": 16000
+    }
+  },
+  "hints": {
+    "tax_year": "Tax year runs from 1 March to 28/29 February",
+    "provisional_tax": "Provisional taxpayers must make bi-annual payments in August and February",
+    "vat_registration": "VAT registration is mandatory for businesses with taxable supplies over R1 million per year",
+    "retirement_funding": "Retirement fund contributions are tax-deductible up to 27.5% of the greater of taxable income or remuneration"
+  }
+}
