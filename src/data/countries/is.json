@@ -1,0 +1,108 @@
+{
+  "code": "IS",
+  "name": "Iceland",
+  "currency": "ISK",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "einstaklingur",
+      "name": "Einstaklingsfyrirtæki (Sole Proprietorship)",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 2000000,
+        "currency": "ISK"
+      },
+      "socialSecurityRate": 0.1576,
+      "socialSecurityMinBase": 0,
+      "vatRate": 0.24,
+      "taxAgency": "Ríkisskattstjóri"
+    },
+    {
+      "id": "ehf",
+      "name": "Einkahlutafélag (ehf.)",
+      "registrationFee": 150000,
+      "minimumCapital": 500000,
+      "requiresVatRegistration": {
+        "threshold": 2000000,
+        "currency": "ISK"
+      },
+      "corporateTaxRate": 0.20,
+      "socialSecurityRate": 0.1576,
+      "vatRate": 0.24,
+      "taxAgency": "Fyrirtækjaskrá"
+    },
+    {
+      "id": "hf",
+      "name": "Hlutafélag (h.f.)",
+      "registrationFee": 150000,
+      "minimumCapital": 4000000,
+      "requiresVatRegistration": {
+        "threshold": 2000000,
+        "currency": "ISK"
+      },
+      "corporateTaxRate": 0.20,
+      "socialSecurityRate": 0.1576,
+      "vatRate": 0.24,
+      "taxAgency": "Fyrirtækjaskrá"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 409986,
+      "rate": 31.45,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 409987,
+      "maxIncome": 1159143,
+      "rate": 37.95,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 1159144,
+      "maxIncome": 3278861,
+      "rate": 40.25,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 3278862,
+      "rate": 46.25,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "pensionFunds": 0.12,
+    "healthInsurance": 0.065,
+    "socialSecurityTax": 0.03,
+    "maxContributionBase": 0,
+    "minContributionBase": 0
+  },
+  "deductions": {
+    "standard": 0,
+    "pensionSavings": {
+      "maxDeductible": 0,
+      "percentage": 0.04
+    },
+    "interestExpenses": {
+      "maxDeductible": 0,
+      "percentage": 1.0
+    },
+    "homeLoanInterest": {
+      "maxDeductible": 0,
+      "percentage": 1.0
+    },
+    "unionFees": {
+      "maxDeductible": 0,
+      "percentage": 1.0
+    }
+  },
+  "hints": {
+    "einstaklingur": "Sole proprietors must register with the Directorate of Internal Revenue and the Social Insurance Administration",
+    "vat": "Standard VAT rate is 24%, with reduced rates of 11% and 0% for specific goods and services",
+    "social_security": "Social security contributions are approximately 15.76% of income",
+    "tax_declaration": "Tax returns must be filed by 31 March of the following year"
+  }
+}

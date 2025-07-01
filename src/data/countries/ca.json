@@ -1,0 +1,153 @@
+{
+  "code": "CA",
+  "name": "Canada",
+  "currency": "CAD",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_prop",
+      "name": "Sole Proprietorship",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 30000,
+        "currency": "CAD"
+      },
+      "socialSecurityRate": 0.1098,
+      "socialSecurityMinBase": 3500,
+      "hstRate": 0.13,
+      "passThroughTaxation": true,
+      "taxAgency": "CRA"
+    },
+    {
+      "id": "corp",
+      "name": "Corporation",
+      "registrationFee": 200,
+      "provincialFees": 200,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 30000,
+        "currency": "CAD"
+      },
+      "corporateTaxRate": 0.09,
+      "hstRate": 0.13,
+      "taxAgency": "CRA"
+    },
+    {
+      "id": "partnership",
+      "name": "Partnership",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 30000,
+        "currency": "CAD"
+      },
+      "hstRate": 0.13,
+      "passThroughTaxation": true,
+      "taxAgency": "CRA"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "province": "federal",
+      "filingStatus": "single",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 50197,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 50198,
+          "maxIncome": 100392,
+          "rate": 0.205,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 100393,
+          "maxIncome": 155625,
+          "rate": 0.26,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 155626,
+          "maxIncome": 221708,
+          "rate": 0.29,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 221709,
+          "rate": 0.33,
+          "type": "flat"
+        }
+      ]
+    },
+    {
+      "province": "ontario",
+      "filingStatus": "single",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 46226,
+          "rate": 0.0505,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 46227,
+          "maxIncome": 92454,
+          "rate": 0.0915,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 92455,
+          "maxIncome": 150000,
+          "rate": 0.1116,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 150001,
+          "maxIncome": 220000,
+          "rate": 0.1216,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 220001,
+          "rate": 0.1316,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "cpp": 0.051,
+    "ei": 0.0158,
+    "maxPensionableEarnings": 61400,
+    "maxInsurableEarnings": 60300,
+    "basicPersonalAmount": 13229
+  },
+  "deductions": {
+    "rrsp": {
+      "limit": 0.18,
+      "maxContribution": 27830
+    },
+    "childCare": {
+      "perChild": 8000,
+      "maxPerFamily": 5000
+    },
+    "medicalExpenses": {
+      "floor": 0.03,
+      "max": 2326
+    },
+    "homeOffice": {
+      "simplifiedRate": 2,
+      "detailedMethod": true
+    }
+  },
+  "hints": {
+    "hst": "HST rate varies by province (5% to 15%). The standard rate is used here for Ontario (13%)",
+    "small_business_deduction": "Canadian-controlled private corporations may be eligible for the small business deduction on the first $500,000 of active business income",
+    "tax_credits": "Various federal and provincial tax credits are available, including the Canada Workers Benefit and the Climate Action Incentive",
+    "tax_deadlines": "The personal tax filing deadline is April 30th for most individuals, and June 15th for self-employed individuals"
+  }
+}

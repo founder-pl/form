@@ -1,0 +1,181 @@
+{
+  "code": "US",
+  "name": "United States",
+  "currency": "USD",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_prop",
+      "name": "Sole Proprietorship",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": false,
+      "socialSecurityRate": 0.153,
+      "socialSecurityMinBase": 400,
+      "socialSecurityMaxBase": 142800,
+      "passThroughTaxation": true,
+      "taxAgency": "IRS"
+    },
+    {
+      "id": "llc",
+      "name": "Limited Liability Company (LLC)",
+      "registrationFee": 100,
+      "stateFees": 50,
+      "requiresVatRegistration": false,
+      "passThroughTaxation": true,
+      "socialSecurityRate": 0.153,
+      "taxAgency": "IRS & State"
+    },
+    {
+      "id": "scorp",
+      "name": "S Corporation",
+      "registrationFee": 100,
+      "stateFees": 100,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.21,
+      "socialSecurityRate": 0.153,
+      "passThroughTaxation": true,
+      "taxAgency": "IRS & State"
+    },
+    {
+      "id": "c_corp",
+      "name": "C Corporation",
+      "registrationFee": 100,
+      "stateFees": 100,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.21,
+      "socialSecurityRate": 0.153,
+      "passThroughTaxation": false,
+      "taxAgency": "IRS & State"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "single",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 10275,
+          "rate": 0.10,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 10276,
+          "maxIncome": 41775,
+          "rate": 0.12,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 41776,
+          "maxIncome": 89075,
+          "rate": 0.22,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 89076,
+          "maxIncome": 170050,
+          "rate": 0.24,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 170051,
+          "maxIncome": 215950,
+          "rate": 0.32,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 215951,
+          "maxIncome": 539900,
+          "rate": 0.35,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 539901,
+          "rate": 0.37,
+          "type": "flat"
+        }
+      ]
+    },
+    {
+      "filingStatus": "married_joint",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 20550,
+          "rate": 0.10,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 20551,
+          "maxIncome": 83550,
+          "rate": 0.12,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 83551,
+          "maxIncome": 178150,
+          "rate": 0.22,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 178151,
+          "maxIncome": 340100,
+          "rate": 0.24,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 340101,
+          "maxIncome": 431900,
+          "rate": 0.32,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 431901,
+          "maxIncome": 647850,
+          "rate": 0.35,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 647851,
+          "rate": 0.37,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "employeeRate": 0.062,
+    "employerRate": 0.062,
+    "medicareEmployeeRate": 0.0145,
+    "medicareEmployerRate": 0.0145,
+    "additionalMedicareRate": 0.009,
+    "socialSecurityWageBase": 147000,
+    "medicareWageBase": 0
+  },
+  "deductions": {
+    "standardDeduction": {
+      "single": 12550,
+      "married_joint": 25100,
+      "head_of_household": 18800
+    },
+    "itemizedDeductions": {
+      "stateAndLocalTaxes": 10000,
+      "mortgageInterest": 750000,
+      "charitableContributions": 0.6
+    },
+    "qbiDeduction": 0.2,
+    "retirementAccounts": {
+      "traditionalIRA": 6000,
+      "rothIRA": 6000,
+      "sepIRA": 58000,
+      "solo401k": 58000
+    }
+  },
+  "hints": {
+    "self_employment_tax": "Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on the first $147,000 of net earnings",
+    "estimated_tax": "Self-employed individuals must make quarterly estimated tax payments",
+    "state_taxes": "State income tax rates vary by state, with some states having no income tax",
+    "business_expenses": "Business expenses are generally deductible if they are ordinary and necessary"
+  }
+}

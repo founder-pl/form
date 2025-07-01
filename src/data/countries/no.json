@@ -1,0 +1,122 @@
+{
+  "code": "NO",
+  "name": "Norway",
+  "currency": "NOK",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "enk_person",
+      "name": "Enkeltpersonforetak (Sole Proprietorship)",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 50000,
+        "currency": "NOK"
+      },
+      "socialSecurityRate": 0.111,
+      "socialSecurityMinBase": 0,
+      "vatRate": 0.25,
+      "taxAgency": "Skatteetaten"
+    },
+    {
+      "id": "as",
+      "name": "Aksjeselskap (AS)",
+      "registrationFee": 3000,
+      "minimumCapital": 30000,
+      "requiresVatRegistration": {
+        "threshold": 50000,
+        "currency": "NOK"
+      },
+      "corporateTaxRate": 0.22,
+      "socialSecurityRate": 0.141,
+      "vatRate": 0.25,
+      "taxAgency": "Foretaksregisteret"
+    },
+    {
+      "id": "ans",
+      "name": "Ansvarlig selskap (ANS)",
+      "registrationFee": 0,
+      "notaryFees": 0,
+      "requiresVatRegistration": {
+        "threshold": 50000,
+        "currency": "NOK"
+      },
+      "socialSecurityRate": 0.111,
+      "vatRate": 0.25,
+      "taxAgency": "Foretaksregisteret",
+      "passThroughTaxation": true
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 198875,
+      "rate": 0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 198876,
+      "maxIncome": 280150,
+      "rate": 1.7,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 280151,
+      "maxIncome": 642950,
+      "rate": 4.0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 642951,
+      "maxIncome": 926800,
+      "rate": 13.4,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 926801,
+      "maxIncome": 1500000,
+      "rate": 16.4,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 1500001,
+      "rate": 17.4,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "pension": 0.07,
+    "healthcare": 0.08,
+    "unemployment": 0.05,
+    "occupationalInjury": 0.004,
+    "maxContributionBase": 750000,
+    "minContributionBase": 0
+  },
+  "deductions": {
+    "standard": 0,
+    "workRelatedExpenses": {
+      "maxDeductible": 4000,
+      "percentage": 1.0
+    },
+    "travelExpenses": {
+      "domesticRate": 1.8,
+      "foreignRate": 2.5,
+      "maxDaily": 0
+    },
+    "homeOffice": {
+      "dailyRate": 100,
+      "maxDays": 200
+    },
+    "pensionSavings": {
+      "maxDeductible": 15000,
+      "percentage": 0.22
+    }
+  },
+  "hints": {
+    "enk_person": "Sole proprietors must register with the Brønnøysund Register Centre and the Tax Administration",
+    "vat": "Standard VAT rate is 25%, with reduced rates of 15% and 12% for specific goods and services",
+    "social_security": "Social security contributions are approximately 11.1% of income above NOK 69,650",
+    "tax_declaration": "Tax returns must be filed by 30 April of the following year"
+  }
+}
