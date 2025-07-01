@@ -5,8 +5,13 @@ let benefitConfig = {};
 // Cache for loaded country data
 const countryDataCache = new Map();
 
+// Supported country codes
+const SUPPORTED_COUNTRIES = ['DE', 'FR'];
+
 // Constants
 const DAYS_IN_YEAR = 365;
+const MIN_DAYS_IN_YEAR = 1;
+const MAX_DAYS_IN_YEAR = 366; // Account for leap years
 
 /**
  * Loads a specific country's data
@@ -41,17 +46,154 @@ export async function loadCountryData(countryCode) {
 
 /**
  * Gets country data, loading it if necessary
- * @param {string} countryCode - ISO country code
+ * @param {string} countryCode - ISO country code (case-insensitive)
  * @returns {Promise<Object>} Country data
+ * @throws {Error} If country code is invalid or data cannot be loaded
  */
 export async function getCountryData(countryCode) {
+    if (!countryCode || typeof countryCode !== 'string') {
+        throw new Error('Country code must be a non-empty string');
+    }
+    
+    // Normalize country code to uppercase
+    const normalizedCode = countryCode.toUpperCase();
+    
+    // Validate country code
+    if (!SUPPORTED_COUNTRIES.includes(normalizedCode)) {
+        throw new Error(`Unsupported country code: ${countryCode}. Supported codes: ${SUPPORTED_COUNTRIES.join(', ')}`);
+    }
+    
     // If already in cache, return it
-    if (countryDataCache.has(countryCode)) {
-        return countryDataCache.get(countryCode);
+    if (countryDataCache.has(normalizedCode)) {
+        return countryDataCache.get(normalizedCode);
     }
     
     // Otherwise load it
-    return loadCountryData(countryCode);
+    return loadCountryData(normalizedCode);
+}
+
+/**
+ * Gets all supported country codes
+ * @returns {string[]} Array of supported country codes
+ */
+export function getSupportedCountries() {
+    return [...SUPPORTED_COUNTRIES];
+}
+
+/**
+ * Gets available business types for a country
+ * @param {string} countryCode - ISO country code
+ * @returns {Promise<Array>} Array of business types
+ */
+export async function getBusinessTypes(countryCode) {
+    try {
+        const countryData = await getCountryData(countryCode);
+        return countryData.businessTypes || [];
+    } catch (error) {
+        console.error(`Error getting business types for ${countryCode}:`, error);
+        return [];
+    }
+}
+
+/**
+ * Validates if a business type is valid for a country
+ * @param {string} countryCode - ISO country code
+ * @param {string} businessTypeId - Business type ID to validate
+ * @returns {Promise<boolean>} True if valid, false otherwise
+ */
+export async function isValidBusinessType(countryCode, businessTypeId) {
+    try {
+        const businessTypes = await getBusinessTypes(countryCode);
+        return businessTypes.some(type => type.id === businessTypeId);
+    } catch (error) {
+        console.error(`Error validating business type for ${countryCode}:`, error);
+        return false;
+    }
+}
+
+/**
+ * Calculates tax based on income and country
+ * @param {string} countryCode - ISO country code
+ * @param {number} income - Annual income
+ * @param {string} businessTypeId - Business type ID
+ * @returns {Promise<Object>} Tax calculation result
+ */
+export async function calculateTax(countryCode, income, businessTypeId) {
+    try {
+        const countryData = await getCountryData(countryCode);
+        const businessType = countryData.businessTypes?.find(bt => bt.id === businessTypeId);
+        
+        if (!businessType) {
+            throw new Error(`Invalid business type: ${businessTypeId} for country: ${countryCode}`);
+        }
+        
+        // Basic tax calculation (simplified)
+        let tax = 0;
+        let remainingIncome = income;
+        
+        if (countryData.taxBrackets) {
+            for (const bracket of countryData.taxBrackets) {
+                if (remainingIncome <= 0) break;
+                
+                let taxableInBracket = remainingIncome;
+                if (bracket.maxIncome !== undefined && bracket.maxIncome > 0) {
+                    taxableInBracket = Math.min(remainingIncome, bracket.maxIncome - (bracket.minIncome || 0));
+                }
+                
+                if (taxableInBracket > 0) {
+                    tax += taxableInBracket * (bracket.rate / 100);
+                    remainingIncome -= taxableInBracket;
+                }
+            }
+        }
+        
+        // Apply corporate tax if applicable
+        if (businessType.corporateTaxRate && businessType.corporateTaxRate > 0) {
+            tax += income * businessType.corporateTaxRate;
+        }
+        
+        // Apply social security if applicable
+        let socialSecurity = 0;
+        if (businessType.socialSecurityRate && businessType.socialSecurityRate > 0) {
+            socialSecurity = income * businessType.socialSecurityRate;
+        }
+        
+        return {
+            country: countryData.name,
+            businessType: businessType.name,
+            income,
+            tax,
+            socialSecurity,
+            totalDeductions: tax + socialSecurity,
+            netIncome: income - (tax + socialSecurity)
+        };
+    } catch (error) {
+        console.error(`Error calculating tax for ${countryCode}:`, error);
+        throw error;
+    }
+}
+
+/**
+ * Validates days spent in a country
+ * @param {number} days - Number of days
+ * @param {number} year - Year for leap year calculation
+ * @returns {Object} Validation result { isValid: boolean, message?: string }
+ */
+export function validateDaysInCountry(days, year) {
+    if (typeof days !== 'number' || isNaN(days)) {
+        return { isValid: false, message: 'Days must be a number' };
+    }
+    
+    if (days < MIN_DAYS_IN_YEAR) {
+        return { isValid: false, message: `Days cannot be less than ${MIN_DAYS_IN_YEAR}` };
+    }
+    
+    const maxDays = isLeapYear(year) ? 366 : 365;
+    if (days > maxDays) {
+        return { isValid: false, message: `Days cannot exceed ${maxDays} in ${year}` };
+    }
+    
+    return { isValid: true };
 }
 
 /**
