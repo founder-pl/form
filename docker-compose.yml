@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  tax-comparison:
+    build: .
+    ports:
+      - "3006:3006"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run start:dev
+
+  test-client:
+    image: curl/curl:latest
+    volumes:
+      - ./test.sh:/test.sh
+    entrypoint: ["bash", "-c"]
+    command: 
+      - "sleep 5 && curl -X POST http://tax-comparison:3006/api/calculate \
+        -H \"Content-Type: application/json\" \
+        -d '{\"country\":\"DE\",\"income\":50000,\"year\":2023,\"businessType\":\"services\",\"isCitizen\":false}'"
+    depends_on:
+      - tax-comparison

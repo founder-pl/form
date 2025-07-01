@@ -1,0 +1,201 @@
+{
+  "code": "NI",
+  "name": "Nicaragua",
+  "currency": "NIO",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresario_individual",
+      "name": "Empresario Individual",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "NIO"
+      },
+      "taxRegime": "Régimen de Pequeño Contribuyente",
+      "incomeTaxRate": 0.02,
+      "vatRate": 0.15,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 2000000,
+      "taxAgency": "DGI (Dirección General de Ingresos)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 15000,
+      "minimumCapital": 10000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "NIO"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.15,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "DGI"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S. de R.L.)",
+      "registrationFee": 10000,
+      "minimumCapital": 5000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "NIO"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.15,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "DGI"
+    },
+    {
+      "id": "sociedad_anonima_simplificada",
+      "name": "Sociedad Anónima Simplificada (S.A.S.)",
+      "registrationFee": 5000,
+      "minimumCapital": 2000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "NIO"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.15,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "DGI"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 20000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "NIO"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.15,
+      "branchProfitsTax": 0.00,
+      "taxAgency": "DGI"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 100000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 100001,
+          "maxIncome": 200000,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 200001,
+          "maxIncome": 350000,
+          "rate": 0.20,
+          "tax": 15000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 350001,
+          "rate": 0.25,
+          "tax": 45000,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "inss": {
+      "employeeRate": 0.065,
+      "employerRate": 0.19,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "inss_patronal": {
+      "employerRate": 0.0225,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "inss_laboral": {
+      "employeeRate": 0.00,
+      "employerRate": 0.0225,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "inss_insolvencia": {
+      "employerRate": 0.015,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "bono_anual": {
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0,
+      "annualBonus": true
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.15,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "ir": {
+      "rate": 0.00,
+      "appliesTo": "Income tax"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.25,
+      "tobacco": 0.35,
+      "vehicles": 0.15,
+      "bebidas_azucaradas": 0.10
+    },
+    "impuesto_turismo": {
+      "rate": 0.05,
+      "appliesTo": "Tourism services"
+    },
+    "impuesto_especial": {
+      "rate": 0.00,
+      "appliesTo": "Special consumption tax"
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.05,
+      "approvedInstitutionsOnly": true
+    },
+    "vivienda": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "seguros": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "ruc": "Registro Único de Contribuyente is required for all businesses",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_anual": "Annual tax return must be filed between January and March",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "pequeno_contribuyente": "Small taxpayer regime available for businesses with revenue under C$2,000,000"
+  }
+}

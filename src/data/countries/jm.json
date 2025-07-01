@@ -1,0 +1,213 @@
+{
+  "code": "JM",
+  "name": "Jamaica",
+  "currency": "JMD",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_proprietor",
+      "name": "Sole Proprietor",
+      "registrationFee": 2000,
+      "requiresVatRegistration": {
+        "threshold": 10000000,
+        "currency": "JMD"
+      },
+      "taxRegime": "Individual Taxpayer",
+      "incomeTaxRate": 0.30,
+      "educationTaxRate": 0.0225,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "Tax Administration Jamaica (TAJ)"
+    },
+    {
+      "id": "private_company",
+      "name": "Private Limited Company (Ltd.)",
+      "registrationFee": 20000,
+      "minimumCapital": 1000000,
+      "requiresVatRegistration": {
+        "threshold": 10000000,
+        "currency": "JMD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.25,
+      "educationTaxRate": 0.0225,
+      "dividendWithholdingTax": 0.15,
+      "taxAgency": "Tax Administration Jamaica (TAJ)"
+    },
+    {
+      "id": "public_company",
+      "name": "Public Limited Company (PLC)",
+      "registrationFee": 50000,
+      "minimumCapital": 2000000,
+      "requiresVatRegistration": {
+        "threshold": 10000000,
+        "currency": "JMD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.25,
+      "educationTaxRate": 0.0225,
+      "dividendWithholdingTax": 0.15,
+      "taxAgency": "Tax Administration Jamaica (TAJ)"
+    },
+    {
+      "id": "branch_office",
+      "name": "Branch of Foreign Company",
+      "registrationFee": 50000,
+      "requiresVatRegistration": {
+        "threshold": 10000000,
+        "currency": "JMD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.25,
+      "educationTaxRate": 0.0225,
+      "branchProfitsTax": 0.15,
+      "taxAgency": "Tax Administration Jamaica (TAJ)"
+    },
+    {
+      "id": "international_company",
+      "name": "International Business Company (IBC)",
+      "registrationFee": 100000,
+      "minimumCapital": 5000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "JMD"
+      },
+      "taxRegime": "Special Economic Zone",
+      "corporateTaxRate": 0.125,
+      "educationTaxRate": 0.0225,
+      "dividendWithholdingTax": 0.00,
+      "taxHolidayYears": 10,
+      "taxAgency": "JAMPRO"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 1509000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1509001,
+          "maxIncome": 6000000,
+          "rate": 0.25,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 6000001,
+          "rate": 0.30,
+          "tax": 1122750,
+          "type": "flat"
+        }
+      ]
+    },
+    {
+      "filingStatus": "married_joint",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 3018000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 30018001,
+          "maxIncome": 12000000,
+          "rate": 0.25,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 12000001,
+          "rate": 0.30,
+          "tax": 2245500,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "nis": {
+      "employeeRate": 0.03,
+      "employerRate": 0.03,
+      "ceiling": 1500000,
+      "minBase": 0
+    },
+    "hef": {
+      "employeeRate": 0.03,
+      "employerRate": 0.03,
+      "ceiling": 5000000,
+      "minBase": 0
+    },
+    "education_tax": {
+      "employeeRate": 0.0225,
+      "employerRate": 0.0225,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "nht": {
+      "employeeRate": 0.02,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "gct": {
+      "standardRate": 0.15,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Exported goods", "Prescription drugs"]
+    },
+    "sct": {
+      "rate": 0.20,
+      "appliesTo": "Special consumption tax on specific goods"
+    },
+    "asset_tax": {
+      "rate": 0.0075,
+      "appliesTo": "Assets over J$1M"
+    },
+    "transfer_tax": {
+      "rate": 0.04,
+      "appliesTo": "Property transfer tax"
+    },
+    "stamp_duty": {
+      "rate": 0.015,
+      "appliesTo": "Legal documents and transactions"
+    }
+  },
+  "deductions": {
+    "medical_expenses": {
+      "rate": 1.00,
+      "maxDeduction": 1250000
+    },
+    "education": {
+      "rate": 1.00,
+      "maxDeduction": 1000000
+    },
+    "pension": {
+      "rate": 1.00,
+      "maxDeduction": 0.20
+    },
+    "nht": {
+      "rate": 1.00,
+      "maxDeduction": 0.02
+    },
+    "charitable_donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.05,
+      "approvedInstitutionsOnly": true
+    }
+  },
+  "hints": {
+    "gct": "GCT (General Consumption Tax) is similar to VAT",
+    "nis": "National Insurance Scheme provides social security benefits",
+    "nht": "National Housing Trust contributions are mandatory for employees under 65",
+    "education_tax": "Education tax applies to both employees and employers",
+    "tax_incentives": "Various tax incentives available under special economic zones"
+  }
+}

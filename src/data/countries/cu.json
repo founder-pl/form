@@ -1,0 +1,198 @@
+{
+  "code": "CU",
+  "name": "Cuba",
+  "currency": "CUP",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "trabajador_por_cuenta_propia",
+      "name": "Trabajador por Cuenta Propia (TCP)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CUP"
+      },
+      "taxRegime": "Régimen Simplificado",
+      "incomeTaxRate": 0.10,
+      "vatRate": 0.00,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "ONAT (Oficina Nacional de Administración Tributaria)"
+    },
+    {
+      "id": "empresa_estatal",
+      "name": "Empresa Estatal Socialista",
+      "registrationFee": 0,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CUP"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.35,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "ONAT"
+    },
+    {
+      "id": "empresa_mixta",
+      "name": "Empresa Mixta",
+      "registrationFee": 0,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CUP"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "ONAT"
+    },
+    {
+      "id": "cooperativa_no_agropecuaria",
+      "name": "Cooperativa No Agropecuaria",
+      "registrationFee": 0,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CUP"
+      },
+      "taxRegime": "Régimen Especial",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "ONAT"
+    },
+    {
+      "id": "pequena_empresa_estatal",
+      "name": "Pequeña Empresa Estatal",
+      "registrationFee": 0,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CUP"
+      },
+      "taxRegime": "Régimen Especial",
+      "corporateTaxRate": 0.15,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "ONAT"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 10000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 10001,
+          "maxIncome": 20000,
+          "rate": 0.05,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 20001,
+          "maxIncome": 30000,
+          "rate": 0.10,
+          "tax": 500,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 30001,
+          "maxIncome": 50000,
+          "rate": 0.15,
+          "tax": 1500,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 50001,
+          "rate": 0.20,
+          "tax": 4500,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "seguro_social": {
+      "employeeRate": 0.05,
+      "employerRate": 0.14,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "seguro_escolar": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "seguro_colectivo": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "seguro_retiro": {
+      "employerRate": 0.025,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "impuesto_ventas": {
+      "standardRate": 0.00,
+      "reducedRate": 0.00,
+      "exemptItems": []
+    },
+    "impuesto_sobre_utilidades": {
+      "rate": 0.35,
+      "appliesTo": "Corporate income tax"
+    },
+    "impuesto_sobre_servicios": {
+      "rate": 0.10,
+      "appliesTo": "Services tax"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.30,
+      "tobacco": 0.40,
+      "vehicles": 0.20,
+      "bebidas_azucaradas": 0.15
+    },
+    "impuesto_sobre_ingresos_personales": {
+      "rate": 0.00,
+      "appliesTo": "Personal income tax"
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.05,
+      "approvedInstitutionsOnly": true
+    },
+    "seguros": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "tcp": "Los Trabajadores por Cuenta Propia (TCP) deben registrarse en la ONAT",
+    "empresas_estatales": "Las empresas estatales tienen regímenes fiscales especiales",
+    "moneda_dual": "Cuba opera con un sistema de doble moneda (CUP y MLC)",
+    "sector_privado": "El sector privado está limitado principalmente a trabajadores por cuenta propia y pequeñas empresas",
+    "inversion_extranjera": "La inversión extranjera está sujeta a regulaciones especiales"
+  }
+}

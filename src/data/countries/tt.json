@@ -1,0 +1,211 @@
+{
+  "code": "TT",
+  "name": "Trinidad and Tobago",
+  "currency": "TTD",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_trader",
+      "name": "Sole Trader",
+      "registrationFee": 100,
+      "requiresVatRegistration": {
+        "threshold": 360000,
+        "currency": "TTD"
+      },
+      "taxRegime": "Individual Taxpayer",
+      "incomeTaxRate": 0.25,
+      "vatRate": 0.125,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "Board of Inland Revenue (BIR)"
+    },
+    {
+      "id": "private_company",
+      "name": "Private Limited Company (Ltd.)",
+      "registrationFee": 1000,
+      "minimumCapital": 100,
+      "requiresVatRegistration": {
+        "threshold": 360000,
+        "currency": "TTD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.125,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "Companies Registry & BIR"
+    },
+    {
+      "id": "public_company",
+      "name": "Public Limited Company (PLC)",
+      "registrationFee": 2500,
+      "minimumCapital": 1000000,
+      "requiresVatRegistration": {
+        "threshold": 360000,
+        "currency": "TTD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.125,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "Companies Registry & BIR"
+    },
+    {
+      "id": "branch_office",
+      "name": "Branch of Foreign Company",
+      "registrationFee": 5000,
+      "requiresVatRegistration": {
+        "threshold": 360000,
+        "currency": "TTD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.125,
+      "branchProfitsTax": 0.05,
+      "taxAgency": "Companies Registry & BIR"
+    },
+    {
+      "id": "free_zone_company",
+      "name": "Free Zone Company",
+      "registrationFee": 10000,
+      "minimumCapital": 100000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "TTD"
+      },
+      "taxRegime": "Free Zone Incentives",
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxHolidayYears": 10,
+      "taxAgency": "Free Zones Company of T&T"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 1000000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1000001,
+          "maxIncome": 1500000,
+          "rate": 0.25,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1500001,
+          "rate": 0.30,
+          "tax": 125000,
+          "type": "flat"
+        }
+      ]
+    },
+    {
+      "filingStatus": "married_joint",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 2000000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 2000001,
+          "maxIncome": 3000000,
+          "rate": 0.25,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 3000001,
+          "rate": 0.30,
+          "tax": 250000,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "nis": {
+      "employeeRate": 0.028,
+      "employerRate": 0.042,
+      "ceiling": 10000,
+      "minBase": 0
+    },
+    "health_surcharge": {
+      "employeeRate": 0.03,
+      "employerRate": 0.045,
+      "ceiling": 10000,
+      "minBase": 0
+    },
+    "training_levy": {
+      "employerRate": 0.02,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "severance_fund": {
+      "employerRate": 0.06,
+      "ceiling": 10000,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.125,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Exported goods", "Education services"]
+    },
+    "petroleum_profits": {
+      "rate": 0.50,
+      "appliesTo": "Petroleum companies"
+    },
+    "property_tax": {
+      "rate": 0.03,
+      "appliesTo": "Annual rental value of property"
+    },
+    "green_fund_levy": {
+      "rate": 0.03,
+      "appliesTo": "Businesses with turnover > $1M TTD"
+    },
+    "entertainment_tax": {
+      "rate": 0.15,
+      "appliesTo": "Entertainment services"
+    }
+  },
+  "deductions": {
+    "pension_contributions": {
+      "rate": 1.00,
+      "maxDeduction": 30000
+    },
+    "medical_expenses": {
+      "rate": 1.00,
+      "maxDeduction": 18000
+    },
+    "education": {
+      "rate": 1.00,
+      "maxDeduction": 24000
+    },
+    "mortgage_interest": {
+      "rate": 1.00,
+      "maxDeduction": 30000
+    },
+    "charitable_donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    }
+  },
+  "hints": {
+    "vat": "VAT registration is required for businesses with annual turnover > $360,000 TTD",
+    "free_zone": "Free zone companies enjoy 0% corporate tax for 10 years",
+    "tax_holidays": "Tax holidays available for specific industries and investments",
+    "double_taxation": "Double taxation treaties with several countries",
+    "audit_requirements": "Companies must file audited financial statements annually"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "Poland",
+  "flag": "🇵🇱",
+  "eu": true,
+  "vat": 23,
+  "taxIncome": {
+    "production": 19,
+    "trade": 19,
+    "services": 19,
+    "freelance": 19,
+    "ecommerce": 19
+  },
+  "taxBrackets": [
+    { "threshold": 120000, "rate": 12 },
+    { "threshold": 1000000, "rate": 32 }
+  ],
+  "socialSecurity": 450,
+  "notes": "Flat tax rate of 19% or progressive tax (12%/32%) for entrepreneurs. Lower 9% rate for small taxpayers (lump sum).",
+  "taxBreakdown": {
+    "income_tax": 0.6,
+    "social_security": 0.3,
+    "health_insurance": 0.1
+  },
+  "businessTypes": {
+    "sole_proprietorship": {
+      "name": "Działalność gospodarcza (JDG)",
+      "taxation": ["lump_sum", "tax_scale", "flat_rate", "tax_card"],
+      "simplified": true,
+      "social_security": true,
+      "health_insurance": true,
+      "vat_required": false,
+      "accounting_required": false
+    },
+    "limited_liability_company": {
+      "name": "Spółka z o.o.",
+      "taxation": ["corporate_income_tax", "lump_sum"],
+      "simplified": false,
+      "social_security": true,
+      "health_insurance": true,
+      "vat_required": true,
+      "accounting_required": true
+    }
+  },
+  "taxation_systems": {
+    "lump_sum": {
+      "name": "Ryczałt ewidencjonowany",
+      "description": "Simplified tax system with flat rates from 2% to 17% depending on business activity"
+    },
+    "tax_scale": {
+      "name": "Skala podatkowa",
+      "description": "Progressive tax scale (12% up to 120,000 PLN, 32% above)"
+    },
+    "flat_rate": {
+      "name": "Podatek liniowy",
+      "description": "Flat 19% tax rate"
+    },
+    "tax_card": {
+      "name": "Karta podatkowa",
+      "description": "Fixed monthly tax amount depending on business type and location"
+    },
+    "corporate_income_tax": {
+      "name": "CIT",
+      "description": "Corporate Income Tax at 9% (for small taxpayers) or 19% standard rate"
+    }
+  },
+  "social_security_contributions": {
+    "pension_contribution": 0.1952,
+    "disability_contribution": 0.08,
+    "sickness_contribution": 0.0245,
+    "accident_contribution": 0.0167,
+    "labor_fund_contribution": 0.0245,
+    "fgsp_contribution": 0.001
+  },
+  "health_insurance_contribution": 0.09,
+  "special_economic_zones": true,
+  "rd_tax_relief": true,
+  "ip_box_regime": true,
+  "tax_year": "calendar_year",
+  "accounting_standards": "Polish Accounting Standards",
+  "financial_statement_deadline": "15 days after the Annual General Meeting, but no later than 10 months after the end of the financial year",
+  "vat_returns_frequency": "monthly or quarterly",
+  "corporate_tax_advance_payments": "monthly or quarterly",
+  "transfer_pricing": {
+    "threshold": 2_000_000,
+    "documentation_required": true,
+    "local_file_required": true,
+    "master_file_required": true,
+    "country_by_country_reporting": true
+  },
+  "thin_capitalization_rules": true,
+  "cfc_rules": true,
+  "tax_treaties": "Extensive network of tax treaties",
+  "participation_exemption": true,
+  "loss_carryforward": 5,
+  "loss_carryback": 1,
+  "tax_incentives": [
+    "Polish Investment Zone",
+    "R&D tax relief",
+    "IP Box regime",
+    "Relief for robotization",
+    "Relief for prototype"
+  ]
+}

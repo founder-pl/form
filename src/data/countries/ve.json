@@ -1,0 +1,203 @@
+{
+  "code": "VE",
+  "name": "Venezuela",
+  "currency": "VED",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "persona_natural_con_actividad_comercial",
+      "name": "Persona Natural con Actividad Comercial",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 10000,
+        "currency": "VED"
+      },
+      "taxRegime": "Régimen Simplificado",
+      "incomeTaxRate": 0.02,
+      "vatRate": 0.16,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 1000000,
+      "taxAgency": "SENIAT (Servicio Nacional Integrado de Administración Aduanera y Tributaria)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 10000,
+      "minimumCapital": 10000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "VED"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.34,
+      "vatRate": 0.16,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "SENIAT"
+    },
+    {
+      "id": "sociedad_de_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S.R.L.)",
+      "registrationFee": 8000,
+      "minimumCapital": 5000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "VED"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.34,
+      "vatRate": 0.16,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "SENIAT"
+    },
+    {
+      "id": "empresa_de_propiedad_social_directa",
+      "name": "Empresa de Propiedad Social Directa (EPSD)",
+      "registrationFee": 5000,
+      "minimumCapital": 1000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "VED"
+      },
+      "taxRegime": "Régimen Especial",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.16,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "SUNACOOP"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 20000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "VED"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.34,
+      "vatRate": 0.16,
+      "branchProfitsTax": 0.00,
+      "taxAgency": "SENIAT"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 1000,
+          "rate": 0.06,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1001,
+          "maxIncome": 1500,
+          "rate": 0.09,
+          "tax": 60,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1501,
+          "maxIncome": 2000,
+          "rate": 0.12,
+          "tax": 105,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 2001,
+          "maxIncome": 2500,
+          "rate": 0.16,
+          "tax": 165,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 2501,
+          "rate": 0.20,
+          "tax": 245,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "ivss": {
+      "employeeRate": 0.04,
+      "employerRate": 0.11,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "faov": {
+      "employerRate": 0.02,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "paro_forzoso": {
+      "employeeRate": 0.005,
+      "employerRate": 0.02,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "ley_politica_habitacional": {
+      "employerRate": 0.015,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.16,
+      "reducedRate": 0.08,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "isrlr": {
+      "rate": 0.34,
+      "appliesTo": "Corporate income tax"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.30,
+      "tobacco": 0.50,
+      "vehicles": 0.20,
+      "bebidas_azucaradas": 0.10
+    },
+    "impuesto_turismo": {
+      "rate": 0.10,
+      "appliesTo": "Tourism services"
+    },
+    "impuesto_timbre_fiscal": {
+      "rate": 0.01,
+      "appliesTo": "Fiscal stamp duty"
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.05,
+      "approvedInstitutionsOnly": true
+    },
+    "vivienda": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "seguros": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "rif": "Registro de Información Fiscal is required for all businesses",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "control_cambio": "Foreign exchange controls and currency regulations apply",
+    "precios_acordados": "Some products have regulated prices",
+    "ley_ilicitos": "Strict regulations on illicit exchange transactions"
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "familyTypes": [
+    {
+      "id": "single",
+      "name": "Single",
+      "description": "Single person without dependents",
+      "defaultChildren": 0,
+      "defaultAdults": 1,
+      "factors": {
+        "housing": 1.0,
+        "groceries": 0.8,
+        "transportation": 0.7
+      }
+    },
+    {
+      "id": "couple",
+      "name": "Couple",
+      "description": "Two adults without children",
+      "defaultChildren": 0,
+      "defaultAdults": 2,
+      "factors": {
+        "housing": 1.5,
+        "groceries": 1.6,
+        "transportation": 1.3
+      }
+    },
+    {
+      "id": "family_small",
+      "name": "Small Family",
+      "description": "2 adults with 1-2 children",
+      "defaultChildren": 2,
+      "defaultAdults": 2,
+      "factors": {
+        "housing": 2.0,
+        "groceries": 2.5,
+        "transportation": 1.8
+      }
+    },
+    {
+      "id": "family_large",
+      "name": "Large Family",
+      "description": "2 adults with 3+ children",
+      "defaultChildren": 3,
+      "defaultAdults": 2,
+      "factors": {
+        "housing": 2.5,
+        "groceries": 3.5,
+        "transportation": 2.2
+      }
+    },
+    {
+      "id": "single_parent",
+      "name": "Single Parent",
+      "description": "1 adult with 1+ children",
+      "defaultChildren": 2,
+      "defaultAdults": 1,
+      "factors": {
+        "housing": 1.8,
+        "groceries": 2.0,
+        "transportation": 1.5
+      }
+    }
+  ],
+  "childAgeGroups": [
+    {
+      "id": "infant",
+      "name": "Infant (0-2)",
+      "costFactor": 0.8,
+      "educationCost": 0,
+      "childcareCost": 1.0
+    },
+    {
+      "id": "preschool",
+      "name": "Preschool (3-5)",
+      "costFactor": 1.0,
+      "educationCost": 0.5,
+      "childcareCost": 1.0
+    },
+    {
+      "id": "elementary",
+      "name": "Elementary (6-12)",
+      "costFactor": 1.2,
+      "educationCost": 0.8,
+      "childcareCost": 0.7
+    },
+    {
+      "id": "teen",
+      "name": "Teenager (13-18)",
+      "costFactor": 1.5,
+      "educationCost": 1.0,
+      "childcareCost": 0.3
+    },
+    {
+      "id": "student",
+      "name": "Student (19-26)",
+      "costFactor": 1.8,
+      "educationCost": 1.5,
+      "childcareCost": 0.1
+    }
+  ],
+  "lifestyleLevels": [
+    {
+      "id": "frugal",
+      "name": "Frugal",
+      "description": "Minimal expenses, budget-conscious living",
+      "multiplier": 0.7
+    },
+    {
+      "id": "moderate",
+      "name": "Moderate",
+      "description": "Comfortable but reasonable spending",
+      "multiplier": 1.0
+    },
+    {
+      "id": "comfortable",
+      "name": "Comfortable",
+      "description": "Good quality of life with some luxuries",
+      "multiplier": 1.5
+    },
+    {
+      "id": "affluent",
+      "name": "Affluent",
+      "description": "High standard of living with premium services",
+      "multiplier": 2.5
+    },
+    {
+      "id": "luxury",
+      "name": "Luxury",
+      "description": "Premium lifestyle with no expense spared",
+      "multiplier": 4.0
+    }
+  ],
+  "housingOptions": [
+    {
+      "id": "rent_shared",
+      "name": "Shared Apartment",
+      "description": "Renting a room in shared accommodation",
+      "factor": 0.5
+    },
+    {
+      "id": "rent_1bed",
+      "name": "1-Bedroom Apartment",
+      "description": "Small apartment in the city",
+      "factor": 1.0
+    },
+    {
+      "id": "rent_2bed",
+      "name": "2-Bedroom Apartment",
+      "description": "Medium-sized apartment suitable for small families",
+      "factor": 1.5
+    },
+    {
+      "id": "rent_3bed",
+      "name": "3-Bedroom Apartment/House",
+      "description": "Spacious living for families",
+      "factor": 2.0
+    },
+    {
+      "id": "buy_apartment",
+      "name": "Buy Apartment",
+      "description": "Monthly mortgage payment for an apartment",
+      "factor": 1.8
+    },
+    {
+      "id": "buy_house",
+      "name": "Buy House",
+      "description": "Monthly mortgage payment for a house",
+      "factor": 2.5
+    }
+  ],
+  "transportationOptions": [
+    {
+      "id": "public_transport",
+      "name": "Public Transport",
+      "description": "Buses, trams, metro",
+      "factor": 1.0
+    },
+    {
+      "id": "bike_walk",
+      "name": "Bike/Walking",
+      "description": "Eco-friendly transportation",
+      "factor": 0.5
+    },
+    {
+      "id": "economy_car",
+      "name": "Economy Car",
+      "description": "Small, fuel-efficient car",
+      "factor": 2.0
+    },
+    {
+      "id": "family_car",
+      "name": "Family Car",
+      "description": "Mid-size car for families",
+      "factor": 3.0
+    },
+    {
+      "id": "premium_car",
+      "name": "Premium Car",
+      "description": "Luxury or large vehicle",
+      "factor": 5.0
+    },
+    {
+      "id": "multiple_vehicles",
+      "name": "Multiple Vehicles",
+      "description": "Two or more vehicles",
+      "factor": 6.0
+    }
+  ]
+}

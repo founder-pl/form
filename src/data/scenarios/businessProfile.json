@@ -1,0 +1,27 @@
+{
+  "businessTypes": [
+    {
+      "id": "freelance",
+      "name": "Freelancer / Self-Employed",
+      "description": "Individual entrepreneur or sole trader",
+      "legalForms": [
+        {
+          "id": "sole_proprietor",
+          "name": "Sole Proprietor",
+          "countries": ["PL", "DE", "FR", "ES", "IT"],
+          "taxationOptions": ["lump_sum", "tax_scale", "flat_rate"],
+          "liability": "unlimited",
+          "capitalRequirements": 0,
+          "registrationComplexity": "low"
+        },
+        {
+          "id": "self_employed",
+          "name": "Self-Employed",
+          "countries": ["DE", "AT", "NL"],
+          "taxationOptions": ["tax_scale", "flat_rate"],
+          "liability": "unlimited",
+          "capitalRequirements": 0,
+          "registrationComplexity": "low"
+        }
+      ],
+      

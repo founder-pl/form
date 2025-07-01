@@ -1,0 +1,201 @@
+{
+  "code": "SV",
+  "name": "El Salvador",
+  "currency": "USD",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresario_individual",
+      "name": "Empresario Individual",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 15000,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen Simplificado",
+      "incomeTaxRate": 0.10,
+      "vatRate": 0.13,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 50000,
+      "taxAgency": "MH (Ministerio de Hacienda)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima de Capital Variable (S.A. de C.V.)",
+      "registrationFee": 500,
+      "minimumCapital": 2000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.13,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "MH"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S. de R.L. de C.V.)",
+      "registrationFee": 300,
+      "minimumCapital": 1000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.13,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "MH"
+    },
+    {
+      "id": "sociedad_anonima_simplificada",
+      "name": "Sociedad Anónima Simplificada (S.A.S.)",
+      "registrationFee": 200,
+      "minimumCapital": 500,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.13,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "MH"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 1000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.13,
+      "branchProfitsTax": 0.05,
+      "taxAgency": "MH"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 4720,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 4721,
+          "maxIncome": 11962.50,
+          "rate": 0.10,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 11962.51,
+          "maxIncome": 20339.34,
+          "rate": 0.20,
+          "tax": 724.25,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 20339.35,
+          "rate": 0.30,
+          "tax": 2399.41,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "isss": {
+      "employeeRate": 0.03,
+      "employerRate": 0.075,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "afp": {
+      "employeeRate": 0.0725,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "isna": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "insaforp": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "bono_navidad": {
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0,
+      "annualBonus": true
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.13,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "renta": {
+      "rate": 0.00,
+      "appliesTo": "Income tax"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.25,
+      "tobacco": 0.35,
+      "vehicles": 0.20,
+      "bebidas_azucaradas": 0.10
+    },
+    "impuesto_turismo": {
+      "rate": 0.05,
+      "appliesTo": "Tourism services"
+    },
+    "impuesto_especial": {
+      "rate": 0.00,
+      "appliesTo": "Special consumption tax"
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.05,
+      "approvedInstitutionsOnly": true
+    },
+    "vivienda": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "seguros": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "nit": "Número de Identificación Tributaria is required for all businesses",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_anual": "Annual tax return must be filed between January and April",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "regimen_simplificado": "Simplified regime available for small businesses with revenue under $50,000"
+  }
+}

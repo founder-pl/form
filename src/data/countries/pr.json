@@ -1,0 +1,240 @@
+{
+  "code": "PR",
+  "name": "Puerto Rico",
+  "currency": "USD",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresario_individual",
+      "name": "Empresario Individual (Sole Proprietor)",
+      "registrationFee": 250,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Individual Taxpayer",
+      "incomeTaxRate": 0.24,
+      "vatRate": 0.115,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "Departamento de Hacienda de Puerto Rico"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (Corporation)",
+      "registrationFee": 500,
+      "minimumCapital": 1000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.185,
+      "vatRate": 0.115,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "Departamento de Hacienda de Puerto Rico"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (LLC)",
+      "registrationFee": 250,
+      "minimumCapital": 500,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Pass-Through Entity",
+      "incomeTaxRate": 0.20,
+      "vatRate": 0.115,
+      "dividendWithholdingTax": 0.15,
+      "taxAgency": "Departamento de Hacienda de Puerto Rico"
+    },
+    {
+      "id": "sociedad_anonima_ley_60",
+      "name": "Sociedad Anónima Bajo la Ley 60",
+      "registrationFee": 2500,
+      "minimumCapital": 5000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Act 60 Tax Incentives",
+      "corporateTaxRate": 0.04,
+      "vatRate": 0.115,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "Departamento de Desarrollo Económico y Comercio (DDEC)"
+    },
+    {
+      "id": "empresa_extranjera",
+      "name": "Empresa Extranjera (Foreign Corporation)",
+      "registrationFee": 500,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.185,
+      "vatRate": 0.115,
+      "branchProfitsTax": 0.10,
+      "taxAgency": "Departamento de Hacienda de Puerto Rico"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 9000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 9001,
+          "maxIncome": 25000,
+          "rate": 0.07,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 25001,
+          "maxIncome": 41000,
+          "rate": 0.14,
+          "tax": 1120,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 41001,
+          "maxIncome": 61000,
+          "rate": 0.25,
+          "tax": 3360,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 61001,
+          "rate": 0.33,
+          "tax": 8360,
+          "type": "flat"
+        }
+      ]
+    },
+    {
+      "filingStatus": "married_joint",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 18000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 18001,
+          "maxIncome": 50000,
+          "rate": 0.07,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 50001,
+          "maxIncome": 82000,
+          "rate": 0.14,
+          "tax": 2240,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 82001,
+          "maxIncome": 122000,
+          "rate": 0.25,
+          "tax": 6720,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 122001,
+          "rate": 0.33,
+          "tax": 16720,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "seguro_social": {
+      "employeeRate": 0.062,
+      "employerRate": 0.062,
+      "ceiling": 147000,
+      "minBase": 0
+    },
+    "medicare": {
+      "employeeRate": 0.0145,
+      "employerRate": 0.0145,
+      "additionalRate": 0.009,
+      "additionalThreshold": 200000,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "suta": {
+      "employerRate": 0.027,
+      "ceiling": 7000,
+      "minBase": 0
+    },
+    "seguro_estatal": {
+      "employeeRate": 0.006,
+      "ceiling": 7000,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "ivl": {
+      "standardRate": 0.115,
+      "reducedRate": 0.07,
+      "exemptItems": ["Basic food items", "Prescription drugs", "Educational services"]
+    },
+    "patente_nacional": {
+      "rate": 0.20,
+      "appliesTo": "Corporate income over $900,000"
+    },
+    "contribucion_adicional": {
+      "rate": 0.05,
+      "appliesTo": "Additional municipal tax"
+    },
+    "impuesto_propiedad": {
+      "rate": 0.008,
+      "appliesTo": "Property tax"
+    },
+    "impuesto_vehiculos": {
+      "rate": 0.04,
+      "appliesTo": "Vehicle excise tax"
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 2500
+    },
+    "intereses_hipotecarios": {
+      "rate": 1.00,
+      "maxDeduction": 25000
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.50,
+      "approvedInstitutionsOnly": true
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 4000
+    },
+    "retiro": {
+      "rate": 1.00,
+      "maxDeduction": 6500
+    }
+  },
+  "hints": {
+    "act_60": "Act 60 offers significant tax incentives for eligible businesses",
+    "ivl": "IVL (Impuesto sobre Ventas y Uso) is similar to sales tax",
+    "retiro": "Retirement plans have special tax treatment",
+    "incentivos": "Various tax credits available for job creation and investment",
+    "contabilidad": "Accrual accounting required for businesses with gross receipts >$3M"
+  }
+}

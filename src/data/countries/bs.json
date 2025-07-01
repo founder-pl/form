@@ -1,0 +1,184 @@
+{
+  "code": "BS",
+  "name": "Bahamas",
+  "currency": "BSD",
+  "taxYearStart": "07-01",
+  "taxYearEnd": "06-30",
+  "businessTypes": [
+    {
+      "id": "sole_proprietor",
+      "name": "Sole Proprietor",
+      "registrationFee": 100,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "BSD"
+      },
+      "taxRegime": "Individual Taxpayer",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.12,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "Department of Inland Revenue"
+    },
+    {
+      "id": "local_company",
+      "name": "Local Company (Ltd.)",
+      "registrationFee": 350,
+      "minimumCapital": 500,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "BSD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.12,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "Companies Registry & Inland Revenue"
+    },
+    {
+      "id": "ibc",
+      "name": "International Business Company (IBC)",
+      "registrationFee": 1000,
+      "minimumCapital": 50000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "BSD"
+      },
+      "taxRegime": "IBC Regime",
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "Bahamas Financial Services Board"
+    },
+    {
+      "id": "exempt_company",
+      "name": "Exempted Company",
+      "registrationFee": 2000,
+      "minimumCapital": 100000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "BSD"
+      },
+      "taxRegime": "Tax Exempt",
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "Bahamas Financial Services Board"
+    },
+    {
+      "id": "branch_office",
+      "name": "Branch of Foreign Company",
+      "registrationFee": 5000,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "BSD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.12,
+      "branchProfitsTax": 0.00,
+      "taxAgency": "Companies Registry & Inland Revenue"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "rate": 0.00,
+          "type": "flat"
+        }
+      ]
+    },
+    {
+      "filingStatus": "married_joint",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "rate": 0.00,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "nib": {
+      "employeeRate": 0.039,
+      "employerRate": 0.058,
+      "ceiling": 10400,
+      "minBase": 0
+    },
+    "national_insurance": {
+      "employeeRate": 0.00,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "training_levy": {
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "severance_fund": {
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.12,
+      "reducedRate": 0.00,
+      "exemptItems": ["Financial services", "Education", "Healthcare"]
+    },
+    "stamp_duty": {
+      "rate": 0.025,
+      "appliesTo": "Property transactions"
+    },
+    "property_tax": {
+      "rate": 0.01,
+      "appliesTo": "Owner-occupied property value"
+    },
+    "departure_tax": {
+      "rate": 29,
+      "appliesTo": "Per departing passenger"
+    },
+    "hotel_tax": {
+      "rate": 0.10,
+      "appliesTo": "Room rates"
+    }
+  },
+  "deductions": {
+    "nib_contributions": {
+      "rate": 1.00,
+      "maxDeduction": 0.039
+    },
+    "pension_contributions": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "education": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "medical_expenses": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    },
+    "charitable_donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    }
+  },
+  "hints": {
+    "no_income_tax": "No personal or corporate income tax in the Bahamas",
+    "vat": "VAT registration is required for businesses with annual turnover > $100,000 BSD",
+    "ibc": "IBCs are tax-exempt but cannot do business with Bahamian residents",
+    "work_permits": "Work permits required for non-Bahamians",
+    "exchange_control": "No exchange controls on foreign currency transactions"
+  }
+}

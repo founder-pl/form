@@ -1,0 +1,205 @@
+{
+  "code": "BB",
+  "name": "Barbados",
+  "currency": "BBD",
+  "taxYearStart": "04-01",
+  "taxYearEnd": "03-31",
+  "businessTypes": [
+    {
+      "id": "sole_trader",
+      "name": "Sole Trader",
+      "registrationFee": 300,
+      "requiresVatRegistration": {
+        "threshold": 200000,
+        "currency": "BBD"
+      },
+      "taxRegime": "Individual Taxpayer",
+      "incomeTaxRate": 0.285,
+      "vatRate": 0.175,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "Barbados Revenue Authority (BRA)"
+    },
+    {
+      "id": "local_company",
+      "name": "Local Company",
+      "registrationFee": 1000,
+      "minimumCapital": 2000,
+      "requiresVatRegistration": {
+        "threshold": 200000,
+        "currency": "BBD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.05,
+      "vatRate": 0.175,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "Corporate Affairs & BRA"
+    },
+    {
+      "id": "ibc",
+      "name": "International Business Company (IBC)",
+      "registrationFee": 2500,
+      "minimumCapital": 5000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "BBD"
+      },
+      "taxRegime": "IBC Regime",
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "International Business Division"
+    },
+    {
+      "id": "societal_enterprise",
+      "name": "Societal Enterprise",
+      "registrationFee": 500,
+      "minimumCapital": 1000,
+      "requiresVatRegistration": {
+        "threshold": 200000,
+        "currency": "BBD"
+      },
+      "taxRegime": "Special Tax Regime",
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "Ministry of Small Business"
+    },
+    {
+      "id": "branch_office",
+      "name": "Branch of Foreign Company",
+      "registrationFee": 5000,
+      "requiresVatRegistration": {
+        "threshold": 200000,
+        "currency": "BBD"
+      },
+      "taxRegime": "Corporate Tax Regime",
+      "corporateTaxRate": 0.05,
+      "vatRate": 0.175,
+      "branchProfitsTax": 0.00,
+      "taxAgency": "Corporate Affairs & BRA"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 50000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 50001,
+          "rate": 0.125,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 0,
+          "rate": 0.16,
+          "type": "additional_surtax"
+        }
+      ]
+    },
+    {
+      "filingStatus": "married_joint",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 100000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 100001,
+          "rate": 0.125,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 0,
+          "rate": 0.16,
+          "type": "additional_surtax"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "nis": {
+      "employeeRate": 0.105,
+      "employerRate": 0.095,
+      "ceiling": 4980,
+      "minBase": 0
+    },
+    "nisf": {
+      "employerRate": 0.05,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "training_levy": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "severance_fund": {
+      "employerRate": 0.025,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.175,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Exported goods", "Financial services"]
+    },
+    "nhil": {
+      "rate": 0.02,
+      "appliesTo": "National Health Insurance Levy"
+    },
+    "property_tax": {
+      "rate": 0.0075,
+      "appliesTo": "Annual rental value"
+    },
+    "airline_travel": {
+      "rate": 0.15,
+      "appliesTo": "Airline ticket sales"
+    },
+    "room_tax": {
+      "rate": 0.10,
+      "appliesTo": "Accommodation services"
+    }
+  },
+  "deductions": {
+    "nis_contributions": {
+      "rate": 1.00,
+      "maxDeduction": 0.105
+    },
+    "medical_expenses": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    },
+    "education": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "pension": {
+      "rate": 1.00,
+      "maxDeduction": 0.20
+    },
+    "charitable_donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    }
+  },
+  "hints": {
+    "vat": "VAT registration is required for businesses with annual turnover > $200,000 BBD",
+    "ibc": "IBCs enjoy 0% corporate tax but have restrictions on local business",
+    "tax_treaties": "Barbados has an extensive network of double taxation treaties",
+    "work_permits": "Work permits required for non-national employees",
+    "exchange_control": "Exchange controls apply to local currency transactions"
+  }
+}
