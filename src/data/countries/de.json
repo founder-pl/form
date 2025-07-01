@@ -1,0 +1,69 @@
+{
+  "code": "DE",
+  "name": "Germany",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "freelancer",
+      "name": "Freelancer (Freiberufler)",
+      "registrationFee": 0,
+      "annualFees": 0,
+      "requiresVatRegistration": {
+        "threshold": 22000,
+        "currency": "EUR"
+      }
+    },
+    {
+      "id": "gmbh",
+      "name": "GmbH (Limited Liability Company)",
+      "registrationFee": 1000,
+      "annualFees": 200,
+      "requiresVatRegistration": true
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 9744,
+      "rate": 0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 9745,
+      "maxIncome": 57918,
+      "rate": 14,
+      "incrementalRate": 0.14,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 57919,
+      "rate": 42,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "pension": 0.186,
+    "health": 0.146,
+    "unemployment": 0.024,
+    "nursingCare": 0.0305,
+    "maxContributionBase": 73000
+  },
+  "deductions": {
+    "standard": 1000,
+    "healthInsurance": {
+      "maxDeductible": 1900,
+      "percentage": 1.0
+    },
+    "pension": {
+      "maxDeductible": 10000,
+      "percentage": 0.88
+    }
+  },
+  "hints": {
+    "freelancer": "Freelancers in Germany are exempt from trade tax",
+    "vat": "VAT registration is required if annual turnover exceeds €22,000",
+    "healthInsurance": "Health insurance is mandatory for all residents"
+  }
+}

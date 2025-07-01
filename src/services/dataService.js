@@ -2,32 +2,56 @@
 let countriesData = {};
 let benefitConfig = {};
 
+// Cache for loaded country data
+const countryDataCache = new Map();
+
 // Constants
 const DAYS_IN_YEAR = 365;
 
 /**
- * Loads country data from JSON file
- * @returns {Promise<void>}
+ * Loads a specific country's data
+ * @param {string} countryCode - ISO 3166-1 alpha-2 country code (e.g., 'DE', 'FR')
+ * @returns {Promise<Object>} Country data
  */
-export async function loadCountryData() {
-    try {
-        const response = await fetch('../data/countries.json');
-        if (!response.ok) {
-            throw new Error('Failed to load country data');
-        }
-        countriesData = await response.json();
-        
-        // Load benefit configuration
-        const benefitResponse = await fetch('../data/benefits.json');
-        if (benefitResponse.ok) {
-            benefitConfig = await benefitResponse.json();
-        }
-        
-        return Promise.resolve();
-    } catch (error) {
-        console.error('Error loading country data:', error);
-        return Promise.reject(error);
+export async function loadCountryData(countryCode) {
+    // Check cache first
+    if (countryDataCache.has(countryCode)) {
+        return countryDataCache.get(countryCode);
     }
+
+    try {
+        // Try to load the country data file
+        const response = await fetch(`/src/data/countries/${countryCode.toLowerCase()}.json`);
+        
+        if (!response.ok) {
+            throw new Error(`Failed to load data for country: ${countryCode}`);
+        }
+        
+        const countryData = await response.json();
+        
+        // Cache the loaded data
+        countryDataCache.set(countryCode, countryData);
+        
+        return countryData;
+    } catch (error) {
+        console.error(`Error loading data for country ${countryCode}:`, error);
+        throw error;
+    }
+}
+
+/**
+ * Gets country data, loading it if necessary
+ * @param {string} countryCode - ISO country code
+ * @returns {Promise<Object>} Country data
+ */
+export async function getCountryData(countryCode) {
+    // If already in cache, return it
+    if (countryDataCache.has(countryCode)) {
+        return countryDataCache.get(countryCode);
+    }
+    
+    // Otherwise load it
+    return loadCountryData(countryCode);
 }
 
 /**

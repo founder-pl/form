@@ -1,0 +1,78 @@
+{
+  "code": "FR",
+  "name": "France",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "autoentrepreneur",
+      "name": "Auto-entrepreneur",
+      "registrationFee": 0,
+      "annualFees": 0,
+      "requiresVatRegistration": {
+        "threshold": 36800,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.22,
+      "simplifiedTaxation": true
+    },
+    {
+      "id": "sas",
+      "name": "SAS (Simplified Joint-Stock Company)",
+      "registrationFee": 200,
+      "annualFees": 500,
+      "requiresVatRegistration": true,
+      "socialSecurityRate": 0.45,
+      "corporateTaxRate": 0.25
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 10777,
+      "rate": 0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 10778,
+      "maxIncome": 27478,
+      "rate": 11,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 27479,
+      "maxIncome": 78570,
+      "rate": 30,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 78571,
+      "rate": 45,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "health": 0.13,
+    "pension": 0.17,
+    "familyBenefits": 0.051,
+    "unemployment": 0.04,
+    "maxContributionBase": 205592
+  },
+  "deductions": {
+    "standard": 0.1,
+    "professionalExpenses": {
+      "maxDeductible": 12899,
+      "percentage": 0.5
+    },
+    "homeOffice": {
+      "dailyRate": 10,
+      "maxDays": 250
+    }
+  },
+  "hints": {
+    "autoentrepreneur": "Auto-entrepreneur status has simplified tax and social security declarations",
+    "vat": "VAT registration is required if annual turnover exceeds €36,800 for services",
+    "healthInsurance": "Health insurance is mandatory for all residents through the French social security system"
+  }
+}
