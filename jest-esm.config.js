@@ -10,8 +10,13 @@ export default {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   
   // Handle ES modules
-  preset: 'ts-jest/presets/default-esm',
-  extensionsToTreatAsEsm: ['.js'],
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
+  },
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',
   },

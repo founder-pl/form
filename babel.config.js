@@ -12,10 +12,8 @@ export default function (api) {
     [
       '@babel/preset-env',
       {
-        targets: {
-          node: 'current',
-        },
-        modules: 'auto',
+        targets: isTest ? { node: 'current' } : '> 0.25%, not dead',
+        modules: isTest ? 'commonjs' : 'auto',
         useBuiltIns: 'usage',
         corejs: 3,
       },
@@ -23,41 +21,21 @@ export default function (api) {
   ];
 
   const plugins = [
-    '@babel/plugin-transform-runtime',
-    ['@babel/plugin-transform-modules-commonjs', { loose: true }],
+    [
+      '@babel/plugin-transform-runtime',
+      {
+        useESModules: !isTest,
+        version: '^7.22.5',
+      },
+    ],
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-optional-chaining',
     '@babel/plugin-proposal-nullish-coalescing-operator',
   ];
 
-  const env = {
-    test: {
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            targets: {
-              node: 'current',
-            },
-            modules: 'commonjs',
-            useBuiltIns: 'usage',
-            corejs: 3,
-          },
-        ],
-      ],
-      plugins: [
-        [
-          '@babel/plugin-transform-runtime',
-          {
-            useESModules: false,
-            version: '^7.22.5',
-          },
-        ],
-      ],
-    },
-  };
-  if (isTest) {
-    plugins.push('@babel/plugin-transform-modules-commonjs');
+  // Only add commonjs transform if not in test environment
+  if (!isTest) {
+    plugins.push(['@babel/plugin-transform-modules-commonjs', { loose: true }]);
   }
 
   return {
