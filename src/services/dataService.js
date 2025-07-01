@@ -6,7 +6,7 @@ let benefitConfig = {};
 const countryDataCache = new Map();
 
 // Supported country codes
-const SUPPORTED_COUNTRIES = ['DE', 'FR', 'ES', 'IT', 'NL', 'PT', 'BE', 'AT', 'SE', 'DK', 'FI', 'IE', 'LU', 'CH'];
+const SUPPORTED_COUNTRIES = ['DE', 'FR', 'ES', 'IT', 'NL', 'PT', 'BE', 'AT', 'SE', 'DK', 'FI', 'IE', 'LU', 'CH', 'NO', 'IS', 'US', 'CA'];
 
 // Constants
 const DAYS_IN_YEAR = 365;
@@ -341,8 +341,6 @@ export function calculateFamilyBenefits(countryCode, familyData) {
  * @param {boolean} isCitizen - Whether the person is a citizen of the country
  * @returns {Object} Tax calculation result
  */
-
-}
 
 /**
  * Validates days spent in different countries
