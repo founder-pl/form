@@ -11,8 +11,13 @@ export default {
   // Module handling
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
-    '^(\.{1,2}/.*)\.js$': '$1',
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+    '^(\.{1,2}/.*)\\.js$': '$1',
+    '^(\.{1,2}/.*)\\.mjs$': '$1',
+    '^(\.{1,2}/.*)\\.cjs$': '$1',
   },
+  moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'json', 'node'],
+  extensionsToTreatAsEsm: ['.js', '.mjs'],
   
   // Transform configuration
   transform: {
