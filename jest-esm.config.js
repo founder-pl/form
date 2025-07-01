@@ -2,29 +2,29 @@
 // This configuration is specifically for running tests with ES modules
 
 export default {
-  // Test environment
+  // Use Node environment
   testEnvironment: 'node',
   
   // Setup files
-  setupFiles: ['<rootDir>/jest.setup.js'],
+  setupFiles: ['<rootDir>/src/__tests__/global-setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   
-  // Module handling
+  // Handle ES modules
+  preset: 'ts-jest/presets/default-esm',
+  extensionsToTreatAsEsm: ['.js'],
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',
   },
-  
-  // Transform configuration
   transform: {
-    '^.+\\.m?js$': ['babel-jest'],
+    '^.+\\.m?js$': 'babel-jest',
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!(bootstrap|bootstrap-icons|chalk|cli-table3|figlet)/)',
+    'node_modules/(?!(chalk|figlet|commander|cli-table3)/)',
   ],
-  
-  // Test configuration
-  testMatch: ['**/src/__tests__/**/*.test.js'],
-  testEnvironmentOptions: {
-    url: 'http://localhost',
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
   },
   
   // Coverage settings (temporarily disabled)

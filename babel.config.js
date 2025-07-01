@@ -12,26 +12,50 @@ export default function (api) {
     [
       '@babel/preset-env',
       {
-        targets: isTest ? { node: 'current' } : 'defaults',
-        modules: isTest ? 'commonjs' : 'auto',
+        targets: {
+          node: 'current',
+        },
+        modules: 'auto',
         useBuiltIns: 'usage',
         corejs: 3,
-        debug: false,
       },
     ],
   ];
 
   const plugins = [
-    ['@babel/plugin-transform-runtime', {
-      regenerator: true,
-      corejs: 3,
-    }],
+    '@babel/plugin-transform-runtime',
+    ['@babel/plugin-transform-modules-commonjs', { loose: true }],
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-optional-chaining',
     '@babel/plugin-proposal-nullish-coalescing-operator',
   ];
 
-  // Add test-specific plugins
+  const env = {
+    test: {
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: {
+              node: 'current',
+            },
+            modules: 'commonjs',
+            useBuiltIns: 'usage',
+            corejs: 3,
+          },
+        ],
+      ],
+      plugins: [
+        [
+          '@babel/plugin-transform-runtime',
+          {
+            useESModules: false,
+            version: '^7.22.5',
+          },
+        ],
+      ],
+    },
+  };
   if (isTest) {
     plugins.push('@babel/plugin-transform-modules-commonjs');
   }

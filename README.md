@@ -47,7 +47,7 @@ form/
 2. **Installation**
    ```bash
    # Clone the repository
-   git clone https://github.com/yourusername/form.git
+   git clone https://github.com/founder-pl/form.git
    cd form
    
    # Install dependencies (if any)

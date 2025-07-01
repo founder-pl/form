@@ -1,0 +1,284 @@
+{
+  "AT": {
+    "name": "Austria",
+    "flag": "🇦🇹",
+    "eu": true,
+    "vat": 20,
+    "taxIncome": {
+      "production": 25,
+      "trade": 25,
+      "services": 25,
+      "freelance": 25,
+      "ecommerce": 25
+    },
+    "socialSecurity": 500,
+    "notes": "Flat tax rate of 25% for entrepreneurs"
+  },
+  "BE": {
+    "name": "Belgium",
+    "flag": "🇧🇪",
+    "eu": true,
+    "vat": 21,
+    "taxIncome": {
+      "production": 25,
+      "trade": 25,
+      "services": 25,
+      "freelance": 25,
+      "ecommerce": 25
+    },
+    "taxBrackets": [
+      { "threshold": 13870, "rate": 25 },
+      { "threshold": 24480, "rate": 40 },
+      { "threshold": 42370, "rate": 45 },
+      { "threshold": 1000000, "rate": 50 }
+    ],
+    "socialSecurity": 600,
+    "notes": "Progressive tax system"
+  },
+  "BG": {
+    "name": "Bulgaria",
+    "flag": "🇧🇬",
+    "eu": true,
+    "vat": 20,
+    "taxIncome": {
+      "production": 10,
+      "trade": 10,
+      "services": 10,
+      "freelance": 10,
+      "ecommerce": 10
+    },
+    "socialSecurity": 200,
+    "notes": "Low flat tax rate of 10%"
+  },
+  "HR": {
+    "name": "Croatia",
+    "flag": "🇭🇷",
+    "eu": true,
+    "vat": 25,
+    "taxIncome": {
+      "production": 20,
+      "trade": 20,
+      "services": 20,
+      "freelance": 20,
+      "ecommerce": 20
+    },
+    "taxBrackets": [
+      { "threshold": 36000, "rate": 20 },
+      { "threshold": 144000, "rate": 30 },
+      { "threshold": 1000000, "rate": 40 }
+    ],
+    "socialSecurity": 300,
+    "notes": "Progressive tax system since 2022"
+  },
+  "CY": {
+    "name": "Cyprus",
+    "flag": "🇨🇾",
+    "eu": true,
+    "vat": 19,
+    "taxIncome": {
+      "production": 12.5,
+      "trade": 12.5,
+      "services": 12.5,
+      "freelance": 12.5,
+      "ecommerce": 12.5
+    },
+    "socialSecurity": 400,
+    "notes": "Low flat tax rate of 12.5%"
+  },
+  "CZ": {
+    "name": "Czech Republic",
+    "flag": "🇨🇿",
+    "eu": true,
+    "vat": 21,
+    "taxIncome": {
+      "production": 15,
+      "trade": 15,
+      "services": 15,
+      "freelance": 15,
+      "ecommerce": 15
+    },
+    "taxBrackets": [
+      { "threshold": 0, "rate": 15 },
+      { "threshold": 48, "rate": 23 }
+    ],
+    "socialSecurity": 450,
+    "notes": "15% flat tax with progression from 48 average salaries"
+  },
+  "DK": {
+    "name": "Denmark",
+    "flag": "🇩🇰",
+    "eu": true,
+    "vat": 25,
+    "taxIncome": {
+      "production": 22,
+      "trade": 22,
+      "services": 22,
+      "freelance": 22,
+      "ecommerce": 22
+    },
+    "taxBrackets": [
+      { "threshold": 56800, "rate": 12.1 },
+      { "threshold": 56800, "rate": 15 },
+      { "threshold": 0, "rate": 22 }
+    ],
+    "socialSecurity": 800,
+    "notes": "High taxes but extensive welfare system"
+  },
+  "EE": {
+    "name": "Estonia",
+    "flag": "🇪🇪",
+    "eu": true,
+    "vat": 20,
+    "taxIncome": {
+      "production": 20,
+      "trade": 20,
+      "services": 20,
+      "freelance": 20,
+      "ecommerce": 20
+    },
+    "socialSecurity": 350,
+    "notes": "Deferred tax system (tax paid on dividend distribution)"
+  },
+  "FI": {
+    "name": "Finland",
+    "flag": "🇫🇮",
+    "eu": true,
+    "vat": 24,
+    "taxIncome": {
+      "production": 20,
+      "trade": 20,
+      "services": 20,
+      "freelance": 20,
+      "ecommerce": 20
+    },
+    "taxBrackets": [
+      { "threshold": 18800, "rate": 0 },
+      { "threshold": 28100, "rate": 6 },
+      { "threshold": 46300, "rate": 17.25 },
+      { "threshold": 81000, "rate": 21.25 },
+      { "threshold": 1000000, "rate": 31.25 }
+    ],
+    "socialSecurity": 700,
+    "notes": "Progressive tax system with high rates"
+  },
+  "FR": {
+    "name": "France",
+    "flag": "🇫🇷",
+    "eu": true,
+    "vat": 20,
+    "taxIncome": {
+      "production": 25,
+      "trade": 25,
+      "services": 25,
+      "freelance": 25,
+      "ecommerce": 25
+    },
+    "taxBrackets": [
+      { "threshold": 10084, "rate": 0 },
+      { "threshold": 25710, "rate": 11 },
+      { "threshold": 73516, "rate": 30 },
+      { "threshold": 158122, "rate": 41 },
+      { "threshold": 1000000, "rate": 45 }
+    ],
+    "socialSecurity": 900,
+    "notes": "High taxes and social security contributions"
+  },
+  "DE": {
+    "name": "Germany",
+    "flag": "🇩🇪",
+    "eu": true,
+    "vat": 19,
+    "taxIncome": {
+      "production": 30,
+      "trade": 30,
+      "services": 30,
+      "freelance": 30,
+      "ecommerce": 30
+    },
+    "taxBrackets": [
+      { "threshold": 9744, "rate": 0 },
+      { "threshold": 14753, "rate": 14 },
+      { "threshold": 57918, "rate": 42 },
+      { "threshold": 274612, "rate": 45 }
+    ],
+    "socialSecurity": 950,
+    "notes": "High taxes and contributions but extensive benefits"
+  },
+  "GR": {
+    "name": "Greece",
+    "flag": "🇬🇷",
+    "eu": true,
+    "vat": 24,
+    "taxIncome": {
+      "production": 22,
+      "trade": 22,
+      "services": 22,
+      "freelance": 22,
+      "ecommerce": 22
+    },
+    "taxBrackets": [
+      { "threshold": 10000, "rate": 9 },
+      { "threshold": 20000, "rate": 22 },
+      { "threshold": 30000, "rate": 28 },
+      { "threshold": 40000, "rate": 36 },
+      { "threshold": 1000000, "rate": 44 }
+    ],
+    "socialSecurity": 550,
+    "notes": "Progressive tax system"
+  },
+  "HU": {
+    "name": "Hungary",
+    "flag": "🇭🇺",
+    "eu": true,
+    "vat": 27,
+    "taxIncome": {
+      "production": 9,
+      "trade": 9,
+      "services": 9,
+      "freelance": 9,
+      "ecommerce": 9
+    },
+    "socialSecurity": 250,
+    "notes": "Lowest flat tax rate in the EU - 9%"
+  },
+  "IE": {
+    "name": "Ireland",
+    "flag": "🇮🇪",
+    "eu": true,
+    "vat": 23,
+    "taxIncome": {
+      "production": 12.5,
+      "trade": 12.5,
+      "services": 25,
+      "freelance": 25,
+      "ecommerce": 12.5
+    },
+    "taxBrackets": [
+      { "threshold": 36800, "rate": 20 },
+      { "threshold": 1000000, "rate": 40 }
+    ],
+    "socialSecurity": 500,
+    "notes": "Low tax for manufacturing and trade (12.5%)"
+  },
+  "IT": {
+    "name": "Italy",
+    "flag": "🇮🇹",
+    "eu": true,
+    "vat": 22,
+    "taxIncome": {
+      "production": 24,
+      "trade": 24,
+      "services": 24,
+      "freelance": 24,
+      "ecommerce": 24
+    },
+    "taxBrackets": [
+      { "threshold": 15000, "rate": 23 },
+      { "threshold": 28000, "rate": 25 },
+      { "threshold": 50000, "rate": 35 },
+      { "threshold": 1000000, "rate": 43 }
+    ],
+    "socialSecurity": 750,
+    "notes": "Tax benefits for new residents (regime impatriati)"
+  }
+}

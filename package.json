@@ -16,6 +16,7 @@
     "test:node": "NODE_OPTIONS=--experimental-vm-modules jest --env=node -c jest-esm.config.js",
     "start:api": "node src/api/server.js",
     "start:dev": "nodemon src/api/server.js",
+    "dev": "npm run start:dev",
     "cli": "node src/cli/tax-cli.js"
   },
   "dependencies": {

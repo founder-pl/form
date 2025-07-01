@@ -144,7 +144,7 @@ npm run cli calculate -i 50000 -c US -y 2023 --type services --citizen
 - `-y, --year <number>`: Tax year (default: current year)
 - `-t, --type <type>`: Business type (default: "services")
 - `--citizen`: If the person is a citizen of the country
-- `-s, --server <url>`: API server URL (default: "http://localhost:3000")
+- `-s, --server <url>`: API server URL (default: "http://localhost:3005")
 
 ### List Countries
 List all supported countries.
@@ -223,8 +223,8 @@ Create a `.env` file in the root directory with the following variables:
 
 ```env
 NODE_ENV=development
-PORT=3000
-API_BASE_URL=http://localhost:3000
+PORT=3005
+API_BASE_URL=http://localhost:3005
 ```
 
 ## License
