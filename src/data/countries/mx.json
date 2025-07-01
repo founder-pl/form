@@ -1,0 +1,212 @@
+{
+  "code": "MX",
+  "name": "Mexico",
+  "currency": "MXN",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "persona_fisica",
+      "name": "Persona Física con Actividad Empresarial",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 3000000,
+        "currency": "MXN"
+      },
+      "taxRegime": "RIF/Resico",
+      "incomeTaxRate": 0.0125,
+      "vatRate": 0.08,
+      "passThroughTaxation": true,
+      "taxAgency": "SAT"
+    },
+    {
+      "id": "resico",
+      "name": "Régimen Simplificado de Confianza (RESICO)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 3000000,
+        "currency": "MXN"
+      },
+      "taxRegime": "RESICO",
+      "incomeTaxRate": 0.0125,
+      "vatRate": 0.08,
+      "annualRevenueLimit": 35000000,
+      "taxAgency": "SAT"
+    },
+    {
+      "id": "sa_de_cv",
+      "name": "Sociedad Anónima de Capital Variable (S.A. de C.V.)",
+      "registrationFee": 25000,
+      "minimumCapital": 50000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "MXN"
+      },
+      "taxRegime": "General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.16,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "SAT & SHCP"
+    },
+    {
+      "id": "s_de_rl",
+      "name": "Sociedad de Responsabilidad Limitada (S. de R.L.)",
+      "registrationFee": 20000,
+      "minimumCapital": 3000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "MXN"
+      },
+      "taxRegime": "General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.16,
+      "taxAgency": "SAT & SHCP"
+    },
+    {
+      "id": "sapi",
+      "name": "Sociedad Anónima Promotora de Inversión (SAPI)",
+      "registrationFee": 30000,
+      "minimumCapital": 5000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "MXN"
+      },
+      "taxRegime": "General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.16,
+      "taxIncentives": true,
+      "taxAgency": "SAT & SHCP"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0.01,
+          "maxIncome": 8835.81,
+          "rate": 0.0192,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 8835.82,
+          "maxIncome": 75029.90,
+          "rate": 0.0640,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 75029.91,
+          "maxIncome": 133347.03,
+          "rate": 0.1088,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 133347.04,
+          "maxIncome": 155229.80,
+          "rate": 0.16,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 155229.81,
+          "maxIncome": 185852.57,
+          "rate": 0.1792,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 185852.58,
+          "maxIncome": 374837.88,
+          "rate": 0.2136,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 374837.89,
+          "maxIncome": 1159929.32,
+          "rate": 0.2380,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1159929.33,
+          "maxIncome": 3119390.18,
+          "rate": 0.30,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 3119390.19,
+          "rate": 0.35,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "imss": {
+      "employeeRate": 0.0175,
+      "employerRate": 0.2040,
+      "ceiling": 25075.49,
+      "minBase": 172.87,
+      "maxBase": 25075.49
+    },
+    "infonavit": {
+      "employerContribution": 0.05,
+      "ceiling": 25075.49
+    },
+    "afores": {
+      "employeeContribution": 0.0625,
+      "employerContribution": 0.0511,
+      "ceiling": 25075.49
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.16,
+      "borderRate": 0.08,
+      "zeroRate": 0.00,
+      "exemptItems": ["Food", "Books", "Medicines"]
+    },
+    "isr": {
+      "corporateRate": 0.30,
+      "dividendRate": 0.10,
+      "interestRate": 0.20,
+      "royaltiesRate": 0.25
+    },
+    "ieps": {
+      "appliesTo": ["Alcohol", "Tobacco", "Gasoline", "Junk Food"],
+      "rates": [0.053, 0.16, 0.30, 0.53]
+    },
+    "isn": {
+      "rate": 0.03,
+      "appliesTo": "Payroll",
+      "stateTax": true
+    }
+  },
+  "deductions": {
+    "standardDeduction": 0,
+    "medicalExpenses": {
+      "rate": 1.00,
+      "ceiling": 0.15
+    },
+    "educationExpenses": {
+      "rate": 1.00,
+      "ceiling": 0.10
+    },
+    "retirementFunds": {
+      "rate": 1.00,
+      "ceiling": 152114.79
+    },
+    "mortgageInterest": {
+      "rate": 1.00,
+      "ceiling": 750000
+    },
+    "donations": {
+      "rate": 1.00,
+      "ceiling": 0.07
+    }
+  },
+  "hints": {
+    "fiscal_regime": "Taxpayers must choose a fiscal regime (e.g., RESICO, General Law) when registering with SAT",
+    "e-invoicing": "Electronic invoicing (CFDI) is mandatory for all businesses",
+    "monthly_returns": "Monthly tax returns are required for VAT and income tax",
+    "fiscal_obligations": "Businesses must maintain proper accounting records and submit annual returns"
+  }
+}

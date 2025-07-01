@@ -1,0 +1,238 @@
+{
+  "code": "IN",
+  "name": "India",
+  "currency": "INR",
+  "taxYearStart": "04-01",
+  "taxYearEnd": "03-31",
+  "businessTypes": [
+    {
+      "id": "proprietorship",
+      "name": "Sole Proprietorship",
+      "registrationFee": 0,
+      "requiresGstRegistration": {
+        "threshold": 4000000,
+        "currency": "INR"
+      },
+      "corporateTaxRate": 0.00,
+      "gstRate": 0.18,
+      "passThroughTaxation": true,
+      "taxAgency": "Income Tax Department"
+    },
+    {
+      "id": "llp",
+      "name": "Limited Liability Partnership (LLP)",
+      "registrationFee": 10000,
+      "minimumCapital": 0,
+      "requiresGstRegistration": {
+        "threshold": 4000000,
+        "currency": "INR"
+      },
+      "corporateTaxRate": 0.30,
+      "surchargeRate": 0.12,
+      "healthAndEducationCess": 0.04,
+      "gstRate": 0.18,
+      "taxAgency": "MCA & Income Tax Department"
+    },
+    {
+      "id": "pvt_ltd",
+      "name": "Private Limited Company",
+      "registrationFee": 15000,
+      "minimumCapital": 100000,
+      "requiresGstRegistration": {
+        "threshold": 4000000,
+        "currency": "INR"
+      },
+      "corporateTaxRate": 0.25,
+      "surchargeRate": 0.07,
+      "healthAndEducationCess": 0.04,
+      "gstRate": 0.18,
+      "dividendDistributionTax": 0.15,
+      "taxAgency": "MCA & Income Tax Department"
+    },
+    {
+      "id": "opc",
+      "name": "One Person Company (OPC)",
+      "registrationFee": 10000,
+      "minimumCapital": 0,
+      "requiresGstRegistration": {
+        "threshold": 4000000,
+        "currency": "INR"
+      },
+      "corporateTaxRate": 0.25,
+      "surchargeRate": 0.07,
+      "healthAndEducationCess": 0.04,
+      "gstRate": 0.18,
+      "taxAgency": "MCA & Income Tax Department"
+    },
+    {
+      "id": "section_8",
+      "name": "Section 8 Company (Non-Profit)",
+      "registrationFee": 10000,
+      "minimumCapital": 0,
+      "requiresGstRegistration": {
+        "threshold": 4000000,
+        "currency": "INR"
+      },
+      "corporateTaxRate": 0.30,
+      "taxExemptions": true,
+      "gstRate": 0.18,
+      "taxAgency": "MCA & Income Tax Department"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "regime": "new",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 250000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 250001,
+          "maxIncome": 500000,
+          "rate": 0.05,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 500001,
+          "maxIncome": 750000,
+          "rate": 0.10,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 750001,
+          "maxIncome": 1000000,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1000001,
+          "maxIncome": 1250000,
+          "rate": 0.20,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1250001,
+          "maxIncome": 1500000,
+          "rate": 0.25,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1500001,
+          "rate": 0.30,
+          "type": "flat"
+        }
+      ]
+    },
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "regime": "old",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 250000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 250001,
+          "maxIncome": 500000,
+          "rate": 0.05,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 500001,
+          "maxIncome": 1000000,
+          "rate": 0.20,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1000001,
+          "rate": 0.30,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "gst": {
+    "standardRate": 0.18,
+    "reducedRates": [
+      {
+        "rate": 0.05,
+        "description": "Essential goods"
+      },
+      {
+        "rate": 0.12,
+        "description": "Processed foods and other items"
+      },
+      {
+        "rate": 0.28,
+        "description": "Luxury and sin goods"
+      }
+    ],
+    "compositionScheme": {
+      "threshold": 1500000,
+      "rates": {
+        "goods": 0.01,
+        "services": 0.06,
+        "restaurants": 0.05
+      }
+    },
+    "thresholds": {
+      "normal": 4000000,
+      "specialCategoryStates": 2000000
+    }
+  },
+  "socialSecurity": {
+    "providentFund": {
+      "employeeContribution": 0.12,
+      "employerContribution": 0.12,
+      "ceiling": 15000,
+      "epsCeiling": 15000
+    },
+    "employeeStateInsurance": {
+      "employeeContribution": 0.0075,
+      "employerContribution": 0.0325,
+      "ceiling": 21000
+    },
+    "gratuity": {
+      "employerContribution": 0.0481,
+      "eligibility": 5
+    }
+  },
+  "deductions": {
+    "standardDeduction": 50000,
+    "section80C": {
+      "maxDeduction": 150000,
+      "includes": ["ELSS", "PPF", "NSC", "Life Insurance Premiums", "Principal Repayment of Home Loan"]
+    },
+    "section80D": {
+      "selfAndFamily": 25000,
+      "parents": 50000,
+      "seniorCitizenParents": 100000
+    },
+    "section24": {
+      "homeLoanInterest": 200000,
+      "letOutProperty": 0.30
+    },
+    "hra": {
+      "metro": 0.50,
+      "nonMetro": 0.40
+    },
+    "lta": {
+      "maxExemptions": 2,
+      "blockYears": 4
+    }
+  },
+  "hints": {
+    "tax_regime": "Taxpayers can choose between old and new tax regimes each year",
+    "gst_filing": "Monthly/quarterly GST returns are required based on turnover",
+    "tcs_tds": "TCS (1%) on sale of goods over INR 50 lakhs and TDS on various payments",
+    "equalization_levy": "6% on online advertisement services from non-residents"
+  }
+}

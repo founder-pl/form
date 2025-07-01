@@ -1,0 +1,189 @@
+{
+  "code": "SG",
+  "name": "Singapore",
+  "currency": "SGD",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_proprietor",
+      "name": "Sole Proprietor",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 1000000,
+        "currency": "SGD"
+      },
+      "gstRate": 0.08,
+      "passThroughTaxation": true,
+      "taxAgency": "IRAS"
+    },
+    {
+      "id": "pte_ltd",
+      "name": "Private Limited Company (Pte Ltd)",
+      "registrationFee": 315,
+      "annualReturnFee": 60,
+      "requiresVatRegistration": {
+        "threshold": 1000000,
+        "currency": "SGD"
+      },
+      "corporateTaxRate": 0.17,
+      "partialTaxExemption": {
+        "first10000": 0.75,
+        "next190000": 0.50
+      },
+      "startupTaxExemption": {
+        "first100000": 0.75,
+        "next100000": 0.50
+      },
+      "gstRate": 0.08,
+      "taxAgency": "ACRA & IRAS"
+    },
+    {
+      "id": "llp",
+      "name": "Limited Liability Partnership (LLP)",
+      "registrationFee": 115,
+      "annualReturnFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 1000000,
+        "currency": "SGD"
+      },
+      "gstRate": 0.08,
+      "passThroughTaxation": true,
+      "taxAgency": "ACRA & IRAS"
+    },
+    {
+      "id": "ltd_liability",
+      "name": "Limited Partnership (LP)",
+      "registrationFee": 115,
+      "annualReturnFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 1000000,
+        "currency": "SGD"
+      },
+      "gstRate": 0.08,
+      "passThroughTaxation": true,
+      "taxAgency": "ACRA & IRAS"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 20000,
+          "rate": 0,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 20001,
+          "maxIncome": 30000,
+          "rate": 0.02,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 30001,
+          "maxIncome": 40000,
+          "rate": 0.035,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 40001,
+          "maxIncome": 80000,
+          "rate": 0.07,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 80001,
+          "maxIncome": 120000,
+          "rate": 0.115,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 120001,
+          "maxIncome": 160000,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 160001,
+          "maxIncome": 200000,
+          "rate": 0.18,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 200001,
+          "maxIncome": 240000,
+          "rate": 0.19,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 240001,
+          "maxIncome": 280000,
+          "rate": 0.195,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 280001,
+          "maxIncome": 320000,
+          "rate": 0.20,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 320001,
+          "maxIncome": 500000,
+          "rate": 0.22,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 500001,
+          "maxIncome": 1000000,
+          "rate": 0.23,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1000001,
+          "rate": 0.24,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "cpf": {
+    "employeeRate": 0.20,
+    "employerRate": 0.17,
+    "contributionCeiling": 6000,
+    "annualLimit": 102000,
+    "specialAccountRate": 0.04,
+    "medisaveAccountRate": 0.08,
+    "ordinaryAccountRate": 0.08
+  },
+  "sdl": {
+    "rate": 0.00,
+    "ceiling": 6000
+  },
+  "deductions": {
+    "earnedIncomeRelief": {
+      "below55": 1000,
+      "55to59": 6000,
+      "60andAbove": 8000,
+      "disabled": 4000
+    },
+    "parentRelief": {
+      "livingWithYou": 9000,
+      "notLivingWithYou": 5500
+    },
+    "handicappedSiblingRelief": 5500,
+    "cpfCashTopUpRelief": 16000,
+    "srsRelief": 15300,
+    "courseFeesRelief": 5500,
+    "foreignDomesticWorkerLevyRelief": 0.00
+  },
+  "hints": {
+    "corporate_tax": "Corporate tax rate is 17% with partial tax exemption for the first S$200,000 of chargeable income",
+    "gst": "GST registration is mandatory for businesses with taxable turnover exceeding S$1 million",
+    "employment_pass": "Employment Pass (EP) holders are taxed at resident rates if they work in Singapore for 183 days or more in a year",
+    "foreign_income": "Foreign-sourced income received in Singapore is tax-exempt if certain conditions are met"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "code": "QA",
+  "name": "Qatar",
+  "currency": "QAR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_establishment",
+      "name": "Sole Establishment",
+      "registrationFee": 0,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.10,
+      "foreignOwnershipAllowed": false,
+      "localSponsorRequired": true,
+      "taxAgency": "GTA"
+    },
+    {
+      "id": "wll",
+      "name": "Limited Liability Company (WLL)",
+      "registrationFee": 0,
+      "minimumCapital": 200000,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.10,
+      "foreignOwnershipAllowed": true,
+      "foreignOwnershipLimit": 0.49,
+      "localSponsorRequired": true,
+      "taxAgency": "MOCI & GTA"
+    },
+    {
+      "id": "qsc",
+      "name": "Qatari Shareholding Company (QSC)",
+      "registrationFee": 0,
+      "minimumCapital": 10000000,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.10,
+      "foreignOwnershipAllowed": true,
+      "foreignOwnershipLimit": 0.49,
+      "localSponsorRequired": true,
+      "taxAgency": "MOCI & GTA"
+    },
+    {
+      "id": "branch",
+      "name": "Branch of Foreign Company",
+      "registrationFee": 0,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.10,
+      "foreignOwnershipAllowed": true,
+      "localSponsorRequired": true,
+      "taxAgency": "MOCI & GTA"
+    },
+    {
+      "id": "free_zone",
+      "name": "Free Zone Company",
+      "registrationFee": 0,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.00,
+      "foreignOwnershipAllowed": true,
+      "localSponsorRequired": false,
+      "taxHoliday": 20,
+      "taxAgency": "QFC/QFZA & GTA"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "rate": 0.00,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "qatariEmployeeRate": 0.05,
+    "qatariEmployerRate": 0.10,
+    "gccEmployeeRate": 0.00,
+    "gccEmployerRate": 0.00,
+    "maxContributionBase": 0,
+    "minContributionBase": 0
+  },
+  "deductions": {
+    "businessExpenses": {
+      "general": 1.00,
+      "entertainment": 0.50,
+      "donations": 0.00
+    },
+    "depreciation": {
+      "buildings": 0.05,
+      "equipment": 0.10,
+      "furniture": 0.15,
+      "vehicles": 0.20
+    },
+    "startupCosts": {
+      "maxDeduction": 0,
+      "amortizationPeriod": 5
+    }
+  },
+  "hints": {
+    "corporate_tax": "Standard corporate tax rate is 10% on taxable income, with specific rates for oil and gas companies",
+    "withholding_tax": "No withholding tax on dividends, interest, or royalties paid to non-residents",
+    "free_zones": "Qatar Free Zones offer 100% foreign ownership, 20-year tax holiday, and full repatriation of profits",
+    "tax_treaties": "Qatar has double taxation avoidance agreements with over 80 countries"
+  }
+}

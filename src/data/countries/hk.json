@@ -1,0 +1,123 @@
+{
+  "code": "HK",
+  "name": "Hong Kong",
+  "currency": "HKD",
+  "taxYearStart": "04-01",
+  "taxYearEnd": "03-31",
+  "businessTypes": [
+    {
+      "id": "sole_proprietorship",
+      "name": "Sole Proprietorship",
+      "registrationFee": 0,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.00,
+      "passThroughTaxation": true,
+      "taxAgency": "IRD"
+    },
+    {
+      "id": "partnership",
+      "name": "Partnership",
+      "registrationFee": 0,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.00,
+      "passThroughTaxation": true,
+      "taxAgency": "IRD"
+    },
+    {
+      "id": "ltd",
+      "name": "Private Limited Company (Ltd)",
+      "registrationFee": 1720,
+      "annualReturnFee": 105,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.00,
+      "profitTaxRate": 0.165,
+      "taxAgency": "CR & IRD"
+    },
+    {
+      "id": "branch",
+      "name": "Branch of Foreign Company",
+      "registrationFee": 1720,
+      "annualReturnFee": 105,
+      "requiresVatRegistration": false,
+      "corporateTaxRate": 0.00,
+      "profitTaxRate": 0.165,
+      "taxAgency": "CR & IRD"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "rate": 0.02,
+          "type": "progressive",
+          "maxTax": 18000
+        },
+        {
+          "minIncome": 0,
+          "rate": 0.06,
+          "type": "progressive",
+          "maxTax": 54000
+        },
+        {
+          "minIncome": 0,
+          "rate": 0.10,
+          "type": "progressive",
+          "maxTax": 90000
+        },
+        {
+          "minIncome": 0,
+          "rate": 0.14,
+          "type": "progressive",
+          "maxTax": 126000
+        },
+        {
+          "minIncome": 0,
+          "rate": 0.17,
+          "type": "progressive",
+          "maxTax": 153000
+        }
+      ]
+    }
+  ],
+  "profitTax": {
+    "corporateRate": 0.00,
+    "unincorporatedRate": 0.00,
+    "firstTierRate": 0.0825,
+    "secondTierRate": 0.165,
+    "concessionaryRate": 0.00,
+    "taxExemptionThreshold": 0
+  },
+  "propertyTax": {
+    "standardRate": 0.15,
+    "rentalIncomeRate": 0.15
+  },
+  "mpf": {
+    "employeeContributionRate": 0.05,
+    "employerContributionRate": 0.05,
+    "maxMonthlyContribution": 1500,
+    "minRelevantIncome": 7100,
+    "maxRelevantIncome": 30000
+  },
+  "deductions": {
+    "personalAllowance": 132000,
+    "childAllowance": 120000,
+    "dependentParentAllowance": 25000,
+    "dependentGrandparentAllowance": 25000,
+    "disabledDependentAllowance": 75000,
+    "singleParentAllowance": 132000,
+    "disabledDependentBrotherSisterAllowance": 75000,
+    "selfEducationExpenses": 100000,
+    "homeLoanInterest": 100000,
+    "voluntaryHealthInsurance": 8000,
+    "annuityPremiums": 60000,
+    "taxDeductibleMpfContributions": 18000
+  },
+  "hints": {
+    "territorial_taxation": "Hong Kong operates on a territorial basis of taxation, meaning only income arising in or derived from Hong Kong is taxable",
+    "no_vat_gst": "There is no value-added tax (VAT) or goods and services tax (GST) in Hong Kong",
+    "no_sales_tax": "There is no sales tax or capital gains tax in Hong Kong",
+    "tax_return_deadline": "Tax returns are generally issued in early April each year, with a one-month filing deadline"
+  }
+}

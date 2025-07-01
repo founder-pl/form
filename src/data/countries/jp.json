@@ -1,0 +1,216 @@
+{
+  "code": "JP",
+  "name": "Japan",
+  "currency": "JPY",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "kojin_jigyo",
+      "name": "Sole Proprietorship (個人事業)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 10000000,
+        "currency": "JPY"
+      },
+      "corporateTaxRate": 0.00,
+      "consumptionTaxRate": 0.10,
+      "passThroughTaxation": true,
+      "taxAgency": "NTA"
+    },
+    {
+      "id": "godo_kaisha",
+      "name": "Godō Kaisha (合同会社)",
+      "registrationFee": 60000,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 10000000,
+        "currency": "JPY"
+      },
+      "corporateTaxRate": 0.15,
+      "corporateTaxRate2": 0.237,
+      "consumptionTaxRate": 0.10,
+      "taxAgency": "NTA"
+    },
+    {
+      "id": "kabushiki_kaisha",
+      "name": "Kabushiki Kaisha (株式会社)",
+      "registrationFee": 150000,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 10000000,
+        "currency": "JPY"
+      },
+      "corporateTaxRate": 0.15,
+      "corporateTaxRate2": 0.237,
+      "consumptionTaxRate": 0.10,
+      "taxAgency": "NTA"
+    },
+    {
+      "id": "branch",
+      "name": "Branch Office (支店)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "JPY"
+      },
+      "corporateTaxRate": 0.237,
+      "consumptionTaxRate": 0.10,
+      "branchProfitsTax": 0.00,
+      "taxAgency": "NTA"
+    },
+    {
+      "id": "tokutei_mukou_torihiki_kyoryokusha",
+      "name": "TMK (特定目的会社)",
+      "registrationFee": 150000,
+      "minimumCapital": 10000000,
+      "requiresVatRegistration": {
+        "threshold": 10000000,
+        "currency": "JPY"
+      },
+      "corporateTaxRate": 0.20,
+      "consumptionTaxRate": 0.10,
+      "taxIncentives": true,
+      "taxAgency": "NTA"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 1950000,
+          "rate": 0.05,
+          "deduction": 0,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1950001,
+          "maxIncome": 3300000,
+          "rate": 0.10,
+          "deduction": 97500,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 3300001,
+          "maxIncome": 6950000,
+          "rate": 0.20,
+          "deduction": 427500,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 6950001,
+          "maxIncome": 9000000,
+          "rate": 0.23,
+          "deduction": 636000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 9000001,
+          "maxIncome": 18000000,
+          "rate": 0.33,
+          "deduction": 1536000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 18000001,
+          "maxIncome": 40000000,
+          "rate": 0.40,
+          "deduction": 2796000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 40000001,
+          "rate": 0.45,
+          "deduction": 4796000,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialInsurance": {
+    "healthInsurance": {
+      "employeeRate": 0.0495,
+      "employerRate": 0.0495,
+      "ceiling": 1390000,
+      "floor": 0
+    },
+    "welfarePension": {
+      "employeeRate": 0.0915,
+      "employerRate": 0.0915,
+      "ceiling": 650000,
+      "floor": 0
+    },
+    "employmentInsurance": {
+      "employeeRate": 0.003,
+      "employerRate": 0.006,
+      "ceiling": 0,
+      "floor": 0
+    },
+    "workersAccidentInsurance": {
+      "employeeRate": 0.00,
+      "employerRate": 0.003,
+      "ceiling": 0,
+      "floor": 0
+    },
+    "nursingCareInsurance": {
+      "employeeRate": 0.00915,
+      "employerRate": 0.00915,
+      "ceiling": 0,
+      "floor": 0
+    }
+  },
+  "deductions": {
+    "basicDeduction": 480000,
+    "employmentIncomeDeduction": {
+      "type": "progressive",
+      "brackets": [
+        {
+          "maxIncome": 1800000,
+          "deduction": 0.40,
+          "maxDeduction": 0
+        },
+        {
+          "maxIncome": 3600000,
+          "deduction": 0.30,
+          "additional": 180000
+        },
+        {
+          "maxIncome": 6600000,
+          "deduction": 0.20,
+          "additional": 540000
+        },
+        {
+          "maxIncome": 10000000,
+          "deduction": 0.10,
+          "additional": 1200000
+        },
+        {
+          "deduction": 0.05,
+          "additional": 1700000
+        }
+      ]
+    },
+    "socialInsurancePremiums": {
+      "rate": 1.00,
+      "maxDeduction": 0
+    },
+    "lifeInsurancePremiums": {
+      "maxDeduction": 120000,
+      "additionalDeduction": 50000
+    },
+    "medicalExpenses": {
+      "rate": 0.05,
+      "minExpense": 100000,
+      "maxDeduction": 2000000
+    }
+  },
+  "hints": {
+    "consumption_tax": "Consumption tax rate is 10% (8% for food and newspapers)",
+    "corporate_tax": "Corporate tax rates vary by prefecture and municipality, with an effective rate of approximately 30.62% for large companies",
+    "tax_filing": "Fiscal year ends in March for most companies, with tax returns due within 2 months after the fiscal year-end",
+    "foreign_income": "Residents are taxed on worldwide income, while non-residents are taxed only on Japan-sourced income"
+  }
+}

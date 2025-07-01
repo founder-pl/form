@@ -1,0 +1,187 @@
+{
+  "code": "BR",
+  "name": "Brazil",
+  "currency": "BRL",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "mei",
+      "name": "Microempreendedor Individual (MEI)",
+      "registrationFee": 0,
+      "requiresVatRegistration": false,
+      "monthlyTax": 65.76,
+      "annualRevenueLimit": 81000,
+      "employeeLimit": 1,
+      "taxRegime": "SIMPLES Nacional",
+      "taxAgency": "Receita Federal"
+    },
+    {
+      "id": "me",
+      "name": "Microempresa (ME)",
+      "registrationFee": 0,
+      "requiresVatRegistration": true,
+      "annualRevenueLimit": 360000,
+      "taxRegime": "SIMPLES Nacional",
+      "taxAgency": "Receita Federal"
+    },
+    {
+      "id": "epp",
+      "name": "Empresa de Pequeno Porte (EPP)",
+      "registrationFee": 0,
+      "requiresVatRegistration": true,
+      "annualRevenueLimit": 4800000,
+      "taxRegime": "SIMPLES Nacional",
+      "taxAgency": "Receita Federal"
+    },
+    {
+      "id": "ltda",
+      "name": "Sociedade Limitada (LTDA)",
+      "registrationFee": 500,
+      "minimumCapital": 0,
+      "requiresVatRegistration": true,
+      "taxRegime": "Lucro Presumido/Real",
+      "corporateTaxRate": 0.15,
+      "additionalTaxRate": 0.10,
+      "socialContributionRate": 0.09,
+      "taxAgency": "Receita Federal"
+    },
+    {
+      "id": "sa",
+      "name": "Sociedade Anônima (S/A)",
+      "registrationFee": 1500,
+      "minimumCapital": 0,
+      "requiresVatRegistration": true,
+      "taxRegime": "Lucro Real",
+      "corporateTaxRate": 0.15,
+      "additionalTaxRate": 0.10,
+      "socialContributionRate": 0.09,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "CVM & Receita Federal"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 22847.76,
+          "rate": 0.00,
+          "deductible": 0,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 22847.77,
+          "maxIncome": 33919.80,
+          "rate": 0.075,
+          "deductible": 1713.58,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 33919.81,
+          "maxIncome": 45012.60,
+          "rate": 0.15,
+          "deductible": 4257.57,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 45012.61,
+          "maxIncome": 55976.16,
+          "rate": 0.225,
+          "deductible": 7633.51,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 55976.17,
+          "rate": 0.275,
+          "deductible": 10432.32,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "inss": {
+      "employeeRate": 0.07,
+      "employerRate": 0.20,
+      "ceiling": 7518.00,
+      "additionalEmployerRate": 0.00
+    },
+    "fgts": {
+      "employerContribution": 0.08,
+      "appliesTo": "All employees"
+    },
+    "senaiSesi": {
+      "employerContribution": 0.01
+    },
+    "sebrae": {
+      "employerContribution": 0.003
+    }
+  },
+  "taxes": {
+    "pis": {
+      "rate": 0.0065,
+      "appliesTo": "Revenue"
+    },
+    "cofins": {
+      "rate": 0.03,
+      "appliesTo": "Revenue"
+    },
+    "csll": {
+      "rate": 0.09,
+      "appliesTo": "Profit"
+    },
+    "irpj": {
+      "rate": 0.15,
+      "additionalRate": 0.10,
+      "appliesTo": "Profit"
+    },
+    "iss": {
+      "rate": 0.02,
+      "appliesTo": "Service revenue",
+      "municipalTax": true
+    },
+    "icms": {
+      "rate": 0.18,
+      "appliesTo": "Goods circulation",
+      "stateTax": true
+    },
+    "ipva": {
+      "rate": 0.04,
+      "appliesTo": "Vehicle ownership",
+      "stateTax": true
+    },
+    "iptu": {
+      "rate": 0.01,
+      "appliesTo": "Urban property",
+      "municipalTax": true
+    }
+  },
+  "deductions": {
+    "standardDeduction": 0,
+    "dependents": {
+      "perDependent": 2275.08,
+      "maxDependents": 0
+    },
+    "educationExpenses": {
+      "rate": 1.00,
+      "maxDeduction": 3561.50
+    },
+    "healthExpenses": {
+      "rate": 1.00,
+      "maxDeduction": 0
+    },
+    "pensionFund": {
+      "rate": 1.00,
+      "maxDeduction": 0.12
+    }
+  },
+  "hints": {
+    "tax_regime": "Businesses can choose between SIMPLES Nacional, Lucro Presumido, or Lucro Real tax regimes",
+    "simples_nacional": "SIMPLES Nacional is a simplified tax regime for small businesses with annual revenue up to R$4.8M",
+    "monthly_taxes": "Businesses must pay monthly taxes (DAS) even without revenue",
+    "electronic_invoicing": "Electronic invoicing (NF-e, NFC-e) is mandatory for most businesses"
+  }
+}

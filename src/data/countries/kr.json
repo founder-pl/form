@@ -1,0 +1,187 @@
+{
+  "code": "KR",
+  "name": "South Korea",
+  "currency": "KRW",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "individual_business",
+      "name": "Individual Business (개인사업자)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 48000000,
+        "currency": "KRW"
+      },
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.10,
+      "passThroughTaxation": true,
+      "taxAgency": "NTS"
+    },
+    {
+      "id": "yuhan_hoesa",
+      "name": "Limited Company (유한회사)",
+      "registrationFee": 0,
+      "minimumCapital": 10000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "KRW"
+      },
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.10,
+      "dividendWithholdingTax": 0.155,
+      "taxAgency": "NTS"
+    },
+    {
+      "id": "haphap_hoesa",
+      "name": "General Partnership (합명회사)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 48000000,
+        "currency": "KRW"
+      },
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.10,
+      "passThroughTaxation": true,
+      "taxAgency": "NTS"
+    },
+    {
+      "id": "branch",
+      "name": "Branch Office (지사)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "KRW"
+      },
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.10,
+      "branchProfitsTax": 0.05,
+      "taxAgency": "NTS"
+    },
+    {
+      "id": "foreign_investment",
+      "name": "Foreign Investment Company (외국인투자기업)",
+      "registrationFee": 0,
+      "minimumCapital": 100000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "KRW"
+      },
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.10,
+      "taxIncentives": true,
+      "taxAgency": "NTS"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 12000000,
+          "rate": 0.06,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 12000001,
+          "maxIncome": 46000000,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 46000001,
+          "maxIncome": 88000000,
+          "rate": 0.24,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 88000001,
+          "maxIncome": 150000000,
+          "rate": 0.35,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 150000001,
+          "maxIncome": 300000000,
+          "rate": 0.38,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 300000001,
+          "maxIncome": 500000000,
+          "rate": 0.40,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 500000001,
+          "rate": 0.42,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "nationalPension": {
+      "employeeRate": 0.045,
+      "employerRate": 0.045,
+      "ceiling": 5240000,
+      "floor": 320000
+    },
+    "healthInsurance": {
+      "employeeRate": 0.03495,
+      "employerRate": 0.03495,
+      "ceiling": 104800000,
+      "floor": 320000
+    },
+    "employmentInsurance": {
+      "employeeRate": 0.008,
+      "employerRate": 0.008,
+      "ceiling": 5240000,
+      "floor": 0
+    },
+    "workersCompensation": {
+      "employeeRate": 0.00,
+      "employerRate": 0.65,
+      "ceiling": 0,
+      "floor": 0
+    }
+  },
+  "deductions": {
+    "standardDeduction": 1500000,
+    "additionalDeductions": [
+      {
+        "name": "medical_expenses",
+        "rate": 0.15,
+        "maxDeduction": 7000000
+      },
+      {
+        "name": "education_expenses",
+        "rate": 0.15,
+        "maxDeduction": 2000000
+      },
+      {
+        "name": "pension_insurance",
+        "rate": 1.00,
+        "maxDeduction": 0
+      },
+      {
+        "name": "housing_loan_interest",
+        "rate": 0.40,
+        "maxDeduction": 1500000
+      },
+      {
+        "name": "credit_card_expenses",
+        "rate": 0.15,
+        "maxDeduction": 3000000
+      }
+    ]
+  },
+  "hints": {
+    "vat_registration": "VAT registration is mandatory for businesses with annual sales exceeding KRW 48 million",
+    "corporate_tax": "Corporate tax rates are progressive, starting from 10% for income up to KRW 200 million",
+    "tax_filing": "Annual tax returns are due by May 31st of the following year",
+    "foreign_income": "Tax residents are taxed on worldwide income, while non-residents are taxed only on Korea-sourced income"
+  }
+}

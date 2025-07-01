@@ -1,0 +1,122 @@
+{
+  "code": "GB",
+  "name": "United Kingdom",
+  "currency": "GBP",
+  "taxYearStart": "04-06",
+  "taxYearEnd": "04-05",
+  "businessTypes": [
+    {
+      "id": "sole_trader",
+      "name": "Sole Trader",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 85000,
+        "currency": "GBP"
+      },
+      "nationalInsuranceRate": 0.09,
+      "nationalInsuranceThreshold": 9569,
+      "vatRate": 0.20,
+      "passThroughTaxation": true,
+      "taxAgency": "HMRC"
+    },
+    {
+      "id": "ltd",
+      "name": "Limited Company (Ltd)",
+      "registrationFee": 12,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 85000,
+        "currency": "GBP"
+      },
+      "corporationTaxRate": 0.19,
+      "vatRate": 0.20,
+      "dividendTaxRate": 0.075,
+      "taxAgency": "Companies House & HMRC"
+    },
+    {
+      "id": "llp",
+      "name": "Limited Liability Partnership (LLP)",
+      "registrationFee": 40,
+      "requiresVatRegistration": {
+        "threshold": 85000,
+        "currency": "GBP"
+      },
+      "vatRate": 0.20,
+      "passThroughTaxation": true,
+      "taxAgency": "Companies House & HMRC"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 12570,
+          "rate": 0,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 12571,
+          "maxIncome": 50270,
+          "rate": 0.20,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 50271,
+          "maxIncome": 150000,
+          "rate": 0.40,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 150001,
+          "rate": 0.45,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "nationalInsurance": {
+    "class2": {
+      "weeklyRate": 3.05,
+      "smallProfitsThreshold": 6725
+    },
+    "class4": {
+      "lowerProfitsLimit": 9568,
+      "upperProfitsLimit": 50270,
+      "mainRate": 0.09,
+      "additionalRate": 0.02
+    }
+  },
+  "dividendTax": {
+    "allowance": 2000,
+    "basicRate": 0.075,
+    "higherRate": 0.325,
+    "additionalRate": 0.381
+  },
+  "deductions": {
+    "personalAllowance": {
+      "amount": 12570,
+      "reductionThreshold": 100000,
+      "reductionRate": 0.5
+    },
+    "pensionContributions": {
+      "annualAllowance": 40000,
+      "lifetimeAllowance": 1073100
+    },
+    "tradingAllowance": 1000,
+    "propertyAllowance": 1000,
+    "capitalAllowances": {
+      "annualInvestmentAllowance": 1000000,
+      "writingDownAllowance": 0.18,
+      "specialRatePool": 0.06
+    }
+  },
+  "hints": {
+    "making_tax_digital": "Businesses above the VAT threshold must keep digital records and use Making Tax Digital (MTD) compatible software",
+    "vat_flat_rate_scheme": "Businesses with turnover under £150,000 can join the Flat Rate Scheme for simplified VAT accounting",
+    "employment_allowance": "Eligible employers can reduce their National Insurance liability by up to £4,000 per year",
+    "tax_returns": "Self Assessment tax returns must be filed by 31 January following the end of the tax year"
+  }
+}

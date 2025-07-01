@@ -1,0 +1,101 @@
+{
+  "code": "AE",
+  "name": "United Arab Emirates",
+  "currency": "AED",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_establishment",
+      "name": "Sole Establishment",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 375000,
+        "currency": "AED"
+      },
+      "vatRate": 0.05,
+      "corporateTaxRate": 0.00,
+      "passThroughTaxation": true,
+      "taxAgency": "FTA"
+    },
+    {
+      "id": "llc",
+      "name": "Limited Liability Company (LLC)",
+      "registrationFee": 0,
+      "minimumCapital": 300000,
+      "requiresVatRegistration": {
+        "threshold": 375000,
+        "currency": "AED"
+      },
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.05,
+      "taxAgency": "DED & FTA"
+    },
+    {
+      "id": "branch",
+      "name": "Branch of Foreign Company",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 375000,
+        "currency": "AED"
+      },
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.05,
+      "taxAgency": "DED & FTA"
+    },
+    {
+      "id": "free_zone",
+      "name": "Free Zone Company",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 375000,
+        "currency": "AED"
+      },
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.00,
+      "taxAgency": "Free Zone Authority & FTA"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "rate": 0.00,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "emiratiEmployeeRate": 0.05,
+    "emiratiEmployerRate": 0.125,
+    "gccEmployeeRate": 0.00,
+    "gccEmployerRate": 0.00,
+    "maxContributionBase": 50000,
+    "minContributionBase": 0
+  },
+  "deductions": {
+    "businessExpenses": {
+      "general": 1.00,
+      "entertainment": 0.50,
+      "donations": 0.00
+    },
+    "capitalAllowances": {
+      "building": 0.10,
+      "equipment": 0.25,
+      "intangibleAssets": 0.20
+    },
+    "startupCosts": {
+      "maxDeduction": 0,
+      "amortizationPeriod": 0
+    }
+  },
+  "hints": {
+    "corporate_tax": "Corporate tax rate is 0% for most businesses, with 9% for taxable income over AED 375,000 starting from June 2023",
+    "vat": "Standard VAT rate is 5% with certain zero-rated and exempt supplies",
+    "free_zones": "Free zones offer 0% corporate tax for 50 years and 100% foreign ownership",
+    "excise_tax": "Excise tax applies to specific goods: 50% on carbonated drinks, 100% on tobacco and energy drinks, and 100% on electronic smoking devices"
+  }
+}

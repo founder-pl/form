@@ -1,0 +1,139 @@
+{
+  "code": "NZ",
+  "name": "New Zealand",
+  "currency": "NZD",
+  "taxYearStart": "04-01",
+  "taxYearEnd": "03-31",
+  "businessTypes": [
+    {
+      "id": "sole_trader",
+      "name": "Sole Trader",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 60000,
+        "currency": "NZD"
+      },
+      "accLevyRate": 0.00,
+      "gstRate": 0.15,
+      "passThroughTaxation": true,
+      "taxAgency": "IRD"
+    },
+    {
+      "id": "ltd",
+      "name": "Limited Company (Ltd)",
+      "registrationFee": 114.30,
+      "annualReturnFee": 30.00,
+      "requiresVatRegistration": {
+        "threshold": 60000,
+        "currency": "NZD"
+      },
+      "corporateTaxRate": 0.28,
+      "imputationCreditRate": 0.28,
+      "gstRate": 0.15,
+      "accLevyRate": 0.00,
+      "taxAgency": "Companies Office & IRD"
+    },
+    {
+      "id": "partnership",
+      "name": "Partnership",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 60000,
+        "currency": "NZD"
+      },
+      "gstRate": 0.15,
+      "accLevyRate": 0.00,
+      "passThroughTaxation": true,
+      "taxAgency": "IRD"
+    },
+    {
+      "id": "look_through_company",
+      "name": "Look-Through Company (LTC)",
+      "registrationFee": 114.30,
+      "annualReturnFee": 30.00,
+      "requiresVatRegistration": {
+        "threshold": 60000,
+        "currency": "NZD"
+      },
+      "gstRate": 0.15,
+      "accLevyRate": 0.00,
+      "passThroughTaxation": true,
+      "taxAgency": "Companies Office & IRD"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 14000,
+          "rate": 0.105,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 14001,
+          "maxIncome": 48000,
+          "rate": 0.175,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 48001,
+          "maxIncome": 70000,
+          "rate": 0.30,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 70001,
+          "maxIncome": 180000,
+          "rate": 0.33,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 180001,
+          "rate": 0.39,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "accLevy": {
+    "baseRate": 0.00,
+    "workAccountLevy": 0.00,
+    "earnersLevy": 1.39,
+    "workingSafelyLevy": 0.08,
+    "maxLeviableEarnings": 130911
+  },
+  "kiwisaver": {
+    "employeeContributionRate": 0.03,
+    "employerContributionRate": 0.03,
+    "governmentContribution": 521.43,
+    "maxGovernmentContribution": 1042.86,
+    "esctRate": 0.28
+  },
+  "deductions": {
+    "homeOffice": {
+      "fixedRatePerHour": 0.90,
+      "detailedMethod": true
+    },
+    "motorVehicle": {
+      "kmRate": 0.83,
+      "logbookMethod": true
+    },
+    "depreciation": {
+      "generalRate": 0.00,
+      "diminishingValueRate": 0.00
+    },
+    "donations": {
+      "minDonation": 5,
+      "maxDeduction": 0
+    }
+  },
+  "hints": {
+    "ird_number": "An IRD number is required for all taxpayers in New Zealand",
+    "gst_registration": "Businesses with a turnover of $60,000 or more must register for GST",
+    "fbt": "Fringe Benefit Tax (FBT) applies to non-cash benefits provided to employees",
+    "provisional_tax": "Provisional tax payments may be required if your residual income tax is over $5,000"
+  }
+}

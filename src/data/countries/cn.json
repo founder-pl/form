@@ -1,0 +1,204 @@
+{
+  "code": "CN",
+  "name": "China",
+  "currency": "CNY",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_proprietorship",
+      "name": "Sole Proprietorship (个体工商户)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "CNY"
+      },
+      "corporateTaxRate": 0.00,
+      "passThroughTaxation": true,
+      "taxAgency": "SAT"
+    },
+    {
+      "id": "wfoe",
+      "name": "Wholly Foreign-Owned Enterprise (WFOE)",
+      "registrationFee": 0,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "CNY"
+      },
+      "corporateTaxRate": 0.25,
+      "preferentialTaxRate": 0.15,
+      "vatRate": 0.13,
+      "taxAgency": "MOFCOM & SAT"
+    },
+    {
+      "id": "rep_office",
+      "name": "Representative Office (RO)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "CNY"
+      },
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.06,
+      "taxAgency": "MOFCOM & SAT"
+    },
+    {
+      "id": "jv",
+      "name": "Joint Venture (JV)",
+      "registrationFee": 0,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "CNY"
+      },
+      "corporateTaxRate": 0.25,
+      "preferentialTaxRate": 0.15,
+      "vatRate": 0.13,
+      "taxAgency": "MOFCOM & SAT"
+    },
+    {
+      "id": "free_trade_zone",
+      "name": "Free Trade Zone Company",
+      "registrationFee": 0,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "CNY"
+      },
+      "corporateTaxRate": 0.15,
+      "vatRate": 0.06,
+      "taxHoliday": 5,
+      "taxAgency": "FTZ Authority & SAT"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 36000,
+          "rate": 0.03,
+          "quickDeduction": 0,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 36001,
+          "maxIncome": 144000,
+          "rate": 0.10,
+          "quickDeduction": 2520,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 144001,
+          "maxIncome": 300000,
+          "rate": 0.20,
+          "quickDeduction": 16920,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 300001,
+          "maxIncome": 420000,
+          "rate": 0.25,
+          "quickDeduction": 31920,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 420001,
+          "maxIncome": 660000,
+          "rate": 0.30,
+          "quickDeduction": 52920,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 660001,
+          "maxIncome": 960000,
+          "rate": 0.35,
+          "quickDeduction": 85920,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 960001,
+          "rate": 0.45,
+          "quickDeduction": 181920,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "pension": {
+      "employeeRate": 0.08,
+      "employerRate": 0.16,
+      "baseMin": 3613,
+      "baseMax": 28221
+    },
+    "medical": {
+      "employeeRate": 0.02,
+      "employerRate": 0.095,
+      "baseMin": 3613,
+      "baseMax": 28221
+    },
+    "unemployment": {
+      "employeeRate": 0.002,
+      "employerRate": 0.005,
+      "baseMin": 3613,
+      "baseMax": 28221
+    },
+    "workInjury": {
+      "employeeRate": 0.00,
+      "employerRate": 0.002,
+      "baseMin": 3613,
+      "baseMax": 28221
+    },
+    "maternity": {
+      "employeeRate": 0.00,
+      "employerRate": 0.008,
+      "baseMin": 3613,
+      "baseMax": 28221
+    },
+    "housingFund": {
+      "employeeRate": 0.07,
+      "employerRate": 0.07,
+      "baseMin": 2590,
+      "baseMax": 34188
+    }
+  },
+  "deductions": {
+    "standardDeduction": 60000,
+    "specialAdditionalDeductions": [
+      {
+        "name": "children_education",
+        "maxDeduction": 12000
+      },
+      {
+        "name": "continuing_education",
+        "maxDeduction": 4800
+      },
+      {
+        "name": "housing_loan_interest",
+        "maxDeduction": 12000
+      },
+      {
+        "name": "housing_rent",
+        "maxDeduction": 18000
+      },
+      {
+        "name": "elderly_support",
+        "maxDeduction": 24000
+      },
+      {
+        "name": "serious_illness_medical_expenses",
+        "maxDeduction": 15000
+      }
+    ]
+  },
+  "hints": {
+    "individual_income_tax": "China operates a progressive tax rate system for individual income tax with 7 brackets",
+    "social_security": "Social security contributions are mandatory for both employees and employers, with rates varying by city",
+    "tax_residency": "Tax residents are taxed on worldwide income, while non-residents are taxed only on China-sourced income",
+    "annual_bonus_taxation": "Annual bonuses are subject to separate tax calculation methods, with a one-time bonus tax break available once per year"
+  }
+}

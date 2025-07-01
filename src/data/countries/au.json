@@ -1,0 +1,168 @@
+{
+  "code": "AU",
+  "name": "Australia",
+  "currency": "AUD",
+  "taxYearStart": "07-01",
+  "taxYearEnd": "06-30",
+  "businessTypes": [
+    {
+      "id": "sole_trader",
+      "name": "Sole Trader",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 75000,
+        "currency": "AUD"
+      },
+      "medicareLevyRate": 0.02,
+      "gstRate": 0.10,
+      "passThroughTaxation": true,
+      "taxAgency": "ATO"
+    },
+    {
+      "id": "pty_ltd",
+      "name": "Proprietary Limited Company (Pty Ltd)",
+      "registrationFee": 506,
+      "annualReviewFee": 276,
+      "requiresVatRegistration": {
+        "threshold": 75000,
+        "currency": "AUD"
+      },
+      "corporateTaxRate": 0.30,
+      "smallBusinessTaxRate": 0.25,
+      "gstRate": 0.10,
+      "frankingCreditsRate": 0.30,
+      "taxAgency": "ASIC & ATO"
+    },
+    {
+      "id": "trust",
+      "name": "Trust",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 75000,
+        "currency": "AUD"
+      },
+      "gstRate": 0.10,
+      "passThroughTaxation": true,
+      "taxAgency": "ATO"
+    },
+    {
+      "id": "partnership",
+      "name": "Partnership",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 75000,
+        "currency": "AUD"
+      },
+      "gstRate": 0.10,
+      "passThroughTaxation": true,
+      "taxAgency": "ATO"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "resident",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 18200,
+          "rate": 0,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 18201,
+          "maxIncome": 45000,
+          "rate": 0.19,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 45001,
+          "maxIncome": 120000,
+          "rate": 0.325,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 120001,
+          "maxIncome": 180000,
+          "rate": 0.37,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 180001,
+          "rate": 0.45,
+          "type": "flat"
+        }
+      ]
+    },
+    {
+      "filingStatus": "non_resident",
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 120000,
+          "rate": 0.325,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 120001,
+          "maxIncome": 180000,
+          "rate": 0.37,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 180001,
+          "rate": 0.45,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "taxOffsets": {
+    "lowIncome": 700,
+    "lowMiddleIncome": 325,
+    "seniorAustralians": 2230,
+    "pensionerTaxOffset": 1608,
+    "zoneTaxOffset": 57,
+    "privateHealthInsurance": {
+      "tier1": 0.24,
+      "tier2": 0.16,
+      "tier3": 0.08
+    }
+  },
+  "superannuation": {
+    "employerContributionRate": 0.105,
+    "concessionalCap": 27500,
+    "nonConcessionalCap": 110000,
+    "superGuaranteeMaxBase": 58080,
+    "coContribution": {
+      "maxContribution": 500,
+      "lowerThreshold": 41691,
+      "higherThreshold": 56916
+    }
+  },
+  "deductions": {
+    "workRelatedExpenses": {
+      "simplifiedMethod": 0.80,
+      "detailedMethod": true
+    },
+    "homeOffice": {
+      "fixedRateMethod": 0.80,
+      "shortcutMethod": 0.80,
+      "detailedMethod": true
+    },
+    "selfEducation": {
+      "firstThreshold": 250,
+      "maxDeduction": 0
+    },
+    "donations": {
+      "minDeduction": 2,
+      "maxDeduction": 0
+    }
+  },
+  "hints": {
+    "tax_file_number": "A Tax File Number (TFN) is required for all Australian taxpayers",
+    "gst_registration": "Businesses with a GST turnover of $75,000 or more must register for GST",
+    "superannuation_guarantee": "Employers must pay 10.5% of an employee's ordinary time earnings into a super fund",
+    "fbt_year": "The Fringe Benefits Tax (FBT) year runs from 1 April to 31 March"
+  }
+}
