@@ -1,0 +1,91 @@
+{
+  "code": "ES",
+  "name": "Spain",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "autonomo",
+      "name": "Autónomo (Self-employed)",
+      "registrationFee": 0,
+      "monthlyFees": 60,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.30,
+      "minSocialSecurityBase": 944.40,
+      "maxSocialSecurityBase": 4070.10
+    },
+    {
+      "id": "sl",
+      "name": "Sociedad Limitada (SL)",
+      "registrationFee": 600,
+      "annualFees": 200,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.25,
+      "socialSecurityRate": 0.30
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 12450,
+      "rate": 19,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 12451,
+      "maxIncome": 20200,
+      "rate": 24,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 20201,
+      "maxIncome": 35200,
+      "rate": 30,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 35201,
+      "maxIncome": 60000,
+      "rate": 37,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 60001,
+      "maxIncome": 300000,
+      "rate": 45,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 300001,
+      "rate": 47,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "commonContingencies": 0.047,
+    "workAccidents": 0.001,
+    "unemployment": 0.016,
+    "training": 0.001,
+    "fogasa": 0.002
+  },
+  "deductions": {
+    "autonomoDeduction": 0.07,
+    "professionalExpenses": {
+      "maxDeductible": 2000,
+      "percentage": 0.3
+    },
+    "familyDeductions": {
+      "perChild": 2400,
+      "largeFamilyBonus": 1200
+    }
+  },
+  "hints": {
+    "autonomo": "Autónomos must register with the Spanish tax authorities (Agencia Tributaria) and social security (RETA)",
+    "vat": "VAT (IVA) rates in Spain are 21% general, 10% reduced, and 4% super-reduced",
+    "healthInsurance": "Public healthcare is available to all residents registered with social security"
+  }
+}

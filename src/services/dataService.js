@@ -6,7 +6,7 @@ let benefitConfig = {};
 const countryDataCache = new Map();
 
 // Supported country codes
-const SUPPORTED_COUNTRIES = ['DE', 'FR'];
+const SUPPORTED_COUNTRIES = ['DE', 'FR', 'ES'];
 
 // Constants
 const DAYS_IN_YEAR = 365;
