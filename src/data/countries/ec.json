@@ -1,0 +1,230 @@
+{
+  "code": "EC",
+  "name": "Ecuador",
+  "currency": "USD",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "persona_natural_con_negocio",
+      "name": "Persona Natural con Negocio",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen Impositivo Simplificado Ecuatoriano (RISE)",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.12,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 300000,
+      "taxAgency": "SRI (Servicio de Rentas Internas)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 800,
+      "minimumCapital": 800,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "SRI"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S.R.L.)",
+      "registrationFee": 600,
+      "minimumCapital": 400,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "SRI"
+    },
+    {
+      "id": "sociedad_anonima_simplificada",
+      "name": "Sociedad Anónima Simplificada (S.A.S.)",
+      "registrationFee": 400,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "SRI"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 1500,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.28,
+      "vatRate": 0.12,
+      "branchProfitsTax": 0.00,
+      "taxAgency": "SRI"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 11722,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 11723,
+          "maxIncome": 14930,
+          "rate": 0.05,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 14931,
+          "maxIncome": 18660,
+          "rate": 0.10,
+          "tax": 160,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 18661,
+          "maxIncome": 22400,
+          "rate": 0.12,
+          "tax": 533,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 22401,
+          "maxIncome": 32780,
+          "rate": 0.15,
+          "tax": 982,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 32781,
+          "maxIncome": 43170,
+          "rate": 0.20,
+          "tax": 2539,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 43171,
+          "maxIncome": 64760,
+          "rate": 0.25,
+          "tax": 4614,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 64761,
+          "maxIncome": 86350,
+          "rate": 0.30,
+          "tax": 10024,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 86351,
+          "rate": 0.35,
+          "tax": 16495,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "iess": {
+      "employeeRate": 0.0945,
+      "employerRate": 0.1245,
+      "ceiling": 0,
+      "minBase": 450
+    },
+    "seguro_social_campesino": {
+      "rate": 0.00,
+      "fixedAmount": 25,
+      "appliesTo": "Agricultural workers"
+    },
+    "fondos_reserva": {
+      "employerRate": 0.0833,
+      "appliesAfterMonths": 3
+    },
+    "aporte_patronal": {
+      "employerRate": 0.0035,
+      "appliesTo": "Housing fund"
+    },
+    "seguro_cesantia": {
+      "employeeRate": 0.005,
+      "employerRate": 0.01,
+      "appliesTo": "Unemployment insurance"
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.12,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "ice": {
+      "rate": 0.00,
+      "appliesTo": "Special consumption tax"
+    },
+    "ir": {
+      "rate": 0.00,
+      "appliesTo": "Income tax"
+    },
+    "isd": {
+      "rate": 0.00,
+      "appliesTo": "Financial transactions"
+    },
+    "impuesto_verde": {
+      "vehicles": 0.00,
+      "appliesTo": "High-emission vehicles"
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.15,
+      "approvedInstitutionsOnly": true
+    },
+    "vivienda": {
+      "rate": 1.00,
+      "maxDeduction": 10000
+    },
+    "alimentacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "ruc": "Registro Único de Contribuyentes is required for all taxpayers",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_anual": "Annual tax return must be filed between March and April",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "rise": "Simplified regime available for small businesses with revenue under $300,000"
+  }
+}

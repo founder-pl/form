@@ -30,7 +30,7 @@ export async function runCliCommand(command) {
  * @returns {Promise<Object>} Response data
  */
 export async function apiRequest({ method, path, body }) {
-  const baseUrl = 'http://localhost:3005';
+  const baseUrl = 'http://localhost:3006';
   const url = `${baseUrl}${path}`;
   
   const response = await fetch(url, {

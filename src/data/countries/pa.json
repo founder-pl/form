@@ -1,0 +1,194 @@
+{
+  "code": "PA",
+  "name": "Panama",
+  "currency": "USD",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresa_unipersonal",
+      "name": "Empresa Unipersonal",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 36000,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "incomeTaxRate": 0.25,
+      "vatRate": 0.07,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "DGI (Dirección General de Ingresos)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 1000,
+      "minimumCapital": 10000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.07,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "DGI"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S.R.L.)",
+      "registrationFee": 800,
+      "minimumCapital": 2000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.07,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "DGI"
+    },
+    {
+      "id": "sociedad_anonima_simplificada",
+      "name": "Sociedad Anónima Simplificada (S.A.S.)",
+      "registrationFee": 300,
+      "minimumCapital": 1000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.07,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "DGI"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 5000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "USD"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.07,
+      "branchProfitsTax": 0.00,
+      "taxAgency": "DGI"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 11000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 11001,
+          "maxIncome": 50000,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 50001,
+          "rate": 0.25,
+          "tax": 6000,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "css": {
+      "employeeRate": 0.0975,
+      "employerRate": 0.125,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "educacion": {
+      "employerRate": 0.015,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "seguro_educativo": {
+      "employeeRate": 0.0125,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "seguro_riesgo_profesional": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "fondo_ahro_panama": {
+      "employeeRate": 0.00,
+      "employerRate": 0.015,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "itbms": {
+      "standardRate": 0.07,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "impuesto_renta": {
+      "rate": 0.00,
+      "appliesTo": "Income tax"
+    },
+    "impuesto_vehiculos": {
+      "rate": 0.00,
+      "appliesTo": "Vehicle tax"
+    },
+    "impuesto_inmuebles": {
+      "rate": 0.00,
+      "appliesTo": "Property tax"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.15,
+      "tobacco": 0.20,
+      "vehicles": 0.10,
+      "luxury_goods": 0.10
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    },
+    "seguros": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    },
+    "intereses_hipotecarios": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    }
+  },
+  "hints": {
+    "ruc": "Registro Único de Contribuyente is required for all businesses",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_anual": "Annual tax return must be filed between January and March",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "zona_libre_colon": "Special tax regime available in the Colon Free Zone"
+  }
+}

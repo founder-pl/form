@@ -1,0 +1,220 @@
+{
+  "code": "PE",
+  "name": "Peru",
+  "currency": "PEN",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "persona_natural",
+      "name": "Persona Natural",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UIT"
+      },
+      "taxRegime": "Nuevo RUS",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.00,
+      "municipalTaxRate": 0.02,
+      "taxAgency": "SUNAT (Superintendencia Nacional de Aduanas y de Administración Tributaria)"
+    },
+    {
+      "id": "eirl",
+      "name": "Empresa Individual de Responsabilidad Limitada (E.I.R.L.)",
+      "registrationFee": 1000,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UIT"
+      },
+      "taxRegime": "General Regime",
+      "corporateTaxRate": 0.295,
+      "vatRate": 0.18,
+      "municipalTaxRate": 0.02,
+      "dividendWithholdingTax": 0.053,
+      "taxAgency": "SUNAT"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 2000,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UIT"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.295,
+      "vatRate": 0.18,
+      "municipalTaxRate": 0.02,
+      "dividendWithholdingTax": 0.053,
+      "taxAgency": "SUNAT"
+    },
+    {
+      "id": "sociedad_anomima_cerrada",
+      "name": "Sociedad Anónima Cerrada (S.A.C.)",
+      "registrationFee": 1500,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UIT"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.295,
+      "vatRate": 0.18,
+      "municipalTaxRate": 0.02,
+      "dividendWithholdingTax": 0.053,
+      "taxAgency": "SUNAT"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 5000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UIT"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.18,
+      "municipalTaxRate": 0.02,
+      "branchProfitsTax": 0.053,
+      "taxAgency": "SUNAT"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 23600,
+          "rate": 0.08,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 23601,
+          "maxIncome": 94400,
+          "rate": 0.14,
+          "tax": 1888,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 94401,
+          "maxIncome": 196250,
+          "rate": 0.17,
+          "tax": 11808,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 196251,
+          "maxIncome": 392500,
+          "rate": 0.20,
+          "tax": 29115,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 392501,
+          "maxIncome": 588750,
+          "rate": 0.30,
+          "tax": 68345,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 588751,
+          "rate": 0.30,
+          "tax": 127220,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "essalud": {
+      "employeeRate": 0.00,
+      "employerRate": 0.09,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "sctr": {
+      "employeeRate": 0.00,
+      "employerRate": 0.013,
+      "variesByRiskLevel": true,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "sistema_privado_pensiones": {
+      "employeeRate": 0.10,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0,
+      "commissionRate": 0.013
+    },
+    "sistema_nacional_pensiones": {
+      "employeeRate": 0.13,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "seguro_complementario_trabajo_riesgo": {
+      "employerRate": 0.0053,
+      "variesByRiskLevel": true
+    }
+  },
+  "taxes": {
+    "igv": {
+      "standardRate": 0.18,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "isc": {
+      "alcohol": 0.20,
+      "tobacco": 0.30,
+      "gasoline": 0.10,
+      "luxury_vehicles": 0.20
+    },
+    "impuesto_bolsa_plastica": {
+      "rate": 0.10,
+      "appliesTo": "Plastic bag usage"
+    },
+    "retencion_igv": {
+      "rate": 0.12,
+      "appliesTo": "Certain services and goods"
+    },
+    "impuesto_especial_mineria": {
+      "rate": 0.02,
+      "appliesTo": "Mining companies"
+    }
+  },
+  "deductions": {
+    "gastos_educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.20
+    },
+    "salud": {
+      "rate": 1.00,
+      "maxDeduction": 0.03
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    },
+    "intereses_hipotecarios": {
+      "rate": 1.00,
+      "maxDeduction": 30000
+    },
+    "gastos_notariales": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    }
+  },
+  "hints": {
+    "ruc": "RUC (Registro Único de Contribuyentes) is required for all taxpayers",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "pdt": "Monthly tax returns must be filed through the PDT (Plameando Digital Tributario)",
+    "retenciones": "Withholding tax applies to certain services and goods",
+    "sistema_electronico": "Electronic accounting is mandatory for certain taxpayers"
+  }
+}

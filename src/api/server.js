@@ -5,7 +5,7 @@ import { calculateTaxForCountry } from '../services/taxCalculator.js';
 import { getCountryData, getBusinessTypes, getTaxTreaty } from '../services/dataService.js';
 
 const app = express();
-const PORT = process.env.PORT || 3005;
+const PORT = process.env.PORT || 3006;
 
 // Middleware
 app.use(cors());

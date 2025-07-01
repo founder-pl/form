@@ -1,0 +1,215 @@
+{
+  "code": "UY",
+  "name": "Uruguay",
+  "currency": "UYU",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresa_unipersonal",
+      "name": "Empresa Unipersonal",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 1500000,
+        "currency": "UYU"
+      },
+      "taxRegime": "Monotributo",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.00,
+      "monthlyFixedFee": 3000,
+      "maxAnnualRevenue": 2000000,
+      "taxAgency": "DGI (Dirección General Impositiva)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 20000,
+      "minimumCapital": 400000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UYU"
+      },
+      "taxRegime": "General Regime",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.22,
+      "dividendWithholdingTax": 0.07,
+      "taxAgency": "DGI"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S.R.L.)",
+      "registrationFee": 15000,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UYU"
+      },
+      "taxRegime": "General Regime",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.22,
+      "dividendWithholdingTax": 0.07,
+      "taxAgency": "DGI"
+    },
+    {
+      "id": "sociedad_anonima_financiera_inversion",
+      "name": "Sociedad Anónima Financiera de Inversión (S.A.F.I.)",
+      "registrationFee": 30000,
+      "minimumCapital": 4000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UYU"
+      },
+      "taxRegime": "Financial Regime",
+      "corporateTaxRate": 0.00,
+      "vatRate": 0.00,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "BCU & DGI"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 50000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UYU"
+      },
+      "taxRegime": "General Regime",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.22,
+      "branchProfitsTax": 0.07,
+      "taxAgency": "DGI"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 598728,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 598729,
+          "maxIncome": 855326,
+          "rate": 0.10,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 855327,
+          "maxIncome": 1221894,
+          "rate": 0.15,
+          "tax": 25660,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1221895,
+          "maxIncome": 1709781,
+          "rate": 0.24,
+          "tax": 80600,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1709782,
+          "maxIncome": 2564672,
+          "rate": 0.25,
+          "tax": 197774,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 2564673,
+          "rate": 0.36,
+          "tax": 411546,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "bps": {
+      "employeeRate": 0.15,
+      "employerRate": 0.075,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "fonasa": {
+      "employeeRate": 0.045,
+      "employerRate": 0.05,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "bse": {
+      "employeeRate": 0.0125,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "fondo_reconversion": {
+      "employerRate": 0.10,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "seguro_desempleo": {
+      "employerRate": 0.05,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.22,
+      "reducedRate": 0.10,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "imeba": {
+      "rate": 0.25,
+      "appliesTo": "Small and medium enterprises"
+    },
+    "irpf": {
+      "rate": 0.10,
+      "appliesTo": "Employee salaries"
+    },
+    "irnr": {
+      "rate": 0.12,
+      "appliesTo": "Non-resident income"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.25,
+      "tobacco": 0.30,
+      "gasoline": 0.15,
+      "vehicles": 0.20
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.15
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.20
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    },
+    "intereses_hipotecarios": {
+      "rate": 1.00,
+      "maxDeduction": 25000
+    },
+    "gastos_funerarios": {
+      "rate": 1.00,
+      "maxDeduction": 10000
+    }
+  },
+  "hints": {
+    "rut": "RUT (Registro Único Tributario) is required for all taxpayers",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_jurada": "Annual tax return must be filed between April and June",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "monotributo": "Simplified regime for small businesses with revenue under UYU 2,000,000"
+  }
+}

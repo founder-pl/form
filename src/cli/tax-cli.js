@@ -27,7 +27,7 @@ program
   .name('tax-cli')
   .description('CLI for Tax Comparison Tool')
   .version('1.0.0', '-v, --version', 'Show version')
-  .option('-s, --server <url>', 'API server URL', 'http://localhost:3005');
+  .option('-s, --server <url>', 'API server URL', 'http://localhost:3006');
 
 // Helper function to make API requests
 async function apiRequest(endpoint, options = {}) {

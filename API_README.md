@@ -34,7 +34,7 @@ npm run start:dev
 npm start:api
 ```
 
-The server will start on `http://localhost:3005` by default.
+The server will start on `http://localhost:3006` by default.
 
 ### API Endpoints
 
@@ -98,7 +98,7 @@ tax-cli health
 - `-i, --income <number>`: Annual income (required)
 - `-c, --country <string>`: Country code (required)
 - `-y, --year <number>`: Tax year (default: current year)
-- `-s, --server <url>`: API server URL (default: http://localhost:3005)
+- `-s, --server <url>`: API server URL (default: http://localhost:3006)
 
 ## Development
 

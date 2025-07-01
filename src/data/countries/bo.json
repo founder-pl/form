@@ -1,0 +1,202 @@
+{
+  "code": "BO",
+  "name": "Bolivia",
+  "currency": "BOB",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresa_unipersonal",
+      "name": "Empresa Unipersonal",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "BOB"
+      },
+      "taxRegime": "Regimen General",
+      "incomeTaxRate": 0.25,
+      "vatRate": 0.13,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "SIN (Sistema de Impuestos Nacionales)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 2000,
+      "minimumCapital": 20000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "BOB"
+      },
+      "taxRegime": "Regimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.13,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "SIN"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S.R.L.)",
+      "registrationFee": 1500,
+      "minimumCapital": 5000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "BOB"
+      },
+      "taxRegime": "Regimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.13,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "SIN"
+    },
+    {
+      "id": "sociedad_anima_cerrada",
+      "name": "Sociedad Anónima Cerrada (S.A.C.)",
+      "registrationFee": 1800,
+      "minimumCapital": 10000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "BOB"
+      },
+      "taxRegime": "Regimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.13,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "SIN"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 3000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "BOB"
+      },
+      "taxRegime": "Regimen General",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.13,
+      "branchProfitsTax": 0.125,
+      "taxAgency": "SIN"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 42000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 42001,
+          "maxIncome": 60000,
+          "rate": 0.13,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 60001,
+          "maxIncome": 100000,
+          "rate": 0.20,
+          "tax": 2340,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 100001,
+          "rate": 0.25,
+          "tax": 10340,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "caja_salud": {
+      "employeeRate": 0.10,
+      "employerRate": 0.10,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "afp": {
+      "employeeRate": 0.10,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "riesgo_profesional": {
+      "employeeRate": 0.00,
+      "employerRate": 0.0171,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "pro_vivienda": {
+      "employeeRate": 0.00,
+      "employerRate": 0.02,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "solidaridad": {
+      "employerRate": 0.03,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.13,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+ "it": {
+      "rate": 0.03,
+      "appliesTo": "Financial transactions"
+    },
+    "iehd": {
+      "rate": 0.05,
+      "appliesTo": "Specific consumption"
+    },
+    "rc_iva": {
+      "rate": 0.13,
+      "appliesTo": "Withholding VAT"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.30,
+      "tobacco": 0.50,
+      "luxury_vehicles": 0.20,
+      "luxury_goods": 0.10
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    },
+    "vivienda": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "seguros": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "nif": "Número de Identificación Fiscal is required for all taxpayers",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_jurada": "Annual tax return must be filed between January and March",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "regimen_simplificado": "Simplified regime available for small businesses with revenue under BOB 5,000,000"
+  }
+}

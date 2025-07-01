@@ -1,0 +1,207 @@
+{
+  "code": "CR",
+  "name": "Costa Rica",
+  "currency": "CRC",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresa_unipersonal",
+      "name": "Empresa Unipersonal",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CRC"
+      },
+      "taxRegime": "Régimen Simplificado",
+      "incomeTaxRate": 0.10,
+      "vatRate": 0.00,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "Ministerio de Hacienda"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 150000,
+      "minimumCapital": 5000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CRC"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.13,
+      "dividendWithholdingTax": 0.15,
+      "taxAgency": "Ministerio de Hacienda"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S.R.L.)",
+      "registrationFee": 125000,
+      "minimumCapital": 1000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CRC"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.13,
+      "dividendWithholdingTax": 0.15,
+      "taxAgency": "Ministerio de Hacienda"
+    },
+    {
+      "id": "sociedad_anonima_laboral",
+      "name": "Sociedad Anónima Laboral (S.A.L.)",
+      "registrationFee": 150000,
+      "minimumCapital": 2500000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CRC"
+      },
+      "taxRegime": "Régimen Laboral",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.13,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "Ministerio de Hacienda"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 300000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "CRC"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.13,
+      "branchProfitsTax": 0.15,
+      "taxAgency": "Ministerio de Hacienda"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 941000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 941001,
+          "maxIncome": 1383000,
+          "rate": 0.10,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1383001,
+          "maxIncome": 2426000,
+          "rate": 0.15,
+          "tax": 44200,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 2426001,
+          "maxIncome": 4844000,
+          "rate": 0.20,
+          "tax": 200650,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 4844001,
+          "rate": 0.25,
+          "tax": 684250,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "ccss": {
+      "employeeRate": 0.0925,
+      "employerRate": 0.2650,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "banco_popular": {
+      "employerRate": 0.0025,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "imi": {
+      "employerRate": 0.0125,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "ins": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "pension_complementaria": {
+      "employeeRate": 0.01,
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.13,
+      "reducedRate": 0.01,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+ "impuesto_unico": {
+      "rate": 0.00,
+      "appliesTo": "Specific goods and services"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.20,
+      "tobacco": 0.30,
+      "vehicles": 0.25,
+      "sodas": 0.10
+    },
+    "impuesto_renta": {
+      "rate": 0.00,
+      "appliesTo": "Income tax"
+    },
+    "impuesto_ventas": {
+      "rate": 0.13,
+      "appliesTo": "Sales tax"
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    },
+    "vivienda": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "alimentacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "cedula_juridica": "Número de Cédula Jurídica is required for all businesses",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_anual": "Annual tax return must be filed between January and April",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "regimen_simplificado": "Simplified regime available for small businesses with revenue under ₡20,000,000"
+  }
+}

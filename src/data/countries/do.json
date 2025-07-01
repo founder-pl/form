@@ -1,0 +1,201 @@
+{
+  "code": "DO",
+  "name": "Dominican Republic",
+  "currency": "DOP",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresario_individual",
+      "name": "Empresario Individual",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 1500000,
+        "currency": "DOP"
+      },
+      "taxRegime": "Régimen Simplificado",
+      "incomeTaxRate": 0.02,
+      "vatRate": 0.18,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 8000000,
+      "taxAgency": "DGII (Dirección General de Impuestos Internos)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 20000,
+      "minimumCapital": 3000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "DOP"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.18,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "DGII"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S.R.L.)",
+      "registrationFee": 15000,
+      "minimumCapital": 1000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "DOP"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.18,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "DGII"
+    },
+    {
+      "id": "sociedad_anonima_simplificada",
+      "name": "Sociedad Anónima Simplificada (S.A.S.)",
+      "registrationFee": 10000,
+      "minimumCapital": 100000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "DOP"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.18,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "DGII"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 50000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "DOP"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.18,
+      "branchProfitsTax": 0.10,
+      "taxAgency": "DGII"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 416220,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 416221,
+          "maxIncome": 624329,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 624330,
+          "maxIncome": 867123,
+          "rate": 0.20,
+          "tax": 31216,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 867124,
+          "rate": 0.25,
+          "tax": 79791,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "sfs": {
+      "employeeRate": 0.0287,
+      "employerRate": 0.0713,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "afp": {
+      "employeeRate": 0.0287,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "srl": {
+      "employeeRate": 0.00,
+      "employerRate": 0.0121,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "infotep": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "riesgo_laboral": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "itbis": {
+      "standardRate": 0.18,
+      "reducedRate": 0.08,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "isr": {
+      "rate": 0.00,
+      "appliesTo": "Income tax"
+    },
+    "impuesto_selectivo": {
+      "alcohol": 0.20,
+      "tobacco": 0.30,
+      "vehicles": 0.15,
+      "luxury_goods": 0.10
+    },
+    "impuesto_vehiculos": {
+      "rate": 0.00,
+      "appliesTo": "Vehicle tax"
+    },
+    "impuesto_inmuebles": {
+      "rate": 0.01,
+      "appliesTo": "Property tax"
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.05,
+      "approvedInstitutionsOnly": true
+    },
+    "intereses_hipotecarios": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "seguros_vida": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "rnc": "Registro Nacional del Contribuyente is required for all businesses",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_anual": "Annual tax return must be filed between January and April",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "regimen_simplificado": "Simplified regime available for small businesses with revenue under RD$8,000,000"
+  }
+}

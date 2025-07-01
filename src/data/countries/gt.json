@@ -1,0 +1,200 @@
+{
+  "code": "GT",
+  "name": "Guatemala",
+  "currency": "GTQ",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresario_individual",
+      "name": "Empresario Individual",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 30000,
+        "currency": "GTQ"
+      },
+      "taxRegime": "Pequeño Contribuyente",
+      "incomeTaxRate": 0.05,
+      "vatRate": 0.00,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 180000,
+      "taxAgency": "SAT (Superintendencia de Administración Tributaria)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 5000,
+      "minimumCapital": 2000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "GTQ"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "SAT"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S.R.L.)",
+      "registrationFee": 3000,
+      "minimumCapital": 2000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "GTQ"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "SAT"
+    },
+    {
+      "id": "sociedad_anonima_privada",
+      "name": "Sociedad Anónima Privada (S.A.P.)",
+      "registrationFee": 4000,
+      "minimumCapital": 2000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "GTQ"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "SAT"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 10000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "GTQ"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "branchProfitsTax": 0.05,
+      "taxAgency": "SAT"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 300000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 300001,
+          "maxIncome": 500000,
+          "rate": 0.05,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 500001,
+          "maxIncome": 1000000,
+          "rate": 0.10,
+          "tax": 10000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1000001,
+          "rate": 0.15,
+          "tax": 60000,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "igss": {
+      "employeeRate": 0.0483,
+      "employerRate": 0.1067,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "intecap": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "irtra": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "pasivo_laboral": {
+      "employerRate": 0.011,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "bono_14": {
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0,
+      "annualBonus": true
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.12,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "isr": {
+      "rate": 0.00,
+      "appliesTo": "Income tax"
+    },
+    "isr_empresarial": {
+      "rate": 0.25,
+      "appliesTo": "Corporate income tax"
+    },
+    "impuesto_timbres": {
+      "rate": 0.00,
+      "appliesTo": "Legal documents and transactions"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.20,
+      "tobacco": 0.30,
+      "vehicles": 0.25,
+      "bebidas_azucaradas": 0.10
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.05,
+      "approvedInstitutionsOnly": true
+    },
+    "vivienda": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "seguros": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "nit": "Número de Identificación Tributaria is required for all businesses",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_anual": "Annual tax return must be filed between January and March",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "pequeno_contribuyente": "Small taxpayer regime available for businesses with revenue under Q180,000"
+  }
+}

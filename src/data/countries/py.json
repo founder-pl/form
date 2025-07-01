@@ -1,0 +1,201 @@
+{
+  "code": "PY",
+  "name": "Paraguay",
+  "currency": "PYG",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresa_unipersonal",
+      "name": "Empresa Unipersonal",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 300000000,
+        "currency": "PYG"
+      },
+      "taxRegime": "Simplified Regime (RUC-S)",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.05,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "SET (Subsecretaría de Estado de Tributación)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 2500000,
+      "minimumCapital": 30000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "PYG"
+      },
+      "taxRegime": "General Regime",
+      "corporateTaxRate": 0.10,
+      "vatRate": 0.10,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "SET"
+    },
+    {
+      "id": "sociedad_anonima_simplificada",
+      "name": "Sociedad Anónima Simplificada (S.A.S.)",
+      "registrationFee": 1000000,
+      "minimumCapital": 1000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "PYG"
+      },
+      "taxRegime": "General Regime",
+      "corporateTaxRate": 0.10,
+      "vatRate": 0.10,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "SET"
+    },
+    {
+      "id": "sociedad_por_acciones_simplificada",
+      "name": "Sociedad por Acciones Simplificada (S.A.S.)",
+      "registrationFee": 1000000,
+      "minimumCapital": 1000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "PYG"
+      },
+      "taxRegime": "General Regime",
+      "corporateTaxRate": 0.10,
+      "vatRate": 0.10,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "SET"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 5000000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "PYG"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.15,
+      "vatRate": 0.10,
+      "branchProfitsTax": 0.05,
+      "taxAgency": "SET"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 126000000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 126000001,
+          "maxIncome": 180000000,
+          "rate": 0.08,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 180000001,
+          "maxIncome": 300000000,
+          "rate": 0.12,
+          "tax": 4320000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 300000001,
+          "rate": 0.15,
+          "tax": 18720000,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "ips": {
+      "employeeRate": 0.09,
+      "employerRate": 0.16,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "seguro_social": {
+      "employeeRate": 0.00,
+      "employerRate": 0.09,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "seguro_medico": {
+      "employeeRate": 0.00,
+      "employerRate": 0.03,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "comision_empleador": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "fondo_bienestar_social": {
+      "employerRate": 0.01,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.10,
+      "reducedRate": 0.05,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "ire": {
+      "rate": 0.01,
+      "appliesTo": "Corporate equity"
+    },
+    "irp": {
+      "rate": 0.30,
+      "appliesTo": "Personal services"
+    },
+    "imacip": {
+      "rate": 0.30,
+      "appliesTo": "Commercial and industrial activities"
+    },
+    "impuesto_selectivo_al_consumo": {
+      "alcohol": 0.18,
+      "tobacco": 0.20,
+      "vehicles": 0.15,
+      "luxury_goods": 0.10
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.20
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.20
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    },
+    "seguros_vida": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "gastos_funerarios": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "ruc": "RUC (Registro Único de Contribuyentes) is required for all taxpayers",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_renta": "Annual income tax return must be filed between January and March",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "monotributo": "Simplified regime for small businesses with revenue under PYG 300,000,000"
+  }
+}

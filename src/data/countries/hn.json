@@ -1,0 +1,202 @@
+{
+  "code": "HN",
+  "name": "Honduras",
+  "currency": "HNL",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresario_individual",
+      "name": "Empresario Individual",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 150000,
+        "currency": "HNL"
+      },
+      "taxRegime": "Régimen Simplificado",
+      "incomeTaxRate": 0.05,
+      "vatRate": 0.15,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 1000000,
+      "taxAgency": "SAR (Sistema de Administración de Rentas)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 5000,
+      "minimumCapital": 25000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "HNL"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.15,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "SAR"
+    },
+    {
+      "id": "sociedad_responsabilidad_limitada",
+      "name": "Sociedad de Responsabilidad Limitada (S. de R.L.)",
+      "registrationFee": 3000,
+      "minimumCapital": 10000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "HNL"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.15,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "SAR"
+    },
+    {
+      "id": "sociedad_anonima_simplificada",
+      "name": "Sociedad Anónima Simplificada (S.A.S.)",
+      "registrationFee": 2000,
+      "minimumCapital": 5000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "HNL"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.15,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "SAR"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 10000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "HNL"
+      },
+      "taxRegime": "Régimen General",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.15,
+      "branchProfitsTax": 0.10,
+      "taxAgency": "SAR"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 199039,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 199040,
+          "maxIncome": 303499,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 303500,
+          "maxIncome": 705813,
+          "rate": 0.20,
+          "tax": 15669,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 705814,
+          "rate": 0.25,
+          "tax": 96129,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "ihss": {
+      "employeeRate": 0.0125,
+      "employerRate": 0.10,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "infop": {
+      "employerRate": 0.015,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "bono_14": {
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0,
+      "annualBonus": true
+    },
+    "aguinaldo": {
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0,
+      "annualBonus": true
+    },
+    "vacaciones": {
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0,
+      "annualBonus": true
+    }
+  },
+  "taxes": {
+    "isv": {
+      "standardRate": 0.15,
+      "reducedRate": 0.00,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "isr": {
+      "rate": 0.00,
+      "appliesTo": "Income tax"
+    },
+    "impuesto_solidaridad": {
+      "rate": 0.00,
+      "appliesTo": "Solidarity tax on high net worth individuals"
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.25,
+      "tobacco": 0.40,
+      "vehicles": 0.20,
+      "bebidas_azucaradas": 0.15
+    },
+    "impuesto_turismo": {
+      "rate": 0.04,
+      "appliesTo": "Tourism services"
+    }
+  },
+  "deductions": {
+    "gastos_medicos": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "educacion": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "donaciones": {
+      "rate": 1.00,
+      "maxDeduction": 0.05,
+      "approvedInstitutionsOnly": true
+    },
+    "vivienda": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "seguros": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "rtn": "Registro Tributario Nacional is required for all businesses",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_anual": "Annual tax return must be filed between January and March",
+    "retenciones": "Withholding tax applies to certain services and payments",
+    "regimen_simplificado": "Simplified regime available for small businesses with revenue under L1,000,000"
+  }
+}
