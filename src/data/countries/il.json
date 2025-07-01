@@ -1,0 +1,205 @@
+{
+  "code": "IL",
+  "name": "Israel",
+  "currency": "ILS",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "yechid_iska",
+      "name": "Self-Employed (Yechid Iska)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "ILS"
+      },
+      "taxRegime": "Income Tax + VAT",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.17,
+      "nationalInsuranceRate": 0.122,
+      "healthInsuranceRate": 0.031,
+      "passThroughTaxation": true,
+      "taxAgency": "Tax Authority"
+    },
+    {
+      "id": "amutah",
+      "name": "Non-Profit Organization (Amutah)",
+      "registrationFee": 1000,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "ILS"
+      },
+      "taxRegime": "Tax-Exempt",
+      "taxExempt": true,
+      "vatRate": 0.00,
+      "approvalRequired": true,
+      "taxAgency": "Amutot Registrar"
+    },
+    {
+      "id": "ltd",
+      "name": "Limited Company (LTD)",
+      "registrationFee": 2500,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "ILS"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.23,
+      "vatRate": 0.17,
+      "dividendWithholdingTax": 0.25,
+      "taxAgency": "Corporations Authority"
+    },
+    {
+      "id": "partnership",
+      "name": "Partnership (Shutafut)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "ILS"
+      },
+      "taxRegime": "Pass-Through",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.17,
+      "passThroughTaxation": true,
+      "liability": "Unlimited",
+      "taxAgency": "Tax Authority"
+    },
+    {
+      "id": "foreign_company",
+      "name": "Foreign Company Branch",
+      "registrationFee": 5000,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "ILS"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.23,
+      "vatRate": 0.17,
+      "branchProfitsTax": 0.23,
+      "taxAgency": "Tax Authority"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 84480,
+          "rate": 0.10,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 84481,
+          "maxIncome": 120960,
+          "rate": 0.14,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 120961,
+          "maxIncome": 193800,
+          "rate": 0.20,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 193801,
+          "maxIncome": 269280,
+          "rate": 0.31,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 269281,
+          "maxIncome": 579840,
+          "rate": 0.35,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 579841,
+          "rate": 0.47,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "nationalInsurance": {
+      "employeeRate": 0.035,
+      "employerRate": 0.0775,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "healthInsurance": {
+      "employeeRate": 0.031,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "pension": {
+      "employeeContribution": 0.06,
+      "employerContribution": 0.065,
+      "ceiling": 0
+    },
+    "severancePay": {
+      "employerContribution": 0.0833,
+      "appliesTo": "Monthly salary"
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.17,
+      "zeroRated": ["Exports", "Foreign residents", "Foreign embassies"],
+      "exempt": ["Financial services", "Education", "Healthcare"]
+    },
+    "purchaseTax": {
+      "standardRate": 0.00,
+      "rates": {
+        "vehicles": 0.83,
+        "electronics": 0.00,
+        "luxury_goods": 0.00
+      }
+    },
+    "municipalTax": {
+      "arnona": "Based on property size and location",
+      "businessLicense": "Varies by municipality"
+    },
+    "landAppreciation": {
+      "rate": 0.25,
+      "exemptions": ["Primary residence", "Inheritance"]
+    }
+  },
+  "deductions": {
+    "professionalExpenses": {
+      "rate": 0.35,
+      "maxDeduction": 0.16,
+      "requiresDocumentation": true
+    },
+    "pensionSavings": {
+      "rate": 0.35,
+      "maxDeduction": 0.07,
+      "annualCeiling": 0
+    },
+    "educationFunds": {
+      "rate": 0.25,
+      "maxDeduction": 0.05,
+      "annualCeiling": 0
+    },
+    "mortgageInterest": {
+      "rate": 1.00,
+      "maxDeduction": 0.00,
+      "ceiling": 0
+    },
+    "donations": {
+      "rate": 0.35,
+      "maxDeduction": 0.30,
+      "approvedInstitutionsOnly": true
+    }
+  },
+  "hints": {
+    "tax_credits": "New immigrants and returning residents are eligible for tax benefits for 10 years",
+    "vat_returns": "Monthly VAT returns are required for businesses with annual turnover over NIS 100,000",
+    "tax_treaties": "Israel has tax treaties with many countries to avoid double taxation",
+    "electronic_filing": "All tax filings must be submitted electronically through the Tax Authority's website"
+  }
+}

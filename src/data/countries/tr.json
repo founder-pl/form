@@ -1,0 +1,200 @@
+{
+  "code": "TR",
+  "name": "Turkey",
+  "currency": "TRY",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "gercek_kisi",
+      "name": "Gerçek Kişi (Self-Employed)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 150000,
+        "currency": "TRY"
+      },
+      "taxRegime": "Real Earnings",
+      "incomeTaxRate": 0.15,
+      "vatRate": 0.18,
+      "stampDutyRate": 0.00759,
+      "passThroughTaxation": true,
+      "taxAgency": "Gelir İdaresi Başkanlığı"
+    },
+    {
+      "id": "limited_sirket",
+      "name": "Limited Şirket (Ltd. Şti.)",
+      "registrationFee": 5000,
+      "minimumCapital": 10000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "TRY"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.18,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "Gelir İdaresi Başkanlığı"
+    },
+    {
+      "id": "anonim_sirket",
+      "name": "Anonim Şirket (A.Ş.)",
+      "registrationFee": 10000,
+      "minimumCapital": 50000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "TRY"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.18,
+      "dividendWithholdingTax": 0.10,
+      "publicOffering": true,
+      "taxAgency": "Sermaye Piyasası Kurulu"
+    },
+    {
+      "id": "kooperatif",
+      "name": "Kooperatif (Cooperative)",
+      "registrationFee": 2000,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 150000,
+        "currency": "TRY"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.18,
+      "taxIncentives": true,
+      "taxAgency": "Gelir İdaresi Başkanlığı"
+    },
+    {
+      "id": "sube",
+      "name": "Yabancı Şirket Şubesi (Branch)",
+      "registrationFee": 20000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "TRY"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.18,
+      "branchProfitsTax": 0.15,
+      "taxAgency": "Gelir İdaresi Başkanlığı"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 32000,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 32001,
+          "maxIncome": 70000,
+          "rate": 0.20,
+          "tax": 4800,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 70001,
+          "maxIncome": 250000,
+          "rate": 0.27,
+          "tax": 12400,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 250001,
+          "maxIncome": 880000,
+          "rate": 0.35,
+          "tax": 61000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 880001,
+          "rate": 0.40,
+          "tax": 281500,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialInsurance": {
+    "sgk": {
+      "employeeRate": 0.14,
+      "employerRate": 20.50,
+      "ceiling": 39813,
+      "minBase": 17802,
+      "unemploymentFund": {
+        "employeeRate": 0.01,
+        "employerRate": 0.02
+      }
+    },
+    "issizlik": {
+      "employeeRate": 0.01,
+      "employerRate": 0.02,
+      "ceiling": 39813
+    },
+    "issizlik_sigortasi": {
+      "employeeRate": 0.01,
+      "employerRate": 0.02,
+      "ceiling": 39813
+    }
+  },
+  "taxes": {
+    "kdv": {
+      "standardRate": 0.18,
+      "reducedRate1": 0.08,
+      "reducedRate2": 0.01,
+      "exemptItems": ["Basic food items", "Books", "Medical supplies"]
+    },
+    "otv": {
+      "appliesTo": ["Luxury goods", "Alcohol", "Tobacco", "Automobiles"],
+      "rates": [0.10, 0.25, 0.50, 1.00, 2.00, 3.00, 4.00]
+    },
+    "bsmv": {
+      "rate": 0.05,
+      "appliesTo": "Banking and insurance transactions"
+    },
+    "mvhsk": {
+      "rate": 0.02,
+      "appliesTo": "Mobile phone services"
+    },
+    "otv_istisna": {
+      "rate": 0.00,
+      "appliesTo": "Export transactions"
+    }
+  },
+  "deductions": {
+    "standardDeduction": 0,
+    "sgkPremiums": {
+      "rate": 1.00,
+      "ceiling": 0.15
+    },
+    "educationExpenses": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "healthExpenses": {
+      "rate": 1.00,
+      "maxDeduction": 0.15
+    },
+    "donations": {
+      "rate": 0.05,
+      "approvedInstitutionsOnly": true
+    },
+    "homeOffice": {
+      "rate": 0.25,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "tax_year": "Tax year follows the calendar year (January-December)",
+    "vat_returns": "Monthly VAT returns are required for businesses registered for VAT",
+    "e_invoice": "E-invoice is mandatory for certain businesses and transactions",
+    "withholding_tax": "Withholding tax rates vary between 0-20% depending on the type of income"
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "code": "RU",
+  "name": "Russia",
+  "currency": "RUB",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "ip",
+      "name": "Individual Entrepreneur (ИП)",
+      "registrationFee": 800,
+      "requiresVatRegistration": {
+        "threshold": 2000000,
+        "currency": "RUB"
+      },
+      "taxRegime": "Simplified (USN)",
+      "incomeTaxRate": 0.06,
+      "vatRate": 0.20,
+      "pensionFundRate": 0.01,
+      "socialInsuranceRate": 0.00,
+      "passThroughTaxation": true,
+      "taxAgency": "Federal Tax Service"
+    },
+    {
+      "id": "ooo",
+      "name": "Limited Liability Company (ООО)",
+      "registrationFee": 4000,
+      "minimumCapital": 10000,
+      "requiresVatRegistration": {
+        "threshold": 2000000,
+        "currency": "RUB"
+      },
+      "taxRegime": "General (OSNO)",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.20,
+      "dividendWithholdingTax": 0.13,
+      "taxAgency": "Federal Tax Service"
+    },
+    {
+      "id": "ao",
+      "name": "Joint-Stock Company (АО)",
+      "registrationFee": 4000,
+      "minimumCapital": 100000,
+      "requiresVatRegistration": {
+        "threshold": 2000000,
+        "currency": "RUB"
+      },
+      "taxRegime": "General (OSNO)",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.20,
+      "dividendWithholdingTax": 0.13,
+      "publicOffering": true,
+      "taxAgency": "Central Bank & Federal Tax Service"
+    },
+    {
+      "id": "samozanyatyy",
+      "name": "Self-Employed (Самозанятый)",
+      "registrationFee": 0,
+      "requiresVatRegistration": false,
+      "taxRegime": "Professional Income Tax (NPA)",
+      "incomeTaxRate": 0.04,
+      "vatRate": 0.00,
+      "maxAnnualIncome": 2400000,
+      "taxAgency": "Federal Tax Service"
+    },
+    {
+      "id": "branch",
+      "name": "Foreign Company Branch",
+      "registrationFee": 120000,
+      "requiresVatRegistration": {
+        "threshold": 2000000,
+        "currency": "RUB"
+      },
+      "taxRegime": "General (OSNO)",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.20,
+      "branchProfitsTax": 0.20,
+      "taxAgency": "Federal Tax Service"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 150000,
+          "rate": 0.13,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 150001,
+          "maxIncome": 2000000,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 2000001,
+          "rate": 0.22,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialInsurance": {
+    "pensionFund": {
+      "employeeRate": 0.00,
+      "employerRate": 0.22,
+      "ceiling": 1917000,
+      "maxContribution": 421740
+    },
+    "socialInsurance": {
+      "employeeRate": 0.00,
+      "employerRate": 0.029,
+      "ceiling": 966000,
+      "maxContribution": 28014
+    },
+    "medicalInsurance": {
+      "employeeRate": 0.00,
+      "employerRate": 0.051,
+      "ceiling": 0,
+      "maxContribution": 0
+    },
+    "injuryInsurance": {
+      "employerRate": 0.002,
+      "ceiling": 0,
+      "variesByIndustry": true
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.20,
+      "reducedRate": 0.10,
+      "zeroRate": 0.00,
+      "reducedRateAppliesTo": ["Food", "Children's products", "Medical goods"]
+    },
+    "propertyTax": {
+      "corporateRate": 0.022,
+      "individualRate": 0.013,
+      "cadastralValueBased": true
+    },
+    "transportTax": {
+      "basedOn": "Engine power",
+      "rates": {
+        "cars": "From 1 to 150+ RUB per HP",
+        "trucks": "From 2.5 to 8.5 RUB per HP",
+        "motorcycles": "From 1 to 15 RUB per HP"
+      }
+    },
+    "landTax": {
+      "rate": 0.03,
+      "cadastralValueBased": true,
+      "maxRate": 0.03
+    },
+    "simplifiedTax": {
+      "incomeRate": 0.06,
+      "incomeMinusExpensesRate": 0.15,
+      "maxRevenue": 219200000,
+      "maxEmployees": 130
+    }
+  },
+  "deductions": {
+    "standardDeduction": 0,
+    "socialDeductions": {
+      "education": 120000,
+      "medical": 120000,
+      "pension": 120000,
+      "charity": 0.25
+    },
+    "propertyDeduction": {
+      "purchase": 2000000,
+      "mortgageInterest": 3000000
+    },
+    "childrenDeduction": {
+      "perChild": 1400,
+      "forDisabledChildren": 12000,
+      "maxIncome": 350000
+    }
+  },
+  "hints": {
+    "tax_regime": "Businesses can choose between General (OSNO), Simplified (USN), Unified Agricultural (ESHN), or Patent (PSN) tax regimes",
+    "vat_registration": "VAT registration is mandatory for businesses with annual revenue over 2 million RUB",
+    "foreign_currency": "Foreign currency transactions must be converted to RUB using Central Bank rates",
+    "electronic_reporting": "Most tax reporting must be submitted electronically through the Federal Tax Service's website"
+  }
+}
