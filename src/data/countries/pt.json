@@ -1,0 +1,129 @@
+{
+  "code": "PT",
+  "name": "Portugal",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "trabalhador_independente",
+      "name": "Trabalhador Independente (Self-employed)",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 20,
+      "requiresVatRegistration": {
+        "threshold": 12500,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.2174,
+      "simplifiedTaxation": true,
+      "flatTaxRate": 0.75,
+      "irsCategory": "B"
+    },
+    {
+      "id": "unipessoal",
+      "name": "Empresário em Nome Individual (Sole Trader)",
+      "registrationFee": 50,
+      "annualFees": 0,
+      "requiresVatRegistration": true,
+      "socialSecurityRate": 0.2174,
+      "irsCategory": "B"
+    },
+    {
+      "id": "ltd",
+      "name": "Sociedade por Quotas (LTD)",
+      "registrationFee": 360,
+      "annualFees": 150,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.21,
+      "socialSecurityRate": 0.2375,
+      "irsCategory": "B"
+    },
+    {
+      "id": "nhr",
+      "name": "Non-Habitual Resident (NHR)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 12500,
+        "currency": "EUR"
+      },
+      "taxBenefit": "20% flat tax on certain professions for 10 years",
+      "irsCategory": "B"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 7479,
+      "rate": 14.5,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 7480,
+      "maxIncome": 11284,
+      "rate": 23,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 11285,
+      "maxIncome": 15992,
+      "rate": 28.5,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 15993,
+      "maxIncome": 20700,
+      "rate": 35,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 20701,
+      "maxIncome": 27509,
+      "rate": 37,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 27510,
+      "maxIncome": 39816,
+      "rate": 43.5,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 39817,
+      "maxIncome": 51200,
+      "rate": 45,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 51201,
+      "rate": 48,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "trabalhador": 0.11,
+    "empresa": 0.2375,
+    "maxContributionBase": 10639,
+    "minContributionBase": 480.43,
+    "caixaSegurancaSocial": 0.3475,
+    "caixaSegurancaSocialTrabalhador": 0.11
+  },
+  "deductions": {
+    "standard": 0,
+    "specificDeduction": 0.15,
+    "maxDeduction": 125,
+    "healthExpenses": {
+      "maxDeductible": 1000,
+      "percentage": 0.15
+    },
+    "educationExpenses": {
+      "maxDeductible": 800,
+      "percentage": 0.3
+    }
+  },
+  "hints": {
+    "trabalhador_independente": "Trabalhador Independente must register with Social Security and Finanças",
+    "nhr": "NHR status provides tax benefits for 10 years to qualifying new residents",
+    "vat": "Standard VAT rate is 23%, with reduced rates of 13%, 6% and 0% for specific goods and services",
+    "social_security": "Social security contributions are required for all self-employed workers, with a minimum monthly payment"
+  }
+}
