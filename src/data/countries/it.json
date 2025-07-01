@@ -1,0 +1,99 @@
+{
+  "code": "IT",
+  "name": "Italy",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "libero_professionista",
+      "name": "Libero Professionista (Freelancer)",
+      "registrationFee": 0,
+      "annualFees": 0,
+      "requiresVatRegistration": {
+        "threshold": 65000,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.242,
+      "simplifiedTaxation": true,
+      "flatTaxRate": 0.15
+    },
+    {
+      "id": "srl",
+      "name": "SRL (Società a Responsabilità Limitata)",
+      "registrationFee": 1000,
+      "annualFees": 500,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.24,
+      "socialSecurityRate": 0.33
+    },
+    {
+      "id": "forfettario",
+      "name": "Regime Forfettario",
+      "registrationFee": 0,
+      "annualFees": 0,
+      "requiresVatRegistration": {
+        "threshold": 65000,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.2598,
+      "flatTaxRate": 0.15,
+      "maxIncome": 65000,
+      "simplifiedTaxation": true
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 15000,
+      "rate": 23,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 15001,
+      "maxIncome": 28000,
+      "rate": 25,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 28001,
+      "maxIncome": 50000,
+      "rate": 35,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 50001,
+      "rate": 43,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "pension": 0.333,
+    "health": 0.073,
+    "unemployment": 0.019,
+    "familyBenefits": 0.068,
+    "maxContributionBase": 102000,
+    "minContributionBase": 15000
+  },
+  "deductions": {
+    "standard": 800,
+    "professionalExpenses": {
+      "maxDeductible": 7000,
+      "percentage": 0.78
+    },
+    "homeOffice": {
+      "dailyRate": 15,
+      "maxDays": 250
+    },
+    "familyDeductions": {
+      "perChild": 900,
+      "largeFamilyBonus": 1200
+    }
+  },
+  "hints": {
+    "libero_professionista": "Liberi professionisti must register with the INPS (social security) and open a VAT number",
+    "forfettario": "Regime Forfettario offers a flat 15% tax rate for the first 5 years, then 20%",
+    "vat": "Standard VAT rate is 22%, with reduced rates of 10%, 5%, and 4% for specific goods and services",
+    "healthInsurance": "Public healthcare is available to all residents registered with the SSN (Servizio Sanitario Nazionale)"
+  }
+}
