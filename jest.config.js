@@ -15,23 +15,38 @@ export default {
     '^@/(.*)$': '<rootDir>/$1'
   },
 
-  transformIgnorePatterns: ['/node_modules/(?!(bootstrap|bootstrap-icons)/)'],
-  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  transformIgnorePatterns: ['/node_modules/(?!(bootstrap|bootstrap-icons|chalk|cli-table3|figlet)/)'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/test/'],
   moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'json', 'node'],
-
-  // Coverage
+  extensionsToTreatAsEsm: ['.js'],
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
+  },
+  modulePaths: ['<rootDir>/node_modules', '<rootDir>'],
+  moduleDirectories: ['node_modules', 'src'],
   collectCoverage: true,
   collectCoverageFrom: [
+    'src/**/*.js',
+    '!src/**/index.js',
+    '!src/**/*.stories.js',
+    '!src/**/setupTests.js',
     'js/**/*.js',
     '!js/app.js',
     '!**/node_modules/**',
     '!**/vendor/**',
-    '!**/test/**'
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov'],
-
-  // Test discovery
-  testMatch: ['**/test/**/*.test.js'],
+  coverageThreshold: {
+    global: {
+      branches: 50, 
+      functions: 50,
+      lines: 50,
+      statements: 50,
+    },
+  },
+  testMatch: ['**/src/__tests__/**/*.test.js', '**/test/**/*.test.js'],
   verbose: true
 };
