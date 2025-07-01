@@ -10,7 +10,22 @@ import XMLHttpRequest from 'xmlhttprequest';
 export default class CustomTestEnvironment {
     constructor(config) {
         this.config = config;
-        this.global = null;
+        this.global = {};
+        this.moduleMocker = null;
+    }
+
+    async getVmContext() {
+        if (this.global) {
+            return this.global;
+        }
+        
+        // Fallback to setup if getVmContext is called first
+        await this.setup();
+        return this.global;
+    }
+    
+    async handleTestEvent(event, state) {
+        // Optional: Handle test events if needed
     }
 
     async setup() {
@@ -22,32 +37,38 @@ export default class CustomTestEnvironment {
             pretendToBeVisual: true
         });
 
-        this.global = dom.window;
-
-        // Add polyfills to the global scope
+        // Copy JSDOM window properties to global
+        const jsdomGlobal = dom.window;
+        
+        // Add browser globals
+        this.global.window = jsdomGlobal;
+        this.global.document = jsdomGlobal.document;
+        this.global.navigator = jsdomGlobal.navigator;
+        this.global.DOMParser = jsdomGlobal.DOMParser;
+        this.global.Node = jsdomGlobal.Node;
+        this.global.Element = jsdomGlobal.Element;
+        
+        // Add polyfills
         this.global.TextEncoder = TextEncoder;
         this.global.TextDecoder = TextDecoder;
         this.global.URLSearchParams = URLSearchParams;
         this.global.DOMException = DOMException;
         this.global.crypto = {
-            getRandomValues: function (array) {
-                return crypto.randomFillSync(array);
-            }
+            getRandomValues: (array) => crypto.randomFillSync(array)
         };
         this.global.performance = {
             now: () => Date.now(),
             timeOrigin: Date.now()
         };
+        
+        // Add fetch and XHR
         this.global.fetch = fetch;
         this.global.Headers = fetch.Headers;
         this.global.Request = fetch.Request;
         this.global.Response = fetch.Response;
         this.global.XMLHttpRequest = XMLHttpRequest;
-
-        // Add other necessary browser globals
-        this.global.window = dom.window;
-        this.global.document = dom.window.document;
-        this.global.navigator = dom.window.navigator;
+        
+        return this.global;
         this.global.DOMParser = dom.window.DOMParser;
         this.global.Node = dom.window.Node;
         this.global.Element = dom.window.Element;

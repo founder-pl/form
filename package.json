@@ -3,32 +3,44 @@
   "version": "1.0.0",
   "description": "Multi-country tax comparison tool",
   "main": "js/app.js",
+  "bin": {
+    "tax-cli": "./src/cli/tax-cli.js"
+  },
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
-    "test:node": "NODE_OPTIONS=--experimental-vm-modules jest --env=node"
+    "test:node": "NODE_OPTIONS=--experimental-vm-modules jest --env=node",
+    "start:api": "node src/api/server.js",
+    "start:dev": "nodemon src/api/server.js"
   },
   "dependencies": {
+    "@babel/runtime": "^7.27.6",
+    "body-parser": "^2.2.0",
     "bootstrap": "^5.3.0",
-    "bootstrap-icons": "^1.10.0"
+    "bootstrap-icons": "^1.10.0",
+    "commander": "^14.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
+    "@babel/plugin-transform-runtime": "^7.27.4",
     "@babel/preset-env": "^7.22.5",
     "babel-jest": "^29.5.0",
+    "core-js": "^3.32.0",
+    "domexception": "^4.0.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
+    "jest-environment-node": "^29.7.0",
     "jsdom": "^22.1.0",
     "node-fetch": "^3.3.1",
+    "nodemon": "^3.1.10",
+    "regenerator-runtime": "^0.14.0",
+    "text-encoding": "^0.7.0",
     "whatwg-fetch": "^3.6.2",
     "whatwg-url": "^12.0.0",
-    "domexception": "^4.0.0",
-    "xmlhttprequest": "^1.8.0",
-    "text-encoding": "^0.7.0",
-    "core-js": "^3.32.0",
-    "regenerator-runtime": "^0.14.0",
-    "jest-environment-node": "^29.5.0"
+    "xmlhttprequest": "^1.8.0"
   },
   "type": "module"
 }
