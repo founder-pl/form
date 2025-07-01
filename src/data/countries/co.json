@@ -1,0 +1,235 @@
+{
+  "code": "CO",
+  "name": "Colombia",
+  "currency": "COP",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "persona_natural",
+      "name": "Persona Natural",
+      "registrationFee": 0,
+      "requiresVutRegistration": {
+        "threshold": 0,
+        "currency": "UVT"
+      },
+      "taxRegime": "Simplified Regime",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.19,
+      "industryAndCommerceTax": 0.007,
+      "taxAgency": "DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 800000,
+      "minimumCapital": 5000000,
+      "requiresVutRegistration": {
+        "threshold": 0,
+        "currency": "UVT"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.35,
+      "vatRate": 0.19,
+      "industryAndCommerceTax": 0.007,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "DIAN & Cámara de Comercio"
+    },
+    {
+      "id": "sas",
+      "name": "Sociedad por Acciones Simplificada (S.A.S.)",
+      "registrationFee": 600000,
+      "minimumCapital": 1,
+      "requiresVutRegistration": {
+        "threshold": 0,
+        "currency": "UVT"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.35,
+      "vatRate": 0.19,
+      "industryAndCommerceTax": 0.007,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "DIAN & Cámara de Comercio"
+    },
+    {
+      "id": "ltda",
+      "name": "Sociedad Limitada (Ltda.)",
+      "registrationFee": 700000,
+      "minimumCapital": 2000000,
+      "requiresVutRegistration": {
+        "threshold": 0,
+        "currency": "UVT"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.35,
+      "vatRate": 0.19,
+      "industryAndCommerceTax": 0.007,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "DIAN & Cámara de Comercio"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Sociedad Extranjera",
+      "registrationFee": 2000000,
+      "requiresVutRegistration": {
+        "threshold": 0,
+        "currency": "UVT"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.35,
+      "vatRate": 0.19,
+      "industryAndCommerceTax": 0.007,
+      "branchProfitsTax": 0.10,
+      "taxAgency": "DIAN & Cámara de Comercio"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 1090,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1091,
+          "maxIncome": 1700,
+          "rate": 0.19,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1701,
+          "maxIncome": 4100,
+          "rate": 0.28,
+          "tax": 115.90,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 4101,
+          "maxIncome": 8670,
+          "rate": 0.33,
+          "tax": 788.10,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 8671,
+          "maxIncome": 18970,
+          "rate": 0.35,
+          "tax": 2296.20,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 18971,
+          "maxIncome": 31620,
+          "rate": 0.37,
+          "tax": 5901.70,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 31621,
+          "rate": 0.39,
+          "tax": 10588.20,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "salud": {
+      "employeeRate": 0.04,
+      "employerRate": 0.085,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "pension": {
+      "employeeRate": 0.04,
+      "employerRate": 0.12,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "riesgos_laborales": {
+      "employerRate": 0.00522,
+      "variesByRiskLevel": true,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "caja_compensacion": {
+      "employerRate": 0.04,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "sena": {
+      "employerRate": 0.02,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "icbf": {
+      "employerRate": 0.03,
+      "ceiling": 0,
+      "minBase": 0
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.19,
+      "reducedRate": 0.05,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "impuesto_consumo": {
+      "alcohol": 0.25,
+      "tobacco": 0.20,
+      "sugary_drinks": 0.10,
+      "vehicles": 0.08
+    },
+    "impuesto_renta_equidad": {
+      "rate": 0.10,
+      "appliesTo": "Financial institutions"
+    },
+    "retencion_en_la_fuente": {
+      "purchases": 0.015,
+      "services": 0.11,
+      "rental_income": 0.035,
+      "financial_income": 0.07
+    },
+    "impuesto_nacional_al_consumo": {
+      "rate": 0.08,
+      "appliesTo": "Luxury goods and services"
+    }
+  },
+  "deductions": {
+    "personal_allowance": {
+      "individual": 0,
+      "spouse": 0,
+      "children": 0,
+      "disabledDependents": 0
+    },
+    "health_insurance": {
+      "rate": 1.00,
+      "maxDeduction": 0.40
+    },
+    "education_expenses": {
+      "rate": 1.00,
+      "maxDeduction": 0.25
+    },
+    "donations": {
+      "rate": 1.25,
+      "maxDeduction": 0.30,
+      "approvedInstitutionsOnly": true
+    },
+    "investment_incentives": {
+      "rate": 1.00,
+      "maxDeduction": 0.25,
+      "approvalRequired": true
+    }
+  },
+  "hints": {
+    "rut": "RUT (Registro Único Tributario) is required for all taxpayers",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_renta": "Annual income tax return must be filed between August and October",
+    "pagos_factoring": "Factoring payments are subject to 3.5% withholding tax",
+    "retencion_en_la_fuente": "Withholding tax applies to payments to suppliers and service providers"
+  }
+}

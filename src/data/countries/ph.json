@@ -1,0 +1,211 @@
+{
+  "code": "PH",
+  "name": "Philippines",
+  "currency": "PHP",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_proprietor",
+      "name": "Sole Proprietorship",
+      "registrationFee": 2000,
+      "requiresVatRegistration": {
+        "threshold": 3000000,
+        "currency": "PHP"
+      },
+      "taxRegime": "Graduated Income Tax",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.12,
+      "percentageTaxRate": 0.03,
+      "passThroughTaxation": true,
+      "taxAgency": "Bureau of Internal Revenue (BIR)"
+    },
+    {
+      "id": "corporation",
+      "name": "Domestic Corporation",
+      "registrationFee": 5000,
+      "minimumCapital": 5000,
+      "requiresVatRegistration": {
+        "threshold": 3000000,
+        "currency": "PHP"
+      },
+      "taxRegime": "Corporate Income Tax",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "Securities and Exchange Commission (SEC)"
+    },
+    {
+      "id": "one_person_corp",
+      "name": "One Person Corporation (OPC)",
+      "registrationFee": 3000,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 3000000,
+        "currency": "PHP"
+      },
+      "taxRegime": "Corporate Income Tax",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "dividendWithholdingTax": 0.10,
+      "singleStockholder": true,
+      "taxAgency": "Securities and Exchange Commission (SEC)"
+    },
+    {
+      "id": "partnership",
+      "name": "General/Professional Partnership",
+      "registrationFee": 2000,
+      "requiresVatRegistration": {
+        "threshold": 3000000,
+        "currency": "PHP"
+      },
+      "taxRegime": "Partnership Tax",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.12,
+      "percentageTaxRate": 0.03,
+      "passThroughTaxation": true,
+      "taxAgency": "Securities and Exchange Commission (SEC)"
+    },
+    {
+      "id": "branch",
+      "name": "Foreign Company Branch",
+      "registrationFee": 10000,
+      "requiresVatRegistration": {
+        "threshold": 3000000,
+        "currency": "PHP"
+      },
+      "taxRegime": "Corporate Income Tax",
+      "corporateTaxRate": 0.25,
+      "vatRate": 0.12,
+      "branchProfitsTax": 0.15,
+      "taxAgency": "Philippine Economic Zone Authority (PEZA)"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 250000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 250001,
+          "maxIncome": 400000,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 400001,
+          "maxIncome": 800000,
+          "rate": 0.20,
+          "tax": 22500,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 800001,
+          "maxIncome": 2000000,
+          "rate": 0.25,
+          "tax": 102500,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 2000001,
+          "maxIncome": 8000000,
+          "rate": 0.30,
+          "tax": 402500,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 8000001,
+          "rate": 0.35,
+          "tax": 2202500,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "sss": {
+      "employeeRate": 0.04,
+      "employerRate": 0.09,
+      "ceiling": 30000,
+      "minBase": 1000
+    },
+    "philhealth": {
+      "employeeRate": 0.02,
+      "employerRate": 0.02,
+      "ceiling": 80000,
+      "minBase": 10000
+    },
+    "pag_ibig": {
+      "employeeRate": 0.02,
+      "employerRate": 0.02,
+      "ceiling": 5000,
+      "minBase": 1000
+    },
+    "ecc": {
+      "employerRate": 0.01,
+      "ceiling": 15000
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.12,
+      "zeroRate": 0.00,
+      "exemptItems": ["Basic food items", "Education services", "Health services"]
+    },
+    "percentage_tax": {
+      "rate": 0.03,
+      "appliesTo": "Non-VAT registered businesses"
+    },
+    "withholding_tax": {
+      "compensation": 0.05,
+      "expanded": 0.01,
+      "final": 0.15,
+      "appliesTo": ["Salaries", "Professional fees", "Rentals"]
+    },
+    "dtaa_rates": {
+      "dividends": 0.25,
+      "interest": 0.15,
+      "royalties": 0.15
+    },
+    "documentary_stamp_tax": {
+      "variesByDocument": true,
+      "commonRates": [0.75, 1.50, 15.00, 30.00]
+    }
+  },
+  "deductions": {
+    "personal_exemption": {
+      "individual": 50000,
+      "additional_exemption": 25000,
+      "max_dependents": 4
+    },
+    "premium_payments": {
+      "rate": 1.00,
+      "maxDeduction": 2400
+    },
+    "health_insurance": {
+      "rate": 1.00,
+      "maxDeduction": 2400
+    },
+    "sss_contributions": {
+      "rate": 1.00,
+      "maxDeduction": 0.20
+    },
+    "donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    }
+  },
+  "hints": {
+    "tax_id": "Tax Identification Number (TIN) is required for all taxpayers",
+    "tax_returns": "Annual income tax returns must be filed by April 15th each year",
+    "vat_returns": "Monthly VAT returns are due on the 20th of the following month",
+    "bookkeeping": "All businesses must maintain books of accounts and register them with the BIR",
+    "receipts": "All businesses must issue official receipts and register them with the BIR"
+  }
+}

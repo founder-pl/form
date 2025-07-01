@@ -1,0 +1,246 @@
+{
+  "code": "MY",
+  "name": "Malaysia",
+  "currency": "MYR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_proprietor",
+      "name": "Sole Proprietorship",
+      "registrationFee": 3000,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "MYR"
+      },
+      "taxRegime": "Personal Income Tax",
+      "incomeTaxRate": 0.00,
+      "sstRate": 0.06,
+      "passThroughTaxation": true,
+      "taxAgency": "Inland Revenue Board of Malaysia (LHDN)"
+    },
+    {
+      "id": "sdn_bhd",
+      "name": "Private Limited Company (Sdn Bhd)",
+      "registrationFee": 10000,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "MYR"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.17,
+      "sstRate": 0.06,
+      "dividendWithholdingTax": 0.00,
+      "taxAgency": "Companies Commission of Malaysia (SSM)"
+    },
+    {
+      "id": "bhd",
+      "name": "Public Limited Company (Bhd)",
+      "registrationFee": 20000,
+      "minimumCapital": 500000,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "MYR"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.24,
+      "sstRate": 0.06,
+      "dividendWithholdingTax": 0.00,
+      "publicOffering": true,
+      "taxAgency": "Securities Commission Malaysia"
+    },
+    {
+      "id": "llp",
+      "name": "Limited Liability Partnership (LLP)",
+      "registrationFee": 5000,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "MYR"
+      },
+      "taxRegime": "Partnership Tax",
+      "incomeTaxRate": 0.00,
+      "sstRate": 0.06,
+      "passThroughTaxation": true,
+      "taxAgency": "Companies Commission of Malaysia (SSM)"
+    },
+    {
+      "id": "branch",
+      "name": "Foreign Company Branch",
+      "registrationFee": 15000,
+      "requiresVatRegistration": {
+        "threshold": 500000,
+        "currency": "MYR"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.24,
+      "sstRate": 0.06,
+      "branchProfitsTax": 0.00,
+      "taxAgency": "Malaysian Investment Development Authority (MIDA)"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 5000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 5001,
+          "maxIncome": 20000,
+          "rate": 0.01,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 20001,
+          "maxIncome": 35000,
+          "rate": 0.03,
+          "tax": 150,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 35001,
+          "maxIncome": 50000,
+          "rate": 0.08,
+          "tax": 600,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 50001,
+          "maxIncome": 70000,
+          "rate": 0.14,
+          "tax": 1800,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 70001,
+          "maxIncome": 100000,
+          "rate": 0.21,
+          "tax": 4600,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 100001,
+          "maxIncome": 400000,
+          "rate": 0.24,
+          "tax": 10900,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 400001,
+          "maxIncome": 600000,
+          "rate": 0.245,
+          "tax": 82900,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 600001,
+          "maxIncome": 1000000,
+          "rate": 0.25,
+          "tax": 133900,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1000001,
+          "rate": 0.28,
+          "tax": 233900,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "epf": {
+      "employeeRate": 0.11,
+      "employerRate": 0.13,
+      "ceiling": 6000,
+      "minBase": 0
+    },
+    "socso": {
+      "employeeRate": 0.005,
+      "employerRate": 0.013,
+      "ceiling": 4000,
+      "minBase": 0
+    },
+    "eis": {
+      "employeeRate": 0.002,
+      "employerRate": 0.002,
+      "ceiling": 4000,
+      "minBase": 0
+    },
+    "hrdf": {
+      "employerRate": 0.01,
+      "appliesTo": "Companies with 10+ employees"
+    }
+  },
+  "taxes": {
+    "sst": {
+      "standardRate": 0.06,
+      "zeroRate": 0.00,
+      "exemptItems": ["Basic food items", "Education services", "Healthcare services"]
+    },
+    "corporate_income_tax": {
+      "standardRate": 0.24,
+      "smeRate": 0.17,
+      "smeThreshold": 500000,
+      "incentiveSectors": ["Manufacturing", "Agriculture", "Tourism"]
+    },
+    "withholding_tax": {
+      "dividends": 0.00,
+      "interest": 0.15,
+      "royalties": 0.10,
+      "services": 0.10
+    },
+    "real_property_gains_tax": {
+      "disposalWithin3Years": 0.30,
+      "disposalIn4thYear": 0.20,
+      "disposalIn5thYear": 0.15,
+      "disposalAfter5Years": 0.00
+    },
+    "import_duty": {
+      "rate": 0.10,
+      "variesByProduct": true
+    }
+  },
+  "deductions": {
+    "personal_relief": {
+      "individual": 9000,
+      "spouse": 4000,
+      "children": 2000,
+      "parents": 8000
+    },
+    "epf_contribution": {
+      "rate": 1.00,
+      "maxDeduction": 4000
+    },
+    "socso_contribution": {
+      "rate": 1.00,
+      "maxDeduction": 2500
+    },
+    "lifestyle": {
+      "rate": 1.00,
+      "maxDeduction": 2500,
+      "categories": ["Books", "Internet", "Sports equipment"]
+    },
+    "education_fees": {
+      "rate": 1.00,
+      "maxDeduction": 7000
+    },
+    "medical_expenses": {
+      "rate": 1.00,
+      "maxDeduction": 10000
+    }
+  },
+  "hints": {
+    "tax_id": "Tax Identification Number (TIN) is required for all taxpayers",
+    "tax_returns": "Annual tax returns must be filed by April 30th each year",
+    "e_filing": "E-filing is mandatory for companies and optional for individuals",
+    "sst_registration": "Businesses with annual taxable turnover exceeding MYR 500,000 must register for SST",
+    "foreign_income": "Malaysia operates on a territorial basis - foreign-sourced income is generally not taxed"
+  }
+}

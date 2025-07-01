@@ -1,0 +1,180 @@
+{
+  "code": "SA",
+  "name": "Saudi Arabia",
+  "currency": "SAR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_establishment",
+      "name": "Sole Establishment",
+      "registrationFee": 5000,
+      "requiresVatRegistration": {
+        "threshold": 375000,
+        "currency": "SAR"
+      },
+      "taxRegime": "Personal Income Tax",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.15,
+      "zakatRate": 0.00,
+      "passThroughTaxation": true,
+      "taxAgency": "Zakat, Tax and Customs Authority (ZATCA)"
+    },
+    {
+      "id": "llc",
+      "name": "Limited Liability Company (LLC)",
+      "registrationFee": 20000,
+      "minimumCapital": 100000,
+      "requiresVatRegistration": {
+        "threshold": 375000,
+        "currency": "SAR"
+      },
+      "taxRegime": "Corporate Income Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.15,
+      "zakatRate": 0.00,
+      "withholdingTaxRate": 0.05,
+      "taxAgency": "Ministry of Commerce & ZATCA"
+    },
+    {
+      "id": "jsc",
+      "name": "Joint Stock Company (JSC)",
+      "registrationFee": 50000,
+      "minimumCapital": 1000000,
+      "requiresVatRegistration": {
+        "threshold": 375000,
+        "currency": "SAR"
+      },
+      "taxRegime": "Corporate Income Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.15,
+      "zakatRate": 0.00,
+      "withholdingTaxRate": 0.05,
+      "publicOffering": true,
+      "taxAgency": "Capital Market Authority (CMA) & ZATCA"
+    },
+    {
+      "id": "partnership",
+      "name": "General/Limited Partnership",
+      "registrationFee": 10000,
+      "requiresVatRegistration": {
+        "threshold": 375000,
+        "currency": "SAR"
+      },
+      "taxRegime": "Partnership Tax",
+      "incomeTaxRate": 0.20,
+      "vatRate": 0.15,
+      "zakatRate": 0.00,
+      "passThroughTaxation": true,
+      "taxAgency": "Ministry of Commerce & ZATCA"
+    },
+    {
+      "id": "branch",
+      "name": "Foreign Company Branch",
+      "registrationFee": 15000,
+      "requiresVatRegistration": {
+        "threshold": 375000,
+        "currency": "SAR"
+      },
+      "taxRegime": "Corporate Income Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.15,
+      "branchProfitsTax": 0.05,
+      "taxAgency": "Ministry of Investment (MISA) & ZATCA"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "rate": 0.00,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialInsurance": {
+    "gosi": {
+      "employeeRate": 0.10,
+      "employerRate": 0.1175,
+      "ceiling": 45000,
+      "minBase": 4000
+    },
+    "hafiz": {
+      "employerRate": 0.0225,
+      "appliesTo": "Saudi employees only"
+    },
+    "saudi_qualifications": {
+      "employerRate": 0.01,
+      "appliesTo": "Saudi employees with higher education"
+    },
+    "saudi_female": {
+      "employerRate": -0.05,
+      "appliesTo": "Incentive for employing Saudi females"
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.15,
+      "zeroRate": 0.00,
+      "exemptItems": ["Financial services", "Healthcare", "Education"]
+    },
+    "withholding_tax": {
+      "dividends": 0.05,
+      "interest": 0.05,
+      "royalties": 0.15,
+      "services": 0.05,
+      "management_fees": 0.20
+    },
+    "excise_tax": {
+      "tobacco": 1.00,
+      "energy_drinks": 0.50,
+      "sweetened_drinks": 0.50,
+      "electronic_devices": 0.15
+    },
+    "real_estate_transaction_tax": {
+      "rate": 0.05,
+      "appliesTo": "Commercial properties"
+    },
+    "zakat": {
+      "rate": 0.025,
+      "appliesTo": "Saudi/GCC nationals and companies"
+    }
+  },
+  "deductions": {
+    "business_expenses": {
+      "rate": 1.00,
+      "documentationRequired": true
+    },
+    "charitable_donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.10,
+      "approvedInstitutionsOnly": true
+    },
+    "research_development": {
+      "rate": 1.00,
+      "additionalDeduction": 0.25,
+      "approvalRequired": true
+    },
+    "training_costs": {
+      "rate": 1.00,
+      "additionalDeduction": 0.50,
+      "saudiEmployeesOnly": true
+    },
+    "export_marketing": {
+      "rate": 1.00,
+      "additionalDeduction": 0.50,
+      "approvalRequired": true
+    }
+  },
+  "hints": {
+    "vat_registration": "VAT registration is mandatory for businesses with annual taxable supplies exceeding SAR 375,000",
+    "e_invoicing": "Phase 2 of e-invoicing (integration phase) is mandatory for all VAT-registered businesses",
+    "tax_returns": "VAT returns must be filed monthly/quarterly based on annual turnover",
+    "withholding_tax": "WHT applies to payments to non-residents and must be remitted by the 10th of the following month",
+    "zakat_certificate": "Zakat certificate is required for government tenders and some commercial activities"
+  }
+}

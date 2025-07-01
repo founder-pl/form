@@ -1,0 +1,237 @@
+{
+  "code": "AR",
+  "name": "Argentina",
+  "currency": "ARS",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "monotributo",
+      "name": "Monotributo (Small Taxpayer)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "ARS"
+      },
+      "taxRegime": "Simplified Regime",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.00,
+      "grossIncomeTaxRate": 0.00,
+      "monthlyFixedFee": true,
+      "maxAnnualRevenue": 5000000,
+      "taxAgency": "AFIP (Federal Administration of Public Revenue)"
+    },
+    {
+      "id": "responsable_inscripto",
+      "name": "Responsable Inscripto (VAT Registered)",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "ARS"
+      },
+      "taxRegime": "General Regime",
+      "incomeTaxRate": 0.35,
+      "vatRate": 0.21,
+      "grossIncomeTaxRate": 0.035,
+      "taxAgency": "AFIP"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 20000,
+      "minimumCapital": 100000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "ARS"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.21,
+      "grossIncomeTaxRate": 0.035,
+      "dividendWithholdingTax": 0.07,
+      "taxAgency": "AFIP & IGJ"
+    },
+    {
+      "id": "srl",
+      "name": "Sociedad de Responsabilidad Limitada (S.R.L.)",
+      "registrationFee": 15000,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "ARS"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.30,
+      "vatRate": 0.21,
+      "grossIncomeTaxRate": 0.035,
+      "dividendWithholdingTax": 0.07,
+      "taxAgency": "AFIP & IGJ"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 50000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "ARS"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.35,
+      "vatRate": 0.21,
+      "grossIncomeTaxRate": 0.035,
+      "branchProfitsTax": 0.07,
+      "taxAgency": "AFIP & IGJ"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 1738345,
+          "rate": 0.05,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1738346,
+          "maxIncome": 3476690,
+          "rate": 0.09,
+          "tax": 86917,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 3476691,
+          "maxIncome": 5794483,
+          "rate": 0.12,
+          "tax": 243334,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 5794484,
+          "maxIncome": 8112276,
+          "rate": 0.15,
+          "tax": 521420,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 8112277,
+          "maxIncome": 10430069,
+          "rate": 0.19,
+          "tax": 869034,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 10430070,
+          "maxIncome": 15645104,
+          "rate": 0.23,
+          "tax": 1309356,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 15645105,
+          "maxIncome": 20860138,
+          "rate": 0.27,
+          "tax": 2509266,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 20860139,
+          "rate": 0.31,
+          "tax": 3917652,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "jubilacion": {
+      "employeeRate": 0.11,
+      "employerRate": 0.17,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "obra_social": {
+      "employeeRate": 0.03,
+      "employerRate": 0.06,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "pami": {
+      "employeeRate": 0.03,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "ley_19032": {
+      "employerRate": 0.06,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "art": {
+      "employerRate": 0.03,
+      "variesByRiskLevel": true
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.21,
+      "reducedRate": 0.105,
+      "superReducedRate": 0.05,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "ingresos_brutos": {
+      "rate": 0.035,
+      "variesByProvince": true,
+      "appliesTo": "Gross revenue"
+    },
+    "ganancias": {
+      "corporateRate": 0.30,
+      "individualRate": 0.35,
+      "financialIncomeRate": 0.15
+    },
+    "bienes_personales": {
+      "rate": 0.0125,
+      "exemption": 18000000,
+      "foreignAssetsRate": 0.025
+    },
+    "retenciones": {
+      "vat": 0.05,
+      "income_tax": 0.06,
+      "gross_income": 0.02
+    }
+  },
+  "deductions": {
+    "personal_allowance": {
+      "individual": 0,
+      "spouse": 0,
+      "children": 0,
+      "disabledDependents": 0
+    },
+    "social_security_contributions": {
+      "rate": 1.00,
+      "maxDeduction": 0.20
+    },
+    "health_insurance": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    },
+    "education_expenses": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    },
+    "donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.05,
+      "approvedInstitutionsOnly": true
+    }
+  },
+  "hints": {
+    "cuit": "CUIT (Código Único de Identificación Tributaria) is required for all taxpayers",
+    "monotributo": "Monotributo is a simplified regime for small taxpayers with revenue under ARS 5,000,000",
+    "facturacion_electronica": "Electronic invoicing is mandatory for most businesses",
+    "sueldo_anual_complementario": "Two extra monthly salaries (Aguinaldo) are paid in June and December",
+    "bienes_personales": "Wealth tax applies to worldwide assets for residents"
+  }
+}

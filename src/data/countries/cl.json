@@ -1,0 +1,225 @@
+{
+  "code": "CL",
+  "name": "Chile",
+  "currency": "CLP",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "empresa_individual",
+      "name": "Empresa Individual",
+      "registrationFee": 0,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UF"
+      },
+      "taxRegime": "Simplified Regime",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.19,
+      "monthlyFixedFee": 0,
+      "maxAnnualRevenue": 0,
+      "taxAgency": "SII (Servicio de Impuestos Internos)"
+    },
+    {
+      "id": "eirl",
+      "name": "Empresa Individual de Responsabilidad Limitada (E.I.R.L.)",
+      "registrationFee": 50000,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UF"
+      },
+      "taxRegime": "General Regime",
+      "incomeTaxRate": 0.10,
+      "vatRate": 0.19,
+      "taxAgency": "SII"
+    },
+    {
+      "id": "sociedad_anonima",
+      "name": "Sociedad Anónima (S.A.)",
+      "registrationFee": 100000,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UF"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.19,
+      "additionalTaxRate": 0.044,
+      "dividendWithholdingTax": 0.35,
+      "taxAgency": "SII & CMF"
+    },
+    {
+      "id": "spa",
+      "name": "Sociedad por Acciones (SpA)",
+      "registrationFee": 80000,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UF"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.19,
+      "additionalTaxRate": 0.044,
+      "dividendWithholdingTax": 0.35,
+      "taxAgency": "SII & CMF"
+    },
+    {
+      "id": "sucursal_extranjera",
+      "name": "Sucursal de Empresa Extranjera",
+      "registrationFee": 200000,
+      "requiresVatRegistration": {
+        "threshold": 0,
+        "currency": "UF"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.27,
+      "vatRate": 0.19,
+      "additionalTaxRate": 0.044,
+      "branchProfitsTax": 0.35,
+      "taxAgency": "SII & CMF"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 8413416,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 8413417,
+          "maxIncome": 18712200,
+          "rate": 0.04,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 18712201,
+          "maxIncome": 31187000,
+          "rate": 0.08,
+          "tax": 411955,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 31187001,
+          "maxIncome": 43661800,
+          "rate": 0.135,
+          "tax": 1415335,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 43661801,
+          "maxIncome": 56136600,
+          "rate": 0.23,
+          "tax": 3100394,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 56136601,
+          "maxIncome": 74848800,
+          "rate": 0.304,
+          "tax": 5970548,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 74848801,
+          "rate": 0.35,
+          "tax": 11662323,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "salud": {
+      "employeeRate": 0.07,
+      "employerRate": 0.07,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "afp": {
+      "employeeRate": 0.10,
+      "employerRate": 0.00,
+      "ceiling": 0,
+      "minBase": 0,
+      "commissionRate": 0.0136
+    },
+    "seguro_cesantia": {
+      "employeeRate": 0.006,
+      "employerRate": 0.024,
+      "ceiling": 0,
+      "minBase": 0
+    },
+    "accidentes_trabajo": {
+      "employerRate": 0.0093,
+      "variesByRiskLevel": true
+    },
+    "mutual_seguridad": {
+      "employerRate": 0.0155,
+      "variesByRiskLevel": true
+    }
+  },
+  "taxes": {
+    "iva": {
+      "standardRate": 0.19,
+      "exemptItems": ["Basic food items", "Books", "Education services"]
+    },
+    "impuesto_especifico": {
+      "alcohol": 0.15,
+      "tobacco": 0.30,
+      "sugary_drinks": 0.18,
+      "fuel": 0.10
+    },
+    "impuesto_verde": {
+      "vehicles": 0.10,
+      "industrial_emissions": 0.10
+    },
+    "impuesto_adicional": {
+      "rate": 0.044,
+      "appliesTo": "Non-residents and foreign-sourced income"
+    },
+    "derechos_aduaneros": {
+      "rate": 0.06,
+      "appliesTo": "Customs duties"
+    }
+  },
+  "deductions": {
+    "personal_allowance": {
+      "individual": 0,
+      "spouse": 0,
+      "children": 0,
+      "disabledDependents": 0
+    },
+    "health_insurance": {
+      "rate": 1.00,
+      "maxDeduction": 0.50
+    },
+    "education_expenses": {
+      "rate": 1.00,
+      "maxDeduction": 0.30
+    },
+    "donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.50,
+      "approvedInstitutionsOnly": true
+    },
+    "investment_incentives": {
+      "rate": 1.00,
+      "maxDeduction": 0.20,
+      "approvalRequired": true
+    }
+  },
+  "hints": {
+    "rut": "RUT (Rol Único Tributario) is required for all taxpayers",
+    "facturacion_electronica": "Electronic invoicing is mandatory for all VAT taxpayers",
+    "declaracion_anual": "Annual tax return must be filed between April 1st and May 30th",
+    "pago_provisional_mensual": "Monthly provisional payments (PPM) are required for businesses",
+    "retencion_iva": "VAT withholding applies to certain services and purchases"
+  }
+}
