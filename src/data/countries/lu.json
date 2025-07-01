@@ -1,0 +1,129 @@
+{
+  "code": "LU",
+  "name": "Luxembourg",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "independant",
+      "name": "Indépendant (Self-employed)",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 400,
+      "requiresVatRegistration": {
+        "threshold": 30000,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.25,
+      "socialSecurityMinBase": 0,
+      "vatRate": 0.17,
+      "taxAgency": "Administration des contributions directes"
+    },
+    {
+      "id": "sarl",
+      "name": "SARL (Private Limited Company)",
+      "registrationFee": 75,
+      "notaryFees": 2000,
+      "minimumCapital": 12000,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.15,
+      "socialSecurityRate": 0.25,
+      "vatRate": 0.17,
+      "taxAgency": "Administration de l'enregistrement, des domaines et de la TVA"
+    },
+    {
+      "id": "sa",
+      "name": "SA (Public Limited Company)",
+      "registrationFee": 75,
+      "notaryFees": 3000,
+      "minimumCapital": 30000,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.15,
+      "socialSecurityRate": 0.25,
+      "vatRate": 0.17,
+      "taxAgency": "Administration de l'enregistrement, des domaines et de la TVA"
+    },
+    {
+      "id": "sarl_s",
+      "name": "SARL-S (Simplified Private Limited Company)",
+      "registrationFee": 75,
+      "notaryFees": 1500,
+      "minimumCapital": 1,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.15,
+      "socialSecurityRate": 0.25,
+      "vatRate": 0.17,
+      "taxAgency": "Administration de l'enregistrement, des domaines et de la TVA"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 12500,
+      "rate": 0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 12501,
+      "maxIncome": 15000,
+      "rate": 8,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 15001,
+      "maxIncome": 20000,
+      "rate": 9,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 20001,
+      "maxIncome": 100000,
+      "rate": 10,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 100001,
+      "maxIncome": 150000,
+      "rate": 11,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 150001,
+      "rate": 12,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "pension": 0.16,
+    "healthcare": 0.05,
+    "dependencyInsurance": 0.015,
+    "employmentFund": 0.01,
+    "maxContributionBase": 0,
+    "minContributionBase": 0
+  },
+  "deductions": {
+    "standard": 0,
+    "professionalExpenses": {
+      "maxDeductible": 540,
+      "percentage": 0.20
+    },
+    "pensionContributions": {
+      "maxDeductible": 3200,
+      "percentage": 1.0
+    },
+    "homeLoanInterest": {
+      "maxDeductible": 2000,
+      "percentage": 1.0
+    },
+    "trainingExpenses": {
+      "maxDeductible": 1800,
+      "percentage": 0.50
+    }
+  },
+  "hints": {
+    "independant": "Self-employed must register with the Joint Social Security Centre (CCSS) and the Business Register",
+    "vat": "Standard VAT rate is 17%, with reduced rates of 14%, 8%, and 3% for specific goods and services",
+    "social_security": "Social security contributions are approximately 25% of income, with minimum monthly contributions for self-employed",
+    "tax_declaration": "Tax returns must be filed by 31 March of the following year"
+  }
+}

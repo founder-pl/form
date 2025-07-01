@@ -1,0 +1,115 @@
+{
+  "code": "SE",
+  "name": "Sweden",
+  "currency": "SEK",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "enskild_naringsidkare",
+      "name": "Enskild näringsidkare (Sole Trader)",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 80000,
+        "currency": "SEK"
+      },
+      "socialSecurityRate": 0.2836,
+      "socialSecurityMinBase": 22008,
+      "socialSecurityMaxBase": 511500,
+      "vatRate": 0.25,
+      "taxAgency": "Skatteverket"
+    },
+    {
+      "id": "aktiebolag",
+      "name": "Aktiebolag (AB)",
+      "registrationFee": 25000,
+      "minimumCapital": 25000,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.20,
+      "socialSecurityRate": 0.3142,
+      "vatRate": 0.25,
+      "taxAgency": "Skatteverket"
+    },
+    {
+      "id": "hb",
+      "name": "Handelsbolag (Trading Partnership)",
+      "registrationFee": 1700,
+      "requiresVatRegistration": {
+        "threshold": 80000,
+        "currency": "SEK"
+      },
+      "socialSecurityRate": 0.2836,
+      "vatRate": 0.25,
+      "taxAgency": "Skatteverket",
+      "passThroughTaxation": true
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 523900,
+      "rate": 0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 523901,
+      "maxIncome": 610000,
+      "rate": 0.20,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 610001,
+      "maxIncome": 1000000,
+      "rate": 0.25,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 1000001,
+      "maxIncome": 1500000,
+      "rate": 0.30,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 1500001,
+      "rate": 0.35,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "pension": 0.10,
+    "healthInsurance": 0.0435,
+    "parentalInsurance": 0.025,
+    "workInjuryInsurance": 0.003,
+    "employmentProtection": 0.01,
+    "generalPayrollTax": 0.072,
+    "maxContributionBase": 511500,
+    "minContributionBase": 22008
+  },
+  "deductions": {
+    "standard": 0,
+    "homeOffice": {
+      "dailyRate": 2500,
+      "maxDays": 180
+    },
+    "pensionSavings": {
+      "maxDeductible": 12000,
+      "percentage": 1.0
+    },
+    "businessTravel": {
+      "domesticRate": 1800,
+      "foreignRate": 2500,
+      "maxDays": 30
+    },
+    "mealExpenses": {
+      "lunchDeduction": 0.15,
+      "maxDeductible": 1000
+    }
+  },
+  "hints": {
+    "enskild_naringsidkare": "Sole traders must register with the Swedish Tax Agency (Skatteverket) and pay preliminary tax",
+    "vat": "Standard VAT rate is 25%, with reduced rates of 12% and 6% for specific goods and services",
+    "social_security": "Social security contributions are calculated on income between 22,008 SEK and 511,500 SEK per year",
+    "tax_declaration": "Tax returns must be filed by 2 May of the following year"
+  }
+}

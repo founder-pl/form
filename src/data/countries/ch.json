@@ -1,0 +1,168 @@
+{
+  "code": "CH",
+  "name": "Switzerland",
+  "currency": "CHF",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "einzelfirma",
+      "name": "Einzelfirma (Sole Proprietorship)",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "CHF"
+      },
+      "socialSecurityRate": 0.104,
+      "socialSecurityMinBase": 0,
+      "vatRate": 0.077,
+      "taxAgency": "Eidgenössische Steuerverwaltung ESTV"
+    },
+    {
+      "id": "gmbh",
+      "name": "GmbH (Limited Liability Company)",
+      "registrationFee": 6000,
+      "notaryFees": 2000,
+      "minimumCapital": 20000,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "CHF"
+      },
+      "corporateTaxRate": 0.12,
+      "socialSecurityRate": 0.104,
+      "vatRate": 0.077,
+      "taxAgency": "Handelsregister"
+    },
+    {
+      "id": "ag",
+      "name": "AG (Public Limited Company)",
+      "registrationFee": 20000,
+      "notaryFees": 3000,
+      "minimumCapital": 100000,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "CHF"
+      },
+      "corporateTaxRate": 0.12,
+      "socialSecurityRate": 0.104,
+      "vatRate": 0.077,
+      "taxAgency": "Handelsregister"
+    },
+    {
+      "id": "g_gesellschaft",
+      "name": "Kollektivgesellschaft (General Partnership)",
+      "registrationFee": 0,
+      "notaryFees": 1000,
+      "requiresVatRegistration": {
+        "threshold": 100000,
+        "currency": "CHF"
+      },
+      "socialSecurityRate": 0.104,
+      "vatRate": 0.077,
+      "taxAgency": "Handelsregister",
+      "passThroughTaxation": true
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 14800,
+      "rate": 0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 14801,
+      "maxIncome": 32200,
+      "rate": 1,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 32201,
+      "maxIncome": 42200,
+      "rate": 2,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 42201,
+      "maxIncome": 56200,
+      "rate": 3,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 56201,
+      "maxIncome": 73200,
+      "rate": 4,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 73201,
+      "maxIncome": 93700,
+      "rate": 5,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 93701,
+      "maxIncome": 116600,
+      "rate": 6,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 116601,
+      "maxIncome": 161300,
+      "rate": 7,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 161301,
+      "maxIncome": 216300,
+      "rate": 8,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 216301,
+      "maxIncome": 781200,
+      "rate": 9,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 781201,
+      "rate": 11.5,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "ahv_iv_eo": 0.053,
+    "alv": 0.011,
+    "bupl": 0.04,
+    "bvg": 0.00,
+    "ktg": 0.00,
+    "maxContributionBase": 148200,
+    "minContributionBase": 0
+  },
+  "deductions": {
+    "standard": 0,
+    "professionalExpenses": {
+      "maxDeductible": 0,
+      "percentage": 0.20
+    },
+    "transportation": {
+      "dailyRate": 90,
+      "maxDays": 3000
+    },
+    "mealExpenses": {
+      "dailyRate": 70,
+      "maxDays": 200
+    },
+    "pensionSavings": {
+      "maxDeductible": 6883,
+      "percentage": 1.0
+    }
+  },
+  "hints": {
+    "einzelfirma": "Sole proprietors must register with the commercial register if annual turnover exceeds CHF 100,000",
+    "vat": "Standard VAT rate is 7.7%, with reduced rates of 3.7% for accommodation and 2.5% for daily goods",
+    "social_security": "AHV/IV/EO contributions are 10.6% (split between employer and employee)",
+    "tax_declaration": "Tax returns must be filed by 31 March of the following year"
+  }
+}

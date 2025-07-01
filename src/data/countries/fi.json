@@ -1,0 +1,118 @@
+{
+  "code": "FI",
+  "name": "Finland",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "toiminimi",
+      "name": "Toiminimi (TMI) / Yksityinen elinkeinonharjoittaja",
+      "registrationFee": 180,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 15000,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.244,
+      "socialSecurityMinBase": 0,
+      "vatRate": 0.24,
+      "taxAgency": "Verohallinto"
+    },
+    {
+      "id": "oy",
+      "name": "Osakeyhtiö (OY) / Aktiebolag (AB)",
+      "registrationFee": 350,
+      "minimumCapital": 2500,
+      "requiresVatRegistration": {
+        "threshold": 15000,
+        "currency": "EUR"
+      },
+      "corporateTaxRate": 0.20,
+      "socialSecurityRate": 0.244,
+      "vatRate": 0.24,
+      "taxAgency": "Patenti- ja rekisterihallitus"
+    },
+    {
+      "id": "oyj",
+      "name": "Julkinen osakeyhtiö (OYJ) / Publikt aktiebolag (ABP)",
+      "registrationFee": 350,
+      "minimumCapital": 80000,
+      "requiresVatRegistration": {
+        "threshold": 15000,
+        "currency": "EUR"
+      },
+      "corporateTaxRate": 0.20,
+      "socialSecurityRate": 0.244,
+      "vatRate": 0.24,
+      "taxAgency": "Patenti- ja rekisterihallitus"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 18800,
+      "rate": 0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 18801,
+      "maxIncome": 28200,
+      "rate": 6.0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 28201,
+      "maxIncome": 46500,
+      "rate": 17.25,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 46501,
+      "maxIncome": 81600,
+      "rate": 21.25,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 81601,
+      "rate": 31.25,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "pensionInsurance": 0.0695,
+    "unemploymentInsurance": 0.0086,
+    "healthInsurance": 0.0695,
+    "dailyAllowanceInsurance": 0.0115,
+    "accidentInsurance": 0.009,
+    "groupLifeInsurance": 0.0018,
+    "maxContributionBase": 0,
+    "minContributionBase": 0
+  },
+  "deductions": {
+    "standard": 0,
+    "workRelatedExpenses": {
+      "maxDeductible": 750,
+      "percentage": 1.0
+    },
+    "homeOffice": {
+      "dailyRate": 7,
+      "maxDays": 200
+    },
+    "travelExpenses": {
+      "domesticRate": 0.46,
+      "foreignRate": 0.51,
+      "maxDaily": 42
+    },
+    "pensionSavings": {
+      "maxDeductible": 5000,
+      "percentage": 0.30
+    }
+  },
+  "hints": {
+    "toiminimi": "Register your business with the Trade Register and obtain a Business ID (Y-tunnus)",
+    "vat": "Standard VAT rate is 24%, with reduced rates of 14% and 10% for specific goods and services",
+    "social_security": "YEL insurance is mandatory for self-employed individuals with annual income over €8,521.92 (2023)",
+    "tax_declaration": "Tax returns must be filed by 1 May of the following year"
+  }
+}

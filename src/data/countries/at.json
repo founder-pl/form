@@ -1,0 +1,137 @@
+{
+  "code": "AT",
+  "name": "Austria",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "freiberufler",
+      "name": "Freiberufler (Freelancer)",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 35000,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.25,
+      "socialSecurityMinBase": 17800,
+      "socialSecurityMaxBase": 5670,
+      "vatRate": 0.20,
+      "taxOffice": "Finanzamt"
+    },
+    {
+      "id": "einzelunternehmer",
+      "name": "Einzelunternehmer (Sole Proprietor)",
+      "registrationFee": 50,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": true,
+      "socialSecurityRate": 0.25,
+      "vatRate": 0.20,
+      "taxOffice": "Finanzamt"
+    },
+    {
+      "id": "gmbh",
+      "name": "GmbH (Limited Liability Company)",
+      "registrationFee": 360,
+      "notaryFees": 1500,
+      "minimumCapital": 35000,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.25,
+      "socialSecurityRate": 0.25,
+      "vatRate": 0.20,
+      "taxOffice": "Firmenbuch"
+    },
+    {
+      "id": "nfg",
+      "name": "Neue Selbständige (New Self-Employed)",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 35000,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.25,
+      "vatRate": 0.20,
+      "taxOffice": "Finanzamt",
+      "simplifiedTaxation": true
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 11000,
+      "rate": 0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 11001,
+      "maxIncome": 18000,
+      "rate": 20,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 18001,
+      "maxIncome": 31000,
+      "rate": 35,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 31001,
+      "maxIncome": 60000,
+      "rate": 42,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 60001,
+      "maxIncome": 90000,
+      "rate": 48,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 90001,
+      "maxIncome": 1000000,
+      "rate": 50,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 1000001,
+      "rate": 55,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "pension": 0.128,
+    "health": 0.069,
+    "accident": 0.013,
+    "unemployment": 0.03,
+    "marketContribution": 0.01,
+    "maxContributionBase": 5670,
+    "minContributionBase": 1780
+  },
+  "deductions": {
+    "standard": 0,
+    "professionalExpenses": {
+      "maxDeductible": 13200,
+      "percentage": 0.13
+    },
+    "pensionInsurance": {
+      "maxDeductible": 5000,
+      "percentage": 0.25
+    },
+    "homeOffice": {
+      "dailyRate": 6,
+      "maxDays": 220
+    },
+    "specialExpenses": {
+      "maxDeductible": 300,
+      "percentage": 0.50
+    }
+  },
+  "hints": {
+    "freiberufler": "Freelancers must register with the tax office (Finanzamt) and social insurance (SVS)",
+    "vat": "Standard VAT rate is 20%, with reduced rates of 13% and 10% for specific goods and services",
+    "social_security": "Social security contributions are calculated on income between €17,800 and €5,670 per month",
+    "tax_declaration": "Annual tax return must be filed by 30 April of the following year"
+  }
+}

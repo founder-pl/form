@@ -1,0 +1,95 @@
+{
+  "code": "IE",
+  "name": "Ireland",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_trader",
+      "name": "Sole Trader",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 37500,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.04,
+      "vatRate": 0.23,
+      "taxAgency": "Revenue"
+    },
+    {
+      "id": "ltd",
+      "name": "Limited Company (LTD)",
+      "registrationFee": 50,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 37500,
+        "currency": "EUR"
+      },
+      "corporateTaxRate": 0.125,
+      "socialSecurityRate": 0.04,
+      "vatRate": 0.23,
+      "taxAgency": "Companies Registration Office"
+    },
+    {
+      "id": "dac",
+      "name": "Designated Activity Company (DAC)",
+      "registrationFee": 50,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 37500,
+        "currency": "EUR"
+      },
+      "corporateTaxRate": 0.125,
+      "socialSecurityRate": 0.04,
+      "vatRate": 0.23,
+      "taxAgency": "Companies Registration Office"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 36800,
+      "rate": 20,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 36801,
+      "rate": 40,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "prsi": 0.04,
+    "usc": 0.045,
+    "employersPrsi": 0.1105,
+    "maxContributionBase": 0,
+    "minContributionBase": 0
+  },
+  "deductions": {
+    "standard": 0,
+    "pensionContributions": {
+      "maxDeductible": 2000000,
+      "percentage": 1.0
+    },
+    "rentRelief": {
+      "maxDeductible": 1500,
+      "percentage": 0.20
+    },
+    "homeOffice": {
+      "dailyRate": 3.20,
+      "maxDays": 200
+    },
+    "healthExpenses": {
+      "maxDeductible": 0,
+      "percentage": 0.20
+    }
+  },
+  "hints": {
+    "sole_trader": "Sole traders must register with Revenue and may need to register for self-assessment",
+    "vat": "Standard VAT rate is 23%, with reduced rates of 13.5%, 9%, 4.8% and 0% for specific goods and services",
+    "social_security": "PRSI (Pay Related Social Insurance) is 4% of income, plus USC (Universal Social Charge) on a sliding scale",
+    "tax_declaration": "Self-assessment tax returns must be filed by 31 October of the following year"
+  }
+}

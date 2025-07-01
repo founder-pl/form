@@ -1,0 +1,99 @@
+{
+  "code": "DK",
+  "name": "Denmark",
+  "currency": "DKK",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "enkeltmandsvirksomhed",
+      "name": "Enkeltmandsvirksomhed (Sole Proprietorship)",
+      "registrationFee": 0,
+      "monthlySocialSecurity": 0,
+      "requiresVatRegistration": {
+        "threshold": 50000,
+        "currency": "DKK"
+      },
+      "socialSecurityRate": 0.08,
+      "socialSecurityMinBase": 50000,
+      "vatRate": 0.25,
+      "taxAgency": "Skatteforvaltningen"
+    },
+    {
+      "id": "aps",
+      "name": "Anpartsselskab (ApS)",
+      "registrationFee": 40000,
+      "minimumCapital": 40000,
+      "requiresVatRegistration": {
+        "threshold": 50000,
+        "currency": "DKK"
+      },
+      "corporateTaxRate": 0.22,
+      "socialSecurityRate": 0.08,
+      "vatRate": 0.25,
+      "taxAgency": "Erhvervsstyrelsen"
+    },
+    {
+      "id": "ivs",
+      "name": "Iværksætterselskab (IVS)",
+      "registrationFee": 1,
+      "minimumCapital": 1,
+      "requiresVatRegistration": {
+        "threshold": 50000,
+        "currency": "DKK"
+      },
+      "corporateTaxRate": 0.22,
+      "socialSecurityRate": 0.08,
+      "vatRate": 0.25,
+      "taxAgency": "Erhvervsstyrelsen"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 55000,
+      "rate": 0,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 55001,
+      "maxIncome": 558900,
+      "rate": 12.09,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 558901,
+      "rate": 15.0,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "labourMarketContribution": 0.08,
+    "employmentAllowance": 0.00,
+    "specialPensionSavings": 0.00,
+    "maxContributionBase": 598900,
+    "minContributionBase": 0
+  },
+  "deductions": {
+    "employmentAllowance": 0.103,
+    "personalAllowance": 48000,
+    "jobExpenses": {
+      "maxDeductible": 5000,
+      "percentage": 1.0
+    },
+    "transportation": {
+      "dailyRate": 25,
+      "maxDays": 200
+    },
+    "homeOffice": {
+      "dailyRate": 7,
+      "maxDays": 200
+    }
+  },
+  "hints": {
+    "enkeltmandsvirksomhed": "Sole proprietors must register with the Danish Business Authority and SKAT",
+    "vat": "Standard VAT rate is 25%, with reduced rates of 0% for specific goods and services",
+    "social_security": "Labour market contribution (AM-bidrag) is 8% of income",
+    "tax_declaration": "Tax returns must be filed by 1 May of the following year"
+  }
+}
