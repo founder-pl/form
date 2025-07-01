@@ -7,13 +7,13 @@
     "tax-cli": "./src/cli/tax-cli.js"
   },
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-    "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
-    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
-    "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --testPathPattern=__tests__/unit",
-    "test:api": "NODE_OPTIONS=--experimental-vm-modules jest --testPathPattern=__tests__/api",
-    "test:cli": "NODE_OPTIONS=--experimental-vm-modules jest --testPathPattern=__tests__/cli",
-    "test:node": "NODE_OPTIONS=--experimental-vm-modules jest --env=node",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest -c jest-esm.config.js",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch -c jest-esm.config.js",
+    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage -c jest-esm.config.js",
+    "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest --testPathPattern=__tests__/unit -c jest-esm.config.js",
+    "test:api": "NODE_OPTIONS=--experimental-vm-modules jest --testPathPattern=__tests__/api -c jest-esm.config.js",
+    "test:cli": "NODE_OPTIONS=--experimental-vm-modules jest --testPathPattern=__tests__/cli -c jest-esm.config.js",
+    "test:node": "NODE_OPTIONS=--experimental-vm-modules jest --env=node -c jest-esm.config.js",
     "start:api": "node src/api/server.js",
     "start:dev": "nodemon src/api/server.js",
     "cli": "node src/cli/tax-cli.js"
