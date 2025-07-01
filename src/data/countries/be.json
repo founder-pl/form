@@ -1,0 +1,105 @@
+{
+  "code": "BE",
+  "name": "Belgium",
+  "currency": "EUR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "independant",
+      "name": "Indépendant/ZZP (Self-employed)",
+      "registrationFee": 0,
+      "quarterlySocialSecurity": 700,
+      "requiresVatRegistration": {
+        "threshold": 25000,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.225,
+      "socialSecurityMinBase": 16000,
+      "socialSecurityMaxBase": 85000,
+      "vatRate": 0.21
+    },
+    {
+      "id": "bv",
+      "name": "BV/SRL (Private Limited Company)",
+      "registrationFee": 300,
+      "notaryFees": 2000,
+      "minimumCapital": 18550,
+      "requiresVatRegistration": true,
+      "corporateTaxRate": 0.25,
+      "socialSecurityRate": 0.25,
+      "vatRate": 0.21
+    },
+    {
+      "id": "comm_v",
+      "name": "Comm.V/SCS (Partnership)",
+      "registrationFee": 200,
+      "notaryFees": 1000,
+      "requiresVatRegistration": {
+        "threshold": 25000,
+        "currency": "EUR"
+      },
+      "socialSecurityRate": 0.22,
+      "vatRate": 0.21,
+      "passThroughTaxation": true
+    }
+  ],
+  "taxBrackets": [
+    {
+      "minIncome": 0,
+      "maxIncome": 13650,
+      "rate": 25,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 13651,
+      "maxIncome": 23790,
+      "rate": 40,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 23791,
+      "maxIncome": 41360,
+      "rate": 45,
+      "type": "progressive"
+    },
+    {
+      "minIncome": 41361,
+      "rate": 50,
+      "type": "flat"
+    }
+  ],
+  "socialSecurity": {
+    "pension": 0.076,
+    "healthcare": 0.035,
+    "unemployment": 0.0086,
+    "sickness": 0.0244,
+    "familyBenefits": 0.07,
+    "maxContributionBase": 85000,
+    "minContributionBase": 16000
+  },
+  "deductions": {
+    "professionalExpenses": {
+      "maxDeductible": 5000,
+      "percentage": 0.5
+    },
+    "pensionSavings": {
+      "maxDeductible": 1270,
+      "percentage": 0.3
+    },
+    "ecoCheques": {
+      "maxAmount": 250,
+      "taxFree": true
+    },
+    "mealVouchers": {
+      "maxDaily": 8,
+      "taxFree": true
+    }
+  },
+  "hints": {
+    "independant": "Self-employed must register with a social insurance fund (e.g., Partena, Xerius, etc.) and pay quarterly contributions",
+    "vat": "Standard VAT rate is 21%, with reduced rates of 12%, 6% and 0% for specific goods and services",
+    "social_security": "Social security contributions are calculated on income between €16,000 and €85,000",
+    "tax_deductions": "Professional expenses are deductible up to €5,000 at 50%"
+  }
+}

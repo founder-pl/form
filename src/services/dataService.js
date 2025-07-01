@@ -6,7 +6,7 @@ let benefitConfig = {};
 const countryDataCache = new Map();
 
 // Supported country codes
-const SUPPORTED_COUNTRIES = ['DE', 'FR', 'ES', 'IT', 'NL', 'PT'];
+const SUPPORTED_COUNTRIES = ['DE', 'FR', 'ES', 'IT', 'NL', 'PT', 'BE'];
 
 // Constants
 const DAYS_IN_YEAR = 365;
@@ -288,20 +288,6 @@ export function getBenefitConfig() {
 }
 
 /**
- * Gets available business types
- * @returns {string[]} Array of business types
- */
-export function getBusinessTypes() {
-    return [
-        'production',
-        'trade',
-        'services',
-        'freelance',
-        'ecommerce'
-    ];
-}
-
-/**
  * Calculates available benefits for a family in a specific country
  * @param {string} countryCode - ISO country code
  * @param {Object} familyData - Family data including children
@@ -355,52 +341,7 @@ export function calculateFamilyBenefits(countryCode, familyData) {
  * @param {boolean} isCitizen - Whether the person is a citizen of the country
  * @returns {Object} Tax calculation result
  */
-export function calculateTax(countryCode, income, businessType, isCitizen = false) {
-    const country = countriesData[countryCode];
-    if (!country) {
-        throw new Error(`Country ${countryCode} not found`);
-    }
-    
-    // Get base tax rate based on business type
-    const baseRate = country.taxIncome[businessType] || country.taxIncome.services;
-    let taxAmount = 0;
-    
-    // Apply progressive tax brackets if they exist
-    if (country.taxBrackets && country.taxBrackets.length > 0) {
-        let remainingIncome = income;
-        let previousThreshold = 0;
-        
-        // Sort brackets by threshold
-        const sortedBrackets = [...country.taxBrackets].sort((a, b) => a.threshold - b.threshold);
-        
-        for (const bracket of sortedBrackets) {
-            if (remainingIncome <= 0) break;
-            
-            const taxableInBracket = Math.min(
-                remainingIncome,
-                bracket.threshold - previousThreshold
-            );
-            
-            taxAmount += (taxableInBracket * bracket.rate) / 100;
-            remainingIncome -= taxableInBracket;
-            previousThreshold = bracket.threshold;
-        }
-    } else {
-        // Flat tax rate
-        taxAmount = (income * baseRate) / 100;
-    }
-    
-    // Apply citizen discount if applicable (example: some countries have lower rates for citizens)
-    const citizenDiscount = isCitizen && country.citizenDiscount ? country.citizenDiscount : 0;
-    const adjustedTax = taxAmount * (1 - (citizenDiscount / 100));
-    
-    return {
-        baseRate,
-        taxAmount: adjustedTax,
-        effectiveRate: Math.min((adjustedTax / income) * 100, 100) || 0,
-        currency: country.currency || 'EUR',
-        citizenDiscount
-    };
+
 }
 
 /**
