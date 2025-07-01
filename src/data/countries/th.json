@@ -1,0 +1,221 @@
+{
+  "code": "TH",
+  "name": "Thailand",
+  "currency": "THB",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "sole_proprietor",
+      "name": "Sole Proprietorship",
+      "registrationFee": 55000,
+      "requiresVatRegistration": {
+        "threshold": 1800000,
+        "currency": "THB"
+      },
+      "taxRegime": "Personal Income Tax",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.07,
+      "passThroughTaxation": true,
+      "taxAgency": "Revenue Department of Thailand"
+    },
+    {
+      "id": "limited_company",
+      "name": "Limited Company (Ltd.)",
+      "registrationFee": 5500,
+      "minimumCapital": 1000000,
+      "requiresVatRegistration": {
+        "threshold": 1800000,
+        "currency": "THB"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.07,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "Department of Business Development"
+    },
+    {
+      "id": "ptc",
+      "name": "Public Company Limited (PCL)",
+      "registrationFee": 50000,
+      "minimumCapital": 5000000,
+      "requiresVatRegistration": {
+        "threshold": 1800000,
+        "currency": "THB"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.07,
+      "dividendWithholdingTax": 0.10,
+      "publicOffering": true,
+      "taxAgency": "SEC Thailand"
+    },
+    {
+      "id": "partnership",
+      "name": "Registered Ordinary Partnership",
+      "registrationFee": 5500,
+      "requiresVatRegistration": {
+        "threshold": 1800000,
+        "currency": "THB"
+      },
+      "taxRegime": "Personal Income Tax",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.07,
+      "passThroughTaxation": true,
+      "unlimitedLiability": true,
+      "taxAgency": "Department of Business Development"
+    },
+    {
+      "id": "branch",
+      "name": "Foreign Company Branch",
+      "registrationFee": 20000,
+      "requiresVatRegistration": {
+        "threshold": 1800000,
+        "currency": "THB"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.07,
+      "branchProfitsTax": 0.10,
+      "taxAgency": "Department of Business Development"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 150000,
+          "rate": 0.00,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 150001,
+          "maxIncome": 300000,
+          "rate": 0.05,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 300001,
+          "maxIncome": 500000,
+          "rate": 0.10,
+          "tax": 7500,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 500001,
+          "maxIncome": 750000,
+          "rate": 0.15,
+          "tax": 27500,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 750001,
+          "maxIncome": 1000000,
+          "rate": 0.20,
+          "tax": 65000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 1000001,
+          "maxIncome": 2000000,
+          "rate": 0.25,
+          "tax": 115000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 2000001,
+          "maxIncome": 5000000,
+          "rate": 0.30,
+          "tax": 365000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 5000001,
+          "rate": 0.35,
+          "tax": 1265000,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "ssf": {
+      "employeeRate": 0.05,
+      "employerRate": 0.05,
+      "ceiling": 15000,
+      "minBase": 1650,
+      "maxContribution": 750
+    },
+    "workmen_compensation": {
+      "employerRate": 0.05,
+      "variesByIndustry": true
+    },
+    "severance_pay": {
+      "rate": 0.30,
+      "appliesTo": "Employees with 120+ days of service"
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.07,
+      "zeroRate": 0.00,
+      "exemptItems": ["Basic food items", "Books", "Medical services", "Education"]
+    },
+    "specific_business_tax": {
+      "rate": 0.10,
+      "appliesTo": ["Banking", "Finance", "Securities"]
+    },
+    "withholding_tax": {
+      "dividends": 0.10,
+      "interest": 0.15,
+      "royalties": 0.15,
+      "services": 0.03
+    },
+    "land_tax": {
+      "rate": 0.0125,
+      "appraisedValueBased": true
+    },
+    "signboard_tax": {
+      "rate": 0.03,
+      "appliesTo": "Business signs"
+    }
+  },
+  "deductions": {
+    "personal_allowance": {
+      "individual": 60000,
+      "spouse": 60000,
+      "children": 30000,
+      "parents": 30000
+    },
+    "ssf_contribution": {
+      "rate": 1.00,
+      "maxDeduction": 0.15
+    },
+    "ltf_rmf": {
+      "rate": 1.00,
+      "maxDeduction": 500000
+    },
+    "insurance_premiums": {
+      "rate": 1.00,
+      "maxDeduction": 100000
+    },
+    "home_loan_interest": {
+      "rate": 1.00,
+      "maxDeduction": 100000
+    },
+    "donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    }
+  },
+  "hints": {
+    "tax_id": "Tax ID (เลขประจำตัวผู้เสียภาษี) is required for all taxpayers",
+    "tax_returns": "Annual tax returns must be filed by March 31st each year",
+    "mid_year_tax": "Mid-year tax payments are due in September",
+    "e_filing": "E-filing is available through the Revenue Department's website",
+    "withholding_tax": "Withholding tax must be filed by the 7th of the following month"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "code": "ID",
+  "name": "Indonesia",
+  "currency": "IDR",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "cv",
+      "name": "Commanditaire Vennootschap (CV)",
+      "registrationFee": 500000,
+      "requiresVatRegistration": {
+        "threshold": 4800000000,
+        "currency": "IDR"
+      },
+      "taxRegime": "General",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.11,
+      "passThroughTaxation": true,
+      "taxAgency": "Direktorat Jenderal Pajak"
+    },
+    {
+      "id": "pt",
+      "name": "Perseroan Terbatas (PT)",
+      "registrationFee": 1000000,
+      "minimumCapital": 50000000,
+      "requiresVatRegistration": {
+        "threshold": 4800000000,
+        "currency": "IDR"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.22,
+      "vatRate": 0.11,
+      "dividendWithholdingTax": 0.10,
+      "taxAgency": "Kementerian Hukum dan HAM"
+    },
+    {
+      "id": "pt_pma",
+      "name": "PT Penanaman Modal Asing (PMA)",
+      "registrationFee": 25000000,
+      "minimumCapital": 10000000000,
+      "requiresVatRegistration": {
+        "threshold": 4800000000,
+        "currency": "IDR"
+      },
+      "taxRegime": "Corporate Tax",
+      "corporateTaxRate": 0.22,
+      "vatRate": 0.11,
+      "dividendWithholdingTax": 0.20,
+      "foreignOwnershipRestrictions": true,
+      "taxAgency": "BKPM & Kemenkumham"
+    },
+    {
+      "id": "firma",
+      "name": "Firma (Fa)",
+      "registrationFee": 500000,
+      "requiresVatRegistration": {
+        "threshold": 4800000000,
+        "currency": "IDR"
+      },
+      "taxRegime": "General",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.11,
+      "passThroughTaxation": true,
+      "unlimitedLiability": true,
+      "taxAgency": "Kemenkumham"
+    },
+    {
+      "id": "perum",
+      "name": "Perusahaan Umum (Perum)",
+      "registrationFee": 2500000,
+      "minimumCapital": 0,
+      "requiresVatRegistration": {
+        "threshold": 4800000000,
+        "currency": "IDR"
+      },
+      "taxRegime": "Tax-Exempt",
+      "taxExempt": true,
+      "vatRate": 0.11,
+      "stateOwned": true,
+      "taxAgency": "Kementerian BUMN"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 60000000,
+          "rate": 0.05,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 60000001,
+          "maxIncome": 250000000,
+          "rate": 0.15,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 250000001,
+          "maxIncome": 500000000,
+          "rate": 0.25,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 500000001,
+          "maxIncome": 5000000000,
+          "rate": 0.30,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 5000000001,
+          "rate": 0.35,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialSecurity": {
+    "bpjs_ketenagakerjaan": {
+      "employeeRate": 0.02,
+      "employerRate": 0.0398,
+      "ceiling": 12000000,
+      "minBase": 1000000
+    },
+    "bpjs_kesehatan": {
+      "employeeRate": 0.01,
+      "employerRate": 0.04,
+      "ceiling": 12000000,
+      "minBase": 1000000
+    },
+    "jht": {
+      "employeeContribution": 0.02,
+      "employerContribution": 0.037,
+      "ceiling": 12000000
+    },
+    "jkm": {
+      "employerContribution": 0.003,
+      "ceiling": 12000000
+    },
+    "jkk": {
+      "employerContribution": 0.0024,
+      "ceiling": 12000000,
+      "variesByRiskLevel": true
+    }
+  },
+  "taxes": {
+    "ppn": {
+      "standardRate": 0.11,
+      "exportRate": 0.00,
+      "luxuryGoodsRate": 0.40,
+      "exemptItems": ["Basic necessities", "Medical services", "Education"]
+    },
+    "pph_21": {
+      "rate": 0.05,
+      "appliesTo": "Employee income tax"
+    },
+    "pph_22": {
+      "rate": 0.15,
+      "appliesTo": "Import duties"
+    },
+    "pph_23": {
+      "rate": 0.02,
+      "appliesTo": "Dividends, interest, royalties"
+    },
+    "ppn_bm": {
+      "rate": 0.40,
+      "appliesTo": "Luxury goods sales tax"
+    }
+  },
+  "deductions": {
+    "ptkp": {
+      "individual": 54000000,
+      "married": 4500000,
+      "perChild": 4500000,
+      "maxChildren": 3
+    },
+    "jht": {
+      "rate": 1.00,
+      "ceiling": 0.05
+    },
+    "pension": {
+      "rate": 1.00,
+      "maxDeduction": 0.05
+    },
+    "education": {
+      "rate": 1.00,
+      "maxDeduction": 24000000
+    },
+    "donations": {
+      "rate": 0.05,
+      "maxDeduction": 0.05
+    }
+  },
+  "hints": {
+    "tax_id": "Tax Identification Number (NPWP) is required for all taxpayers",
+    "tax_office": "Taxpayers must register at the local tax office (KPP) based on their address",
+    "tax_returns": "Annual tax returns must be filed by March 31st each year",
+    "e_filing": "Electronic filing is mandatory for certain taxpayers"
+  }
+}

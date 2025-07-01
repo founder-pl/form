@@ -1,0 +1,214 @@
+{
+  "code": "VN",
+  "name": "Vietnam",
+  "currency": "VND",
+  "taxYearStart": "01-01",
+  "taxYearEnd": "12-31",
+  "businessTypes": [
+    {
+      "id": "hkd",
+      "name": "Household Business (Hộ Kinh Doanh)",
+      "registrationFee": 100000,
+      "requiresVatRegistration": {
+        "threshold": 100000000,
+        "currency": "VND"
+      },
+      "taxRegime": "Presumptive Tax",
+      "incomeTaxRate": 0.05,
+      "vatRate": 0.10,
+      "passThroughTaxation": true,
+      "taxAgency": "Tax Department of District"
+    },
+    {
+      "id": "tnhh",
+      "name": "Limited Liability Company (TNHH)",
+      "registrationFee": 500000,
+      "minimumCapital": 10000000,
+      "requiresVatRegistration": {
+        "threshold": 100000000,
+        "currency": "VND"
+      },
+      "taxRegime": "Corporate Income Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.10,
+      "dividendWithholdingTax": 0.05,
+      "taxAgency": "Department of Planning and Investment"
+    },
+    {
+      "id": "ctcp",
+      "name": "Joint Stock Company (CTCP)",
+      "registrationFee": 1000000,
+      "minimumCapital": 30000000,
+      "requiresVatRegistration": {
+        "threshold": 100000000,
+        "currency": "VND"
+      },
+      "taxRegime": "Corporate Income Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.10,
+      "dividendWithholdingTax": 0.05,
+      "publicOffering": true,
+      "taxAgency": "State Securities Commission"
+    },
+    {
+      "id": "hdtv",
+      "name": "Partnership (Hợp Danh)",
+      "registrationFee": 500000,
+      "requiresVatRegistration": {
+        "threshold": 100000000,
+        "currency": "VND"
+      },
+      "taxRegime": "Personal Income Tax",
+      "incomeTaxRate": 0.00,
+      "vatRate": 0.10,
+      "passThroughTaxation": true,
+      "unlimitedLiability": true,
+      "taxAgency": "Department of Planning and Investment"
+    },
+    {
+      "id": "branch",
+      "name": "Foreign Company Branch",
+      "registrationFee": 2000000,
+      "requiresVatRegistration": {
+        "threshold": 100000000,
+        "currency": "VND"
+      },
+      "taxRegime": "Corporate Income Tax",
+      "corporateTaxRate": 0.20,
+      "vatRate": 0.10,
+      "branchProfitsTax": 0.05,
+      "taxAgency": "Ministry of Planning and Investment"
+    }
+  ],
+  "taxBrackets": [
+    {
+      "filingStatus": "individual",
+      "year": 2024,
+      "brackets": [
+        {
+          "minIncome": 0,
+          "maxIncome": 5000000,
+          "rate": 0.05,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 5000001,
+          "maxIncome": 10000000,
+          "rate": 0.10,
+          "tax": 250000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 10000001,
+          "maxIncome": 18000000,
+          "rate": 0.15,
+          "tax": 750000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 18000001,
+          "maxIncome": 32000000,
+          "rate": 0.20,
+          "tax": 1950000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 32000001,
+          "maxIncome": 52000000,
+          "rate": 0.25,
+          "tax": 4750000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 52000001,
+          "maxIncome": 80000000,
+          "rate": 0.30,
+          "tax": 9750000,
+          "type": "progressive"
+        },
+        {
+          "minIncome": 80000001,
+          "rate": 0.35,
+          "tax": 18150000,
+          "type": "flat"
+        }
+      ]
+    }
+  ],
+  "socialInsurance": {
+    "social_insurance": {
+      "employeeRate": 0.08,
+      "employerRate": 0.175,
+      "ceiling": 36000000,
+      "minBase": 1490000
+    },
+    "health_insurance": {
+      "employeeRate": 0.015,
+      "employerRate": 0.03,
+      "ceiling": 36000000,
+      "minBase": 1490000
+    },
+    "unemployment_insurance": {
+      "employeeRate": 0.01,
+      "employerRate": 0.01,
+      "ceiling": 88400000,
+      "minBase": 1490000
+    }
+  },
+  "taxes": {
+    "vat": {
+      "standardRate": 0.10,
+      "reducedRate1": 0.05,
+      "reducedRate2": 0.00,
+      "exemptItems": ["Agricultural products", "Education services", "Medical services"]
+    },
+    "corporate_income_tax": {
+      "standardRate": 0.20,
+      "preferentialRate1": 0.10,
+      "preferentialRate2": 0.17,
+      "incentiveSectors": ["High-tech", "Education", "Healthcare"]
+    },
+    "foreign_contractor_tax": {
+      "rate": 0.05,
+      "appliesTo": "Foreign entities without permanent establishment"
+    },
+    "personal_income_tax": {
+      "progressiveRates": true,
+      "taxFreeThreshold": 11000000
+    },
+    "special_sales_tax": {
+      "rate": 0.65,
+      "appliesTo": ["Tobacco", "Alcohol", "Cars"]
+    }
+  },
+  "deductions": {
+    "personal_deduction": {
+      "self": 11000000,
+      "dependant": 4400000,
+      "maxDependants": 2
+    },
+    "insurance_premiums": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "charitable_donations": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "education_expenses": {
+      "rate": 1.00,
+      "maxDeduction": 0.10
+    },
+    "savings_interest": {
+      "taxExempt": true,
+      "conditions": "From credit institutions in Vietnam"
+    }
+  },
+  "hints": {
+    "tax_id": "Tax code (Mã số thuế) is required for all taxpayers",
+    "tax_returns": "Quarterly tax returns are due by the 30th of the following month",
+    "annual_filing": "Annual tax finalization must be completed by March 30th",
+    "e_invoice": "E-invoicing is mandatory for all businesses since July 2022",
+    "foreign_currency": "Tax reporting must be in VND using official exchange rates"
+  }
+}
