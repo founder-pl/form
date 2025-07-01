@@ -31,7 +31,6 @@ export default {
   
   // Module handling
   moduleFileExtensions: ['js', 'mjs', 'json', 'jsx', 'node'],
-  extensionsToTreatAsEsm: ['.js'],
   
   // Coverage settings
   collectCoverage: true,
