@@ -1,36 +1,113 @@
-![img.png](img.png)
+# Multi-Country Tax & Cost of Living Comparison Tool
 
-# Multi-Country Tax Comparison Tool
+![Tax Comparison Tool Screenshot](img.png)
 
-A comprehensive web application for comparing tax and benefit scenarios across multiple countries, with a focus on European countries. This tool helps individuals and businesses understand their tax obligations and benefits in different jurisdictions.
+A comprehensive web application for comparing tax, benefits, and cost of living across multiple countries. This tool helps individuals, digital nomads, and businesses understand their financial obligations and lifestyle costs in different jurisdictions.
 
-## Features
+## ✨ Features
 
-- Compare tax scenarios across multiple countries simultaneously
-- Support for different business types (production, trade, services, freelance, e-commerce)
-- Family and children benefit calculations (500+, 800+, Kindergeld, etc.)
-- Customizable income, costs, and days spent in each country
-- Support for multiple tax years comparison
-- Detailed breakdown of tax calculations and benefits
-- Responsive design for desktop and mobile use
+- **Multi-Country Comparison**: Compare tax scenarios across multiple countries simultaneously
+- **Business Support**: Support for various business types (production, trade, services, freelance, e-commerce)
+- **Family Benefits**: Calculate family and children benefits (500+, 800+, Kindergeld, etc.)
+- **Cost of Living**: Detailed cost of living comparisons across cities
+- **Custom Scenarios**: Create and save custom business and family scenarios
+- **Interactive Visualizations**: Charts and graphs for easy comparison
+- **Responsive Design**: Works on desktop and mobile devices
+- **REST API**: Programmatic access to tax and cost calculations
+- **CLI Interface**: Command-line interface for quick calculations
 
-## Project Structure
+## 🚀 Getting Started
 
+### Prerequisites
+
+- Node.js 18+ (LTS recommended)
+- npm or yarn
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/tax-comparison-tool.git
+   cd tax-comparison-tool
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 🏗️ Project Structure
+
+```text
+tax-comparison-tool/
+├── src/                    # Source code
+│   ├── components/         # React components
+│   ├── contexts/           # React contexts
+│   ├── pages/              # Page components
+│   ├── services/           # Business logic and API clients
+│   ├── utils/              # Utility functions
+│   └── __tests__/          # Test files
+├── public/                 # Static files
+├── data/                   # Data files
+│   ├── countries/          # Country-specific data
+│   ├── benefits.json       # Benefits data
+│   └── cost-of-living/     # Cost of living data
+├── scripts/                # Utility scripts
+├── .github/                # GitHub configurations
+├── .vscode/                # VS Code settings
+├── dist/                   # Build output
+├── coverage/               # Test coverage reports
+└── docs/                   # Documentation
 ```
-form/
-├── css/
-│   └── styles.css           # Main stylesheet
-├── data/
-│   ├── benefits.json       # Family and children benefits data
-│   └── countries.json       # Country-specific tax and legal data
-├── js/
-│   ├── components/         # UI components
-│   │   ├── countrySelection.js
-│   │   ├── familyBenefitsForm.js
-│   │   └── personalDataForm.js
-│   ├── services/            # Application services
-│   │   ├── benefitCalculator.js
-│   │   ├── dataService.js
+
+## 🛠️ Services
+
+Key services in the application:
+
+- **Benefit Calculator**: Handles calculation of various benefits
+- **Data Service**: Manages loading and accessing country data
+- **Tax Calculator**: Core tax calculation logic
+
+## 📊 Data Structure
+
+The application uses a modular data structure with separate files for different aspects:
+
+- Country-specific data in `data/countries/`
+- Benefits configuration in `data/benefits.json`
+- Cost of living data in `data/cost-of-living/`
+
+## 🧪 Testing
+
+Run tests using the following commands:
+
+```bash
+# Run all tests
+npm test
+
+# Run specific test suites
+npm run test:unit    # Unit tests
+npm run test:api     # API tests
+npm run test:cli     # CLI tests
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 │   │   ├── eventHandlers.js
 │   │   ├── tableUpdater.js
 │   │   ├── taxCalculator.js

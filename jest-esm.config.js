@@ -2,30 +2,42 @@
 // This configuration is specifically for running tests with ES modules
 
 export default {
-  // Use Node environment
+  // Use Node environment with ESM support
   testEnvironment: 'node',
   
-  // Setup files
-  setupFiles: ['<rootDir>/src/__tests__/global-setup.js'],
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  // Setup files - using consolidated setup
+  setupFiles: ['<rootDir>/src/__tests__/setup.js'],
   
   // Handle ES modules
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  globals: {
-    'ts-jest': {
-      useESM: true,
-    },
-  },
+  preset: 'ts-jest/presets/default-esm',
+  
+  // Module handling
   moduleNameMapper: {
-    '^(\\.{1,2}/.*)\\.js$': '$1',
+    '^(\\.{1,2}/.*)\\.m?js$': '$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
+  
+  // Transform configuration
   transform: {
-    '^.+\\.m?js$': 'babel-jest',
+    '^.+\\.(t|j)sx?$': ['ts-jest', {
+      useESM: true,
+      tsconfig: 'tsconfig.json',
+      isolatedModules: true,
+    }]
   },
-  transformIgnorePatterns: [
-    'node_modules/(?!(chalk|figlet|commander|cli-table3)/)',
+  
+  // Test paths
+  testMatch: [
+    '**/__tests__/**/*.test.[jt]s?(x)',
+    '**/?(*.)+(spec|test).[jt]s?(x)'
   ],
+  
+  // Ignore patterns
+  transformIgnorePatterns: [
+    'node_modules/(?!(chalk|figlet|commander|cli-table3|@babel/runtime|@testing-library)/)'
+  ],
+  
+  // Global configuration
   globals: {
     'ts-jest': {
       useESM: true,
