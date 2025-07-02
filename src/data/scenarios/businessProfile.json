@@ -7,21 +7,155 @@
       "legalForms": [
         {
           "id": "sole_proprietor",
-          "name": "Sole Proprietor",
+          "name": "Sole Proprietor (JDG in PL)",
           "countries": ["PL", "DE", "FR", "ES", "IT"],
           "taxationOptions": ["lump_sum", "tax_scale", "flat_rate"],
           "liability": "unlimited",
           "capitalRequirements": 0,
-          "registrationComplexity": "low"
+          "registrationComplexity": "low",
+          "socialSecurity": {
+            "type": "fixed_or_percentage",
+            "minAmount": 1000,
+            "maxAmount": 5000,
+            "rate": 0.19,
+            "healthContributionRate": 0.09
+          },
+          "specificIncentives": {
+            "PL": ["small_business_relief", "flat_rate_vat", "family_800_plus"],
+            "DE": ["freelancer_allowance"],
+            "FR": ["auto_entrepreneur"]
+          }
         },
         {
           "id": "self_employed",
-          "name": "Self-Employed",
-          "countries": ["DE", "AT", "NL"],
+          "name": "Self-Employed (Freiberufler in DE)",
+          "countries": ["DE", "AT", "NL", "CH"],
           "taxationOptions": ["tax_scale", "flat_rate"],
           "liability": "unlimited",
           "capitalRequirements": 0,
-          "registrationComplexity": "low"
+          "registrationComplexity": "low",
+          "socialSecurity": {
+            "type": "percentage",
+            "rate": 0.14,
+            "healthContributionRate": 0.145
+          }
         }
-      ],
-      
+      ]
+    },
+    {
+      "id": "llc",
+      "name": "Limited Liability Company",
+      "description": "Private company with limited liability",
+      "legalForms": [
+        {
+          "id": "sp_zoo",
+          "name": "Sp. z o.o. (PL)",
+          "countries": ["PL"],
+          "taxationOptions": ["corporate_tax", "lump_sum"],
+          "liability": "limited",
+          "capitalRequirements": 5000,
+          "registrationComplexity": "medium",
+          "taxRates": {
+            "standard": 0.19,
+            "small_taxpayer": 0.09,
+            "ip_box": 0.05
+          },
+          "specificIncentives": ["ip_box", "rd_relief", "special_economic_zone"]
+        },
+        {
+          "id": "gmbh",
+          "name": "GmbH (DE/AT/CH)",
+          "countries": ["DE", "AT", "CH"],
+          "taxationOptions": ["corporate_tax"],
+          "liability": "limited",
+          "capitalRequirements": 25000,
+          "registrationComplexity": "high"
+        }
+      ]
+    },
+    {
+      "id": "partnership",
+      "name": "Partnership",
+      "description": "Business owned by two or more people",
+      "legalForms": [
+        {
+          "id": "spolka_jd",
+          "name": "Spółka jawna (PL)",
+          "countries": ["PL"],
+          "taxationOptions": ["tax_transparency"],
+          "liability": "unlimited",
+          "capitalRequirements": 0,
+          "registrationComplexity": "medium"
+        },
+        {
+          "id": "kg",
+          "name": "KG (DE)",
+          "countries": ["DE", "AT", "CH"],
+          "taxationOptions": ["tax_transparency"],
+          "liability": "mixed",
+          "capitalRequirements": 0,
+          "registrationComplexity": "medium"
+        }
+      ]
+    }
+  ],
+  
+  "taxIncentives": {
+    "family_800_plus": {
+      "name": "Program 800+ (Poland)",
+      "description": "Monthly child benefit of 800 PLN per child",
+      "countries": ["PL"],
+      "eligibility": {
+        "children_under_18": true,
+        "children_under_24_studying": true,
+        "income_limit": 800000
+      },
+      "calculation": {
+        "amount_per_child": 800,
+        "currency": "PLN",
+        "payment_frequency": "monthly",
+        "tax_free": true
+      }
+    },
+    "ip_box": {
+      "name": "IP Box Regime",
+      "description": "Preferential taxation of intellectual property income",
+      "countries": ["PL", "NL", "UK", "LU"],
+      "eligibility": {
+        "ip_owner": true,
+        "rd_activities": true
+      },
+      "calculation": {
+        "effective_tax_rate": 0.05,
+        "qualifying_income_percentage": 0.7
+      }
+    }
+  },
+  
+  "costCategories": [
+    {
+      "id": "office_space",
+      "name": "Office Space",
+      "subcategories": ["coworking", "private_office", "virtual_office"]
+    },
+    {
+      "id": "accounting",
+      "name": "Accounting & Legal",
+      "subcategories": ["bookkeeping", "tax_filing", "legal_services"]
+    },
+    {
+      "id": "software",
+      "name": "Software & Tools",
+      "subcategories": ["accounting_software", "project_management", "crm"]
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "subcategories": ["online_ads", "seo", "content_creation"]
+    },
+    {
+      "id": "salaries",
+      "name": "Salaries & Benefits",
+      "subcategories": ["gross_salary", "employer_taxes", "benefits"]
+    }
+  ]
